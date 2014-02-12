@@ -1,0 +1,1749 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet/less" type="text/css" href="css/style.less">
+	<link rel="stylesheet/less" type="text/css" href="css/rateit.css">
+	<link rel="stylesheet" href="css/ion.rangeSlider.css" />
+    <link rel="stylesheet" href="css/ion.rangeSlider.skinFlat.css" />
+    <link rel="stylesheet" href="css/rubl.css" />
+	<title></title>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script type="text/javascript" src="js/application.js"></script>
+	<script type="text/javascript" src="js/libs/less.js"></script>
+	<script type="text/javascript" src="js/libs/selectivizr-min.js"></script>
+	<script type="text/javascript" src="js/libs/vendor.js"></script>
+	<script type="text/javascript" src="js/libs/ion.rangeSlider.js"></script>
+	<script type="text/javascript" src="js/filter.js"></script>
+
+</head>
+<body>
+	<div class="header">
+		<div class="container">
+			<!--
+			<div class="userbar">
+				<img src="img/userpic.png" class="userpic">
+				<span class="name"> Алексей П.</span>
+				<a href="">Выход</a>
+			</div>
+			-->
+			<div class="userbar">
+				<img src="img/userpic.png" class="userpic">
+				<label>Вход для пользователей</label>
+				<div class="hidden">
+					<input type="text" placeholder="Введите ваш e-mail" class="autoreport_input">
+					<input type="text" placeholder="Введите желаемый пароль" class="autoreport_input">
+					<a href="">Забыли пароль?</a>
+					<input type="text" value="Войти" class="button">
+
+					<div class="social-icons">
+						<label for="">Войти через:</label>
+						<a href="#" class="vk social"></a> 
+						<a href="#" class="fb social"></a> 
+						<a href="#" class="g_plus social"></a>
+						<a href="#" class="vector social"></a>
+					</div>
+
+				</div>
+			</div>
+			<div class="clearfix"></div>
+			<div class="nav" id="menu1">
+				<a href="#" class="logo"><img src="img/logo.png"></a>
+				<ul>
+					<li><a href="#">Кредитные истории</a></li>
+					<li><a href="#">Симулятор</a></li>
+					<li><a href="#">Предложение</a></li>
+					<li><a href="#">О проекте</a></li>
+					<li><a href="#">Контакты</a></li>
+				</ul>
+			</div> 
+		</div>
+	</div>
+	<div class="container">
+		<div id="menu2" class="nav">
+			<a href="" class="message-notifier">
+				<div class="counter">3</div>
+			</a>
+
+			<table class="table_menu">
+				<tr>
+				<td><a href="#">Сводка</a></td>
+				<td>
+					<a href="#">Услуги</a>
+					<div class="sub_menu">
+					<ul>
+						<li><a href="">Кредитный рейтинг</a></li>
+						<li><a href="">Кредитные отчеты</a></li>
+						<li><a href="">Кредитный симулятор</a></li>
+						<li><a href="">Мои расходы</a></li>
+						<li><a href="">Мои рекомендации</a></li>
+						<li><a href="">Кредитные карты</a></li>
+					</ul>
+					</div>
+				</td>
+				<td><a href="credit_reports.html">Мои финансы</a></td>
+				<td><a href="credit_cards.html">Кредитные карты</a></td>
+				<td class="active"><a href="credits.html">Кредиты</a>
+					<div class="sub_menu">
+						<ul>
+							<li><a href="">Потребительские кредиты</a></li>
+							<li><a href="">Автокредиты</a></li>
+							<li><a href="">Ипотека</a></li>
+						</ul>
+					</div>
+				</td>
+				<td><a href="reports.html">Отчеты</a></td>
+				<td><a href="#">Инструменты</a></td>
+				</tr>
+			</table>
+
+		</div>
+	</div>
+
+	<div class="main">
+		<div class="container">
+
+			<div id="credits" class="clearfix ">
+				<div class="header">
+					<h1>Кредиты</h1>
+				</div>
+				<div class="nav">
+					<ul>
+						<li class="active consumer-loans" data-tabs="consumer-loans">
+							<!--<img src="img/credit_cards_search.png">-->
+							Потребительские <br>кредиты
+						</li>
+						<li class="autocredits" data-tabs="autocredits"> 
+							<!--<img src="img/best_card.png">-->
+							Автокредиты
+						</li>
+						<li class="mortgage" data-tabs="mortgage">
+							<!--<img src="img/cards_with_balance_transfer.png">-->
+							Ипотека
+						</li>
+
+					</ul>
+				</div>
+				<div class="content-container border-box">
+
+
+					<!--Потребительские кредиты-->
+					<div id="consumer_loans"  class="credits_tabs" data-tabs="consumer-loans">
+						<h1>
+							Потребительские кредиты
+						</h1>
+						<p>В этом разделе, вы сможете подобрать для себя наилучшие предложения банков по потребительским кредитам, соответствующие тем параметрам, которые необходимы конкретно вам.</p>
+						<div class="grey-border"></div>
+
+						<form action="">
+							<div class="search_options">
+								<h3>Основные параметры поиска</h3>
+								<div>
+									<h4>Сумма кредита:</h4><input type="text" placeholder="20 000" class="creditLimitFilter left">
+									<figure>
+									<figure><i class="start">0</i><i class="end">1 500 000</i></figure>
+									<input type="text" class="credit_limit_filter">
+								</figure>
+								<input type="text" placeholder="150 000" class="creditLimitFilter right"><figure>
+	 							</div>
+
+	 							<div>
+									<h4>Срок кредита:</h4><input type="text" style="opacity:0" class="left"><figure>
+									<figure><i class="start">1месяц</i><i class="end">360месяцев</i></figure>
+									<input type="text" class="credit_term">
+								</figure>
+								</div>
+								<div>
+									<h4>Процентная ставка:</h4><input type="text" placeholder="25%" class="interestRateFilter left"><figure>
+									<figure><i class="start">0</i><i class="end">100%</i></figure>
+									<input type="text" class="interest_rate_filter">
+								</figure>
+								<input type="text" placeholder="45%" class="interestRateFilter right">
+	 							</div>
+								<div>
+									<h4>Срок рассмотрения заявки:</h4><input type="text" placeholder="3" class="reviewTime left"><figure>
+									<figure><i class="start">1</i><i class="end">14</i></figure>
+									<input type="text" class="review_time">
+								</figure>
+								<input type="text" placeholder="8" class="reviewTime right">
+	 							</div>
+							</div>
+
+							<div class="grey-border"></div>
+							<h3>Дополнительные параметры поиска</h3>
+							<div class="selects_and_checkox clearfix width_100">
+								<div class="left_block">
+
+									<label for="">Валюта:</label>
+									<div class="select">
+										<a href="#" class="slct">Рубли</a>
+										<ul class="drop">
+											<li>Рубли</li>
+										</ul>
+										<input type="hidden" name="occupation">
+									</div>
+
+									<label for="">Подтверждение дохода:</label>
+									<div class="select">
+										<a href="#" class="slct">Не имеет значения</a>
+										<ul class="drop">
+											<li>Не имеет значения</li>
+										</ul>
+										<input type="hidden" name="occupation">
+									</div>
+
+									<label for="">Город выдачи кредита:</label>
+									<div class="select">
+										<a href="#" class="slct">Санкт-Петербург</a>
+										<ul class="drop">
+											<li>Санкт-Петербург</li>
+										</ul>
+										<input type="hidden" name="occupation">
+									</div>
+
+									<div class="checkboxes">
+										<label for="">Выпуск карты:</label>
+										<div class="check">
+											Да
+											<input type="checkbox" value="edition_yes" />
+										</div>
+										<div class="check">
+											Нет
+											<input type="checkbox" value="edition_not" />
+										</div>
+									</div>
+
+									<div class="checkboxes">
+										<label for="">Комиссии:</label>
+										<div class="check">
+											Да
+											<input type="checkbox" value="commission_yes" />
+										</div>
+										<div class="check">
+											нет
+											<input type="checkbox" value="commission_not" />
+										</div>
+									</div>
+
+								</div>
+								<div class="right_block">
+
+									<label for="">Обеспечение:</label>
+									<div class="select">
+										<a href="#" class="slct">Залог</a>
+										<ul class="drop">
+											<li>Залог</li>
+										</ul>
+										<input type="hidden" name="occupation">
+									</div>
+
+									<label for="">Регистрация в регионе получения:</label>
+									<div class="select">
+										<a href="#" class="slct">не имеет значения</a>
+										<ul class="drop">
+											<li>не имеет значения</li>
+										</ul>
+										<input type="hidden" name="occupation">
+									</div>
+									<label for="">Банк-кредитор</label>
+									<div class="select">
+										<a href="#" class="slct">не имеет значения</a>
+										<ul class="drop">
+											<li>не имеет значения</li>
+										</ul>
+										<input type="hidden" name="occupation">
+									</div>
+
+									<div class="checkboxes">
+										<label for="">On-line заявка:</label>
+										<div class="check">
+											Да
+											<input type="checkbox" value="on_line_yes" />
+										</div>
+										<div class="check">
+											Нет
+											<input type="checkbox" value="on_line_no" />
+										</div>
+									</div>
+
+									<div class="checkboxes">
+										<label for="">Страховка:</label>
+										<div class="check">
+											Да
+											<input type="checkbox" value="insurance_yes" />
+										</div>
+										<div class="check">
+											Нет
+											<input type="checkbox" value="insurance_no" />
+										</div>
+									</div>
+								</div>
+							</div>
+
+
+							<div class="grey-border"></div>
+							<div style="height:35px;">
+								<input type="submit" class="button right" value="Найти">
+							</div>
+							<div class="grey-border"></div>
+						</form>
+						<div class="search_result">
+							<h3>Результаты поиска 
+								<label for="">Сортировать по:</label>
+								<div class="select right">
+									<a href="#" class="slct">По минимальной процентной ставке</a>
+									<ul class="drop" style="display: none;">
+										<li>По минимальной процентной ставке</li>
+									</ul>
+									<input type="hidden" name="question">
+								</div>
+							</h3>
+							<p>Найдено: <a href="">123 предложения</a></p>
+
+							<div class="credit_card_box">
+								<div class="head">Кредитная карта Citibank Cashback  <a href class="right">Детали предложения</a></div>
+
+								<div class="content">
+									<figure><img src="img/card_img_b.png" alt=""></figure>
+									<aside>
+										<table>
+											<tr>
+												<td>
+													<div>Годовая процентная ставка
+														<strong>от 18,9%</strong>
+													</div>
+												</td>
+												<td>
+													<div>Льготный период
+														<strong>до 55 дней</strong>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div>Кредитный лимит
+														<strong>до 300 000<span class="rur"> P<span></strong>
+													</div>
+												</td>
+												<td>
+													<div>Стоимость обслуживания
+														<strong>500 в год</strong>
+													</div>
+												</td>
+											</tr>
+										</table>
+									</aside>
+									<div class="required_rating tooltip">
+										<div class="hint">
+											Здесь указано минимальное значение рейтинга, необходимое для получения карты
+										</div>
+										Требуемый рейтинг
+										<span>650</span>
+									</div>
+									<div class="grey-border"></div>
+
+									<a href="" class="button left">Оформить карту</a>
+									<div class="stars">
+										<div data-rateit-resetable="false"  data-rateit-ispreset="true" class="rateit"></div>
+									</div>
+									<div class="comments">
+										<img src="img/comments.png" alt="">
+										<a href="">124</a>
+									</div>
+									<div class="probability_of_approval">
+										<label for="">Вероятность одобрения:</label>
+										<div>
+											<figure class="stats-box box-1"></figure>
+											<figure class="stats-box box-2"></figure>
+											<figure class="stats-box box-3"></figure>
+											<figure class="stats-box box-4"></figure>
+											<figure class="stats-box box-5"></figure>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="credit_card_box">
+								<div class="head">Кредитная карта Citibank Cashback  <a href class="right">Детали предложения</a></div>
+
+								<div class="content">
+									<figure><img src="img/card_img_b.png" alt=""></figure>
+									<aside>
+										<table>
+											<tr>
+												<td>
+													<div>Годовая процентная ставка
+														<strong>от 18,9%</strong>
+													</div>
+												</td>
+												<td>
+													<div>Льготный период
+														<strong>до 55 дней</strong>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div>Кредитный лимит
+														<strong>до 300 000<span class="rur"> P<span></strong>
+													</div>
+												</td>
+												<td>
+													<div>Стоимость обслуживания
+														<strong>500 в год</strong>
+													</div>
+												</td>
+											</tr>
+										</table>
+									</aside>
+									<div class="required_rating tooltip">
+										<div class="hint">
+											Здесь указано минимальное значение рейтинга, необходимое для получения карты
+										</div>
+										Требуемый рейтинг
+										<span>650</span>
+									</div>
+									<div class="grey-border"></div>
+									<a href="" class="button left">Оформить карту</a>
+									<div class="stars">
+										<div data-rateit-resetable="false"  data-rateit-ispreset="true" class="rateit"></div>
+									</div>
+									<div class="comments">
+										<img src="img/comments.png" alt="">
+										<a href="">124</a>
+									</div>
+									<div class="probability_of_approval">
+										<label for="">Вероятность одобрения:</label>
+										<div>
+											<figure class="stats-box box-1"></figure>
+											<figure class="stats-box box-2"></figure>
+											<figure class="stats-box box-3"></figure>
+											<figure class="stats-box box-4"></figure>
+											<figure class="stats-box box-5"></figure>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="credit_card_box">
+								<div class="head">Кредитная карта Citibank Cashback  <a href class="right">Детали предложения</a></div>
+
+								<div class="content">
+									<figure><img src="img/card_img_b.png" alt=""></figure>
+									<aside>
+										<table>
+											<tr>
+												<td>
+													<div>Годовая процентная ставка
+														<strong>от 18,9%</strong>
+													</div>
+												</td>
+												<td>
+													<div>Льготный период
+														<strong>до 55 дней</strong>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div>Кредитный лимит
+														<strong>до 300 000<span class="rur"> P<span></strong>
+													</div>
+												</td>
+												<td>
+													<div>Стоимость обслуживания
+														<strong>500 в год</strong>
+													</div>
+												</td>
+											</tr>
+										</table>
+									</aside>
+									<div class="required_rating tooltip">
+										<div class="hint">
+											Здесь указано минимальное значение рейтинга, необходимое для получения карты
+										</div>
+										Требуемый рейтинг
+										<span>650</span>
+									</div>
+									<div class="grey-border"></div>
+
+									<a href="" class="button left">Оформить карту</a>
+									<div class="stars">
+										<div data-rateit-resetable="false"  data-rateit-ispreset="true" class="rateit"></div>
+									</div>
+									<div class="comments">
+										<img src="img/comments.png" alt="">
+										<a href="">124</a>
+									</div>
+									<div class="probability_of_approval">
+										<label for="">Вероятность одобрения:</label>
+										<div>
+											<figure class="stats-box box-1"></figure>
+											<figure class="stats-box box-2"></figure>
+											<figure class="stats-box box-3"></figure>
+											<figure class="stats-box box-4"></figure>
+											<figure class="stats-box box-5"></figure>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="credit_card_box">
+								<div class="head">Кредитная карта Citibank Cashback  <a href class="right">Детали предложения</a></div>
+
+								<div class="content">
+									<figure><img src="img/card_img_b.png" alt=""></figure>
+									<aside>
+										<table>
+											<tr>
+												<td>
+													<div>Годовая процентная ставка
+														<strong>от 18,9%</strong>
+													</div>
+												</td>
+												<td>
+													<div>Льготный период
+														<strong>до 55 дней</strong>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div>Кредитный лимит
+														<strong>до 300 000<span class="rur"> P<span></strong>
+													</div>
+												</td>
+												<td>
+													<div>Стоимость обслуживания
+														<strong>500 в год</strong>
+													</div>
+												</td>
+											</tr>
+										</table>
+									</aside>
+									<div class="required_rating tooltip">
+										<div class="hint">
+											Здесь указано минимальное значение рейтинга, необходимое для получения карты
+										</div>
+										Требуемый рейтинг
+										<span>650</span>
+									</div>
+									<div class="grey-border"></div>
+									<a href="" class="button left">Оформить карту</a>
+									<div class="stars">
+										<div data-rateit-resetable="false"  data-rateit-ispreset="true" class="rateit"></div>
+									</div>
+									<div class="comments">
+										<img src="img/comments.png" alt="">
+										<a href="">124</a>
+									</div>
+									<div class="probability_of_approval">
+										<label for="">Вероятность одобрения:</label>
+										<div>
+											<figure class="stats-box box-1"></figure>
+											<figure class="stats-box box-2"></figure>
+											<figure class="stats-box box-3"></figure>
+											<figure class="stats-box box-4"></figure>
+											<figure class="stats-box box-5"></figure>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="credit_card_box">
+								<div class="head">Кредитная карта Citibank Cashback  <a href class="right">Детали предложения</a></div>
+
+								<div class="content">
+									<figure><img src="img/card_img_b.png" alt=""></figure>
+									<aside>
+										<table>
+											<tr>
+												<td>
+													<div>Годовая процентная ставка
+														<strong>от 18,9%</strong>
+													</div>
+												</td>
+												<td>
+													<div>Льготный период
+														<strong>до 55 дней</strong>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div>Кредитный лимит
+														<strong>до 300 000<span class="rur"> P<span></strong>
+													</div>
+												</td>
+												<td>
+													<div>Стоимость обслуживания
+														<strong>500 в год</strong>
+													</div>
+												</td>
+											</tr>
+										</table>
+									</aside>
+									<div class="required_rating tooltip">
+										<div class="hint">
+											Здесь указано минимальное значение рейтинга, необходимое для получения карты
+										</div>
+										Требуемый рейтинг
+										<span>650</span>
+									</div>
+									<div class="grey-border"></div>
+									<a href="" class="button left">Оформить карту</a>
+									<div class="stars">
+										<div data-rateit-resetable="false"  data-rateit-ispreset="true" class="rateit"></div>
+									</div>
+									<div class="comments">
+										<img src="img/comments.png" alt="">
+										<a href="">124</a>
+									</div>
+									<div class="probability_of_approval">
+										<label for="">Вероятность одобрения:</label>
+										<div>
+											<figure class="stats-box box-1"></figure>
+											<figure class="stats-box box-2"></figure>
+											<figure class="stats-box box-3"></figure>
+											<figure class="stats-box box-4"></figure>
+											<figure class="stats-box box-5"></figure>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<a href="" class="blue_button more"><span>Показать больше предложений</span></a>
+						
+						</div>
+
+					</div>
+
+					<!--Автокредиты-->
+					<div id="auto_loans" class="credits_tabs" data-tabs="autocredits">
+						<h1>
+							Автокредиты
+						</h1>
+						<p>В этом разделе, вы сможете подобрать для себя наилучшие предложения банков по автокредитам, соответствующие тем параметрам, которые необзодимы конкретно вам</p>
+						<div class="grey-border"></div>
+						<form action="">
+							<div class="search_options">
+								<h3>Основные параметры поиска</h3>
+								<div>
+									<h4>Сумма кредита(P):</h4><input type="text" placeholder="20 000" class="creditLimitFilter left">
+									<figure>
+										<figure><i class="start">0</i><i class="end">1 500 000</i></figure>
+									<input type="text" class="autocredit_limit_filter">
+								</figure>
+								<input type="text" placeholder="150 000" class="creditLimitFilter right">
+
+	 							</div>
+
+								<div>
+									<h4>Срок кредита:</h4><input type="text" style="opacity:0;" class="left">
+									<figure>
+									<figure><i class="start">1 месяц</i><i class="end">30 лет</i></figure>
+									<input type="text" class="credit_term">
+								</figure>
+	 							</div>
+	 							<div>
+									<h4>Процентная ставка(%):</h4><input type="text" placeholder="25" class="interestRateFilter left">
+									<figure>
+									<figure><i class="start">0</i><i class="end">100</i></figure>
+									<input type="text" class="interest_rate_filter">
+								</figure>
+								<input type="text" placeholder="74" class="interestRateFilter right">
+								</div>
+
+								<div>
+									<h4>Первоначальный взнос(%):</h4><input type="text" placeholder="25" class="interestRateFilter left">
+									<figure>
+									<figure><i class="start">10</i><i class="end">100</i></figure>
+									<input type="text" class="interest_rate_filter">
+								</figure>
+								<input type="text" placeholder="47" class="interestRateFilter right">
+								</div>
+
+								<div>
+									<h4>Срок рассмотрения заявки(дней):</h4><input type="text" placeholder="3" class="reviewTime left">
+									<figure>
+									<figure><i class="start">1</i><i class="end">14</i></figure>
+									<input type="text" class="review_time">
+								</figure>
+								<input type="text" placeholder="8" class="reviewTime right">
+	 							</div>
+							</div>
+
+							<div class="grey-border"></div>
+							<h3>Дополнительные параметры поиска</h3>
+							<div class="selects_and_checkox clearfix width_100">
+								<div class="left_block">
+
+									<label for="">Валюта:</label>
+									<div class="select">
+										<a href="#" class="slct">Рубли</a>
+										<ul class="drop">
+											<li>Рубли</li>
+										</ul>
+										<input type="hidden" name="occupation">
+									</div>
+
+									<label for="">Подтверждение дохода:</label>
+									<div class="select">
+										<a href="#" class="slct">Не имеет значения</a>
+										<ul class="drop">
+											<li>Не имеет значения</li>
+										</ul>
+										<input type="hidden" name="occupation">
+									</div>
+
+									<label for="">Город выдачи кредита:</label>
+									<div class="select">
+										<a href="#" class="slct">Санкт-Петербург</a>
+										<ul class="drop">
+											<li>Санкт-Петербург</li>
+										</ul>
+										<input type="hidden" name="occupation">
+									</div>
+
+									<label for="">Вид транспортного средства:</label>
+									<div class="select">
+										<a href="#" class="slct">Легковой</a>
+										<ul class="drop">
+											<li>Легковой</li>
+										</ul>
+										<input type="hidden" name="occupation">
+									</div>
+
+									<label for="">Состояние транспортного средства:</label>
+									<div class="select">
+										<a href="#" class="slct">Новый</a>
+										<ul class="drop">
+											<li>Новый</li>
+										</ul>
+										<input type="hidden" name="occupation">
+									</div>
+
+
+									<div class="checkboxes">
+										<label for="">Спецпрограммы</label>
+										<div class="check">
+											КАСКО
+											<input type="checkbox" value="kasco" />
+										</div>
+										<div class="check">
+											КАСКО+Жизнь
+											<input type="checkbox" value="kasco_life" />
+										</div>
+									</div>
+
+									<div class="checkboxes">
+										<label for="">Комиссии:</label>
+										<div class="check">
+											Да
+											<input type="checkbox" value="commission_yes" />
+										</div>
+										<div class="check">
+											нет
+											<input type="checkbox" value="commission_not" />
+										</div>
+									</div>
+
+								</div>
+								<div class="right_block">
+
+									<label for="">Обеспечение:</label>
+									<div class="select">
+										<a href="#" class="slct">Без обеспечения</a>
+										<ul class="drop">
+											<li>Без обеспечения</li>
+										</ul>
+										<input type="hidden" name="occupation">
+									</div>
+
+									<label for="">Регистрация в регионе получения:</label>
+									<div class="select">
+										<a href="#" class="slct">не имеет значения</a>
+										<ul class="drop">
+											<li>не имеет значения</li>
+										</ul>
+										<input type="hidden" name="occupation">
+									</div>
+									<label for="">Банк-кредитор</label>
+									<div class="select">
+										<a href="#" class="slct">не имеет значения</a>
+										<ul class="drop">
+											<li>не имеет значения</li>
+										</ul>
+										<input type="hidden" name="occupation">
+									</div>
+
+									<label for="">Тип транспортного средства:</label>
+									<div class="select" style="margin-bottom: 124px;">
+										<a href="#" class="slct">Импортный</a>
+										<ul class="drop">
+											<li>Импортный</li>
+										</ul>
+										<input type="hidden" name="occupation">
+									</div>
+
+									<div class="checkboxes">
+										<label for="">On-line заявка:</label>
+										<div class="check">
+											Да
+											<input type="checkbox" value="on_line_yes" />
+										</div>
+										<div class="check">
+											Нет
+											<input type="checkbox" value="on_line_no" />
+										</div>
+									</div>
+
+									<div class="checkboxes">
+										<label for="">Страховка:</label>
+										<div class="check">
+											Да
+											<input type="checkbox" value="insurance_yes" />
+										</div>
+										<div class="check">
+											Нет
+											<input type="checkbox" value="insurance_no" />
+										</div>
+									</div>
+								</div>
+							</div>
+
+
+							<div class="grey-border"></div>
+							<div style="height:35px;">
+								<input type="submit" class="button right" value="Найти">
+							</div>
+							<div class="grey-border"></div>
+						</form>
+						<div class="search_result">
+							<h3>Результаты поиска 
+								<label for="">Сортировать по:</label>
+								<div class="select right">
+									<a href="#" class="slct">По минимальной процентной ставке</a>
+									<ul class="drop" style="display: none;">
+										<li>По минимальной процентной ставке</li>
+									</ul>
+									<input type="hidden" name="question">
+								</div>
+							</h3>
+							<p>Найдено: <a href="">123 предложения</a></p>
+
+							<div class="credit_card_box">
+								<div class="head">Кредитная карта Citibank Cashback  <a href class="right">Детали предложения</a></div>
+
+								<div class="content">
+									<figure><img src="img/card_img_b.png" alt=""></figure>
+									<aside>
+										<table>
+											<tr>
+												<td>
+													<div>Годовая процентная ставка
+														<strong>от 18,9%</strong>
+													</div>
+												</td>
+												<td>
+													<div>Льготный период
+														<strong>до 55 дней</strong>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div>Кредитный лимит
+														<strong>до 300 000<span class="rur"> P<span></strong>
+													</div>
+												</td>
+												<td>
+													<div>Стоимость обслуживания
+														<strong>500 в год</strong>
+													</div>
+												</td>
+											</tr>
+										</table>
+									</aside>
+									<div class="required_rating tooltip">
+										<div class="hint">
+											Здесь указано минимальное значение рейтинга, необходимое для получения карты
+										</div>
+										Требуемый рейтинг
+										<span>650</span>
+									</div>
+									<div class="grey-border"></div>
+
+									<a href="" class="button left">Оформить карту</a>
+									<div class="stars">
+										<div data-rateit-resetable="false"  data-rateit-ispreset="true" class="rateit"></div>
+									</div>
+									<div class="comments">
+										<img src="img/comments.png" alt="">
+										<a href="">124</a>
+									</div>
+									<div class="probability_of_approval">
+										<label for="">Вероятность одобрения:</label>
+										<div>
+											<figure class="stats-box box-1"></figure>
+											<figure class="stats-box box-2"></figure>
+											<figure class="stats-box box-3"></figure>
+											<figure class="stats-box box-4"></figure>
+											<figure class="stats-box box-5"></figure>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="credit_card_box">
+								<div class="head">Кредитная карта Citibank Cashback  <a href class="right">Детали предложения</a></div>
+
+								<div class="content">
+									<figure><img src="img/card_img_b.png" alt=""></figure>
+									<aside>
+										<table>
+											<tr>
+												<td>
+													<div>Годовая процентная ставка
+														<strong>от 18,9%</strong>
+													</div>
+												</td>
+												<td>
+													<div>Льготный период
+														<strong>до 55 дней</strong>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div>Кредитный лимит
+														<strong>до 300 000<span class="rur"> P<span></strong>
+													</div>
+												</td>
+												<td>
+													<div>Стоимость обслуживания
+														<strong>500 в год</strong>
+													</div>
+												</td>
+											</tr>
+										</table>
+									</aside>
+									<div class="required_rating tooltip">
+										<div class="hint">
+											Здесь указано минимальное значение рейтинга, необходимое для получения карты
+										</div>
+										Требуемый рейтинг
+										<span>650</span>
+									</div>
+									<div class="grey-border"></div>
+									<a href="" class="button left">Оформить карту</a>
+									<div class="stars">
+										<div data-rateit-resetable="false"  data-rateit-ispreset="true" class="rateit"></div>
+									</div>
+									<div class="comments">
+										<img src="img/comments.png" alt="">
+										<a href="">124</a>
+									</div>
+									<div class="probability_of_approval">
+										<label for="">Вероятность одобрения:</label>
+										<div>
+											<figure class="stats-box box-1"></figure>
+											<figure class="stats-box box-2"></figure>
+											<figure class="stats-box box-3"></figure>
+											<figure class="stats-box box-4"></figure>
+											<figure class="stats-box box-5"></figure>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="credit_card_box">
+								<div class="head">Кредитная карта Citibank Cashback  <a href class="right">Детали предложения</a></div>
+
+								<div class="content">
+									<figure><img src="img/card_img_b.png" alt=""></figure>
+									<aside>
+										<table>
+											<tr>
+												<td>
+													<div>Годовая процентная ставка
+														<strong>от 18,9%</strong>
+													</div>
+												</td>
+												<td>
+													<div>Льготный период
+														<strong>до 55 дней</strong>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div>Кредитный лимит
+														<strong>до 300 000<span class="rur"> P<span></strong>
+													</div>
+												</td>
+												<td>
+													<div>Стоимость обслуживания
+														<strong>500 в год</strong>
+													</div>
+												</td>
+											</tr>
+										</table>
+									</aside>
+									<div class="required_rating tooltip">
+										<div class="hint">
+											Здесь указано минимальное значение рейтинга, необходимое для получения карты
+										</div>
+										Требуемый рейтинг
+										<span>650</span>
+									</div>
+									<div class="grey-border"></div>
+
+									<a href="" class="button left">Оформить карту</a>
+									<div class="stars">
+										<div data-rateit-resetable="false"  data-rateit-ispreset="true" class="rateit"></div>
+									</div>
+									<div class="comments">
+										<img src="img/comments.png" alt="">
+										<a href="">124</a>
+									</div>
+									<div class="probability_of_approval">
+										<label for="">Вероятность одобрения:</label>
+										<div>
+											<figure class="stats-box box-1"></figure>
+											<figure class="stats-box box-2"></figure>
+											<figure class="stats-box box-3"></figure>
+											<figure class="stats-box box-4"></figure>
+											<figure class="stats-box box-5"></figure>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="credit_card_box">
+								<div class="head">Кредитная карта Citibank Cashback  <a href class="right">Детали предложения</a></div>
+
+								<div class="content">
+									<figure><img src="img/card_img_b.png" alt=""></figure>
+									<aside>
+										<table>
+											<tr>
+												<td>
+													<div>Годовая процентная ставка
+														<strong>от 18,9%</strong>
+													</div>
+												</td>
+												<td>
+													<div>Льготный период
+														<strong>до 55 дней</strong>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div>Кредитный лимит
+														<strong>до 300 000<span class="rur"> P<span></strong>
+													</div>
+												</td>
+												<td>
+													<div>Стоимость обслуживания
+														<strong>500 в год</strong>
+													</div>
+												</td>
+											</tr>
+										</table>
+									</aside>
+									<div class="required_rating tooltip">
+										<div class="hint">
+											Здесь указано минимальное значение рейтинга, необходимое для получения карты
+										</div>
+										Требуемый рейтинг
+										<span>650</span>
+									</div>
+									<div class="grey-border"></div>
+									<a href="" class="button left">Оформить карту</a>
+									<div class="stars">
+										<div data-rateit-resetable="false"  data-rateit-ispreset="true" class="rateit"></div>
+									</div>
+									<div class="comments">
+										<img src="img/comments.png" alt="">
+										<a href="">124</a>
+									</div>
+									<div class="probability_of_approval">
+										<label for="">Вероятность одобрения:</label>
+										<div>
+											<figure class="stats-box box-1"></figure>
+											<figure class="stats-box box-2"></figure>
+											<figure class="stats-box box-3"></figure>
+											<figure class="stats-box box-4"></figure>
+											<figure class="stats-box box-5"></figure>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="credit_card_box">
+								<div class="head">Кредитная карта Citibank Cashback  <a href class="right">Детали предложения</a></div>
+
+								<div class="content">
+									<figure><img src="img/card_img_b.png" alt=""></figure>
+									<aside>
+										<table>
+											<tr>
+												<td>
+													<div>Годовая процентная ставка
+														<strong>от 18,9%</strong>
+													</div>
+												</td>
+												<td>
+													<div>Льготный период
+														<strong>до 55 дней</strong>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div>Кредитный лимит
+														<strong>до 300 000<span class="rur"> P<span></strong>
+													</div>
+												</td>
+												<td>
+													<div>Стоимость обслуживания
+														<strong>500 в год</strong>
+													</div>
+												</td>
+											</tr>
+										</table>
+									</aside>
+									<div class="required_rating tooltip">
+										<div class="hint">
+											Здесь указано минимальное значение рейтинга, необходимое для получения карты
+										</div>
+										Требуемый рейтинг
+										<span>650</span>
+									</div>
+									<div class="grey-border"></div>
+									<a href="" class="button left">Оформить карту</a>
+									<div class="stars">
+										<div data-rateit-resetable="false"  data-rateit-ispreset="true" class="rateit"></div>
+									</div>
+									<div class="comments">
+										<img src="img/comments.png" alt="">
+										<a href="">124</a>
+									</div>
+									<div class="probability_of_approval">
+										<label for="">Вероятность одобрения:</label>
+										<div>
+											<figure class="stats-box box-1"></figure>
+											<figure class="stats-box box-2"></figure>
+											<figure class="stats-box box-3"></figure>
+											<figure class="stats-box box-4"></figure>
+											<figure class="stats-box box-5"></figure>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<a href="" class="blue_button more"><span>Показать больше предложений</span></a>
+						
+						</div>
+
+					</div>
+
+					<!--Ипотека-->
+
+					<div id="mortgage" class="credits_tabs" data-tabs="mortgage">
+						<h1>
+							Ипотека
+						</h1>
+						<p>В этом разделе, вы сможете подобрать для себя наилучшие предложения банков по автокредитам, соответствующие тем параметрам, которые необзодимы конкретно вам</p>
+						<div class="grey-border"></div>
+						<form action="">
+							<div class="search_options">
+								<h3>Основные параметры поиска</h3>
+								<div>
+									<h4>Сумма кредита(P):</h4><input type="text" placeholder="20 000" class="creditLimitFilter left"><figure>
+										<figure><i class="start">0</i><i class="end">1 500 000</i></figure>
+									<input type="text" class="autocredit_limit_filter">
+								</figure>
+								<input type="text" placeholder="125 000" class="creditLimitFilter right">
+
+	 							</div>
+
+								<div>
+									<h4>Срок кредита:</h4><input type="text" style="opacity:0;" class="left">
+									<figure>
+									<figure><i class="start">1 месяц</i><i class="end">30 лет</i></figure>
+									<input type="text" class="credit_term">
+								</figure>
+	 							</div>
+	 							<div>
+									<h4>Процентная ставка(%):</h4><input type="text" placeholder="25" class="interestRateFilter left">
+									<figure>
+									<figure><i class="start">0</i><i class="end">100</i></figure>
+									<input type="text" class="interest_rate_filter">
+								</figure>
+								<input type="text" placeholder="74" class="interestRateFilter right">
+								</div>
+
+								<div>
+									<h4>Первоначальный взнос(%):</h4><input type="text" placeholder="25" class="interestRateFilter left">
+									<figure>
+									<figure><i class="start">10</i><i class="end">100</i></figure>
+									<input type="text" class="interest_rate_filter">
+								</figure>
+								<input type="text" placeholder="47" class="interestRateFilter right">
+								</div>
+
+								<div>
+									<h4>Срок рассмотрения заявки(дней):</h4><input type="text" placeholder="3" class="reviewTime left">
+									<figure>
+									<figure><i class="start">1</i><i class="end">14</i></figure>
+									<input type="text" class="review_time">
+								</figure>
+								<input type="text" placeholder="8" class="reviewTime right">
+	 							</div>
+							</div>
+
+							<div class="grey-border"></div>
+							<h3>Дополнительные параметры поиска</h3>
+							<div class="selects_and_checkox clearfix width_100">
+								<div class="left_block">
+
+									<label for="">Валюта:</label>
+									<div class="select">
+										<a href="#" class="slct">Рубли</a>
+										<ul class="drop">
+											<li>Рубли</li>
+										</ul>
+										<input type="hidden" name="occupation">
+									</div>
+
+									<label for="">Подтверждение дохода:</label>
+									<div class="select">
+										<a href="#" class="slct">Не имеет значения</a>
+										<ul class="drop">
+											<li>Не имеет значения</li>
+										</ul>
+										<input type="hidden" name="occupation">
+									</div>
+
+									<label for="">Город выдачи кредита:</label>
+									<div class="select">
+										<a href="#" class="slct">Санкт-Петербург</a>
+										<ul class="drop">
+											<li>Санкт-Петербург</li>
+										</ul>
+										<input type="hidden" name="occupation">
+									</div>
+
+									<label for="">Тип жилья:</label>
+									<div class="select">
+										<a href="#" class="slct">Легковой</a>
+										<ul class="drop">
+											<li>Легковой</li>
+										</ul>
+										<input type="hidden" name="occupation">
+									</div>
+
+
+									<div class="checkboxes">
+										<label for="">Спецпрограммы</label>
+										<div class="check">
+											КАСКО
+											<input type="checkbox" value="kasco" />
+										</div>
+										<div class="check">
+											КАСКО+Жизнь
+											<input type="checkbox" value="kasco_life" />
+										</div>
+									</div>
+
+									<div class="checkboxes">
+										<label for="">Комиссии:</label>
+										<div class="check">
+											Да
+											<input type="checkbox" value="commission_yes" />
+										</div>
+										<div class="check">
+											нет
+											<input type="checkbox" value="commission_not" />
+										</div>
+									</div>
+
+								</div>
+								<div class="right_block">
+
+									<label for="">Обеспечение:</label>
+									<div class="select">
+										<a href="#" class="slct">Без обеспечения</a>
+										<ul class="drop">
+											<li>Без обеспечения</li>
+										</ul>
+										<input type="hidden" name="occupation">
+									</div>
+
+									<label for="">Регистрация в регионе получения:</label>
+									<div class="select">
+										<a href="#" class="slct">не имеет значения</a>
+										<ul class="drop">
+											<li>не имеет значения</li>
+										</ul>
+										<input type="hidden" name="occupation">
+									</div>
+									<label for="">Банк-кредитор</label>
+									<div class="select">
+										<a href="#" class="slct">не имеет значения</a>
+										<ul class="drop">
+											<li>не имеет значения</li>
+										</ul>
+										<input type="hidden" name="occupation">
+									</div>
+
+									<label for="">Состояние жилья:</label>
+									<div class="select">
+										<a href="#" class="slct">Новое</a>
+										<ul class="drop">
+											<li>Новое</li>
+										</ul>
+										<input type="hidden" name="occupation">
+									</div>
+
+									<div class="checkboxes">
+										<label for="">On-line заявка:</label>
+										<div class="check">
+											Да
+											<input type="checkbox" value="on_line_yes" />
+										</div>
+										<div class="check">
+											Нет
+											<input type="checkbox" value="on_line_no" />
+										</div>
+									</div>
+
+									<div class="checkboxes">
+										<label for="">Страховка:</label>
+										<div class="check">
+											Да
+											<input type="checkbox" value="insurance_yes" />
+										</div>
+										<div class="check">
+											Нет
+											<input type="checkbox" value="insurance_no" />
+										</div>
+									</div>
+								</div>
+							</div>
+
+
+							<div class="grey-border"></div>
+							<div style="height:35px;">
+								<input type="submit" class="button right" value="Найти">
+							</div>
+							<div class="grey-border"></div>
+						</form>
+						<div class="search_result">
+							<h3>Результаты поиска 
+								<label for="">Сортировать по:</label>
+								<div class="select right">
+									<a href="#" class="slct">По минимальной процентной ставке</a>
+									<ul class="drop" style="display: none;">
+										<li>По минимальной процентной ставке</li>
+									</ul>
+									<input type="hidden" name="question">
+								</div>
+							</h3>
+							<p>Найдено: <a href="">123 предложения</a></p>
+
+							<div class="credit_card_box">
+								<div class="head">Кредитная карта Citibank Cashback  <a href class="right">Детали предложения</a></div>
+
+								<div class="content">
+									<figure><img src="img/card_img_b.png" alt=""></figure>
+									<aside>
+										<table>
+											<tr>
+												<td>
+													<div>Годовая процентная ставка
+														<strong>от 18,9%</strong>
+													</div>
+												</td>
+												<td>
+													<div>Льготный период
+														<strong>до 55 дней</strong>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div>Кредитный лимит
+														<strong>до 300 000<span class="rur"> P<span></strong>
+													</div>
+												</td>
+												<td>
+													<div>Стоимость обслуживания
+														<strong>500 в год</strong>
+													</div>
+												</td>
+											</tr>
+										</table>
+									</aside>
+									<div class="required_rating tooltip">
+										<div class="hint">
+											Здесь указано минимальное значение рейтинга, необходимое для получения карты
+										</div>
+										Требуемый рейтинг
+										<span>650</span>
+									</div>
+									<div class="grey-border"></div>
+
+									<a href="" class="button left">Оформить карту</a>
+									<div class="stars">
+										<div data-rateit-resetable="false"  data-rateit-ispreset="true" class="rateit"></div>
+									</div>
+									<div class="comments">
+										<img src="img/comments.png" alt="">
+										<a href="">124</a>
+									</div>
+									<div class="probability_of_approval">
+										<label for="">Вероятность одобрения:</label>
+										<div>
+											<figure class="stats-box box-1"></figure>
+											<figure class="stats-box box-2"></figure>
+											<figure class="stats-box box-3"></figure>
+											<figure class="stats-box box-4"></figure>
+											<figure class="stats-box box-5"></figure>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="credit_card_box">
+								<div class="head">Кредитная карта Citibank Cashback  <a href class="right">Детали предложения</a></div>
+
+								<div class="content">
+									<figure><img src="img/card_img_b.png" alt=""></figure>
+									<aside>
+										<table>
+											<tr>
+												<td>
+													<div>Годовая процентная ставка
+														<strong>от 18,9%</strong>
+													</div>
+												</td>
+												<td>
+													<div>Льготный период
+														<strong>до 55 дней</strong>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div>Кредитный лимит
+														<strong>до 300 000<span class="rur"> P<span></strong>
+													</div>
+												</td>
+												<td>
+													<div>Стоимость обслуживания
+														<strong>500 в год</strong>
+													</div>
+												</td>
+											</tr>
+										</table>
+									</aside>
+									<div class="required_rating tooltip">
+										<div class="hint">
+											Здесь указано минимальное значение рейтинга, необходимое для получения карты
+										</div>
+										Требуемый рейтинг
+										<span>650</span>
+									</div>
+									<div class="grey-border"></div>
+									<a href="" class="button left">Оформить карту</a>
+									<div class="stars">
+										<div data-rateit-resetable="false"  data-rateit-ispreset="true" class="rateit"></div>
+									</div>
+									<div class="comments">
+										<img src="img/comments.png" alt="">
+										<a href="">124</a>
+									</div>
+									<div class="probability_of_approval">
+										<label for="">Вероятность одобрения:</label>
+										<div>
+											<figure class="stats-box box-1"></figure>
+											<figure class="stats-box box-2"></figure>
+											<figure class="stats-box box-3"></figure>
+											<figure class="stats-box box-4"></figure>
+											<figure class="stats-box box-5"></figure>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="credit_card_box">
+								<div class="head">Кредитная карта Citibank Cashback  <a href class="right">Детали предложения</a></div>
+
+								<div class="content">
+									<figure><img src="img/card_img_b.png" alt=""></figure>
+									<aside>
+										<table>
+											<tr>
+												<td>
+													<div>Годовая процентная ставка
+														<strong>от 18,9%</strong>
+													</div>
+												</td>
+												<td>
+													<div>Льготный период
+														<strong>до 55 дней</strong>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div>Кредитный лимит
+														<strong>до 300 000<span class="rur"> P<span></strong>
+													</div>
+												</td>
+												<td>
+													<div>Стоимость обслуживания
+														<strong>500 в год</strong>
+													</div>
+												</td>
+											</tr>
+										</table>
+									</aside>
+									<div class="required_rating tooltip">
+										<div class="hint">
+											Здесь указано минимальное значение рейтинга, необходимое для получения карты
+										</div>
+										Требуемый рейтинг
+										<span>650</span>
+									</div>
+									<div class="grey-border"></div>
+
+									<a href="" class="button left">Оформить карту</a>
+									<div class="stars">
+										<div data-rateit-resetable="false"  data-rateit-ispreset="true" class="rateit"></div>
+									</div>
+									<div class="comments">
+										<img src="img/comments.png" alt="">
+										<a href="">124</a>
+									</div>
+									<div class="probability_of_approval">
+										<label for="">Вероятность одобрения:</label>
+										<div>
+											<figure class="stats-box box-1"></figure>
+											<figure class="stats-box box-2"></figure>
+											<figure class="stats-box box-3"></figure>
+											<figure class="stats-box box-4"></figure>
+											<figure class="stats-box box-5"></figure>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="credit_card_box">
+								<div class="head">Кредитная карта Citibank Cashback  <a href class="right">Детали предложения</a></div>
+
+								<div class="content">
+									<figure><img src="img/card_img_b.png" alt=""></figure>
+									<aside>
+										<table>
+											<tr>
+												<td>
+													<div>Годовая процентная ставка
+														<strong>от 18,9%</strong>
+													</div>
+												</td>
+												<td>
+													<div>Льготный период
+														<strong>до 55 дней</strong>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div>Кредитный лимит
+														<strong>до 300 000<span class="rur"> P<span></strong>
+													</div>
+												</td>
+												<td>
+													<div>Стоимость обслуживания
+														<strong>500 в год</strong>
+													</div>
+												</td>
+											</tr>
+										</table>
+									</aside>
+									<div class="required_rating tooltip">
+										<div class="hint">
+											Здесь указано минимальное значение рейтинга, необходимое для получения карты
+										</div>
+										Требуемый рейтинг
+										<span>650</span>
+									</div>
+									<div class="grey-border"></div>
+									<a href="" class="button left">Оформить карту</a>
+									<div class="stars">
+										<div data-rateit-resetable="false"  data-rateit-ispreset="true" class="rateit"></div>
+									</div>
+									<div class="comments">
+										<img src="img/comments.png" alt="">
+										<a href="">124</a>
+									</div>
+									<div class="probability_of_approval">
+										<label for="">Вероятность одобрения:</label>
+										<div>
+											<figure class="stats-box box-1"></figure>
+											<figure class="stats-box box-2"></figure>
+											<figure class="stats-box box-3"></figure>
+											<figure class="stats-box box-4"></figure>
+											<figure class="stats-box box-5"></figure>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="credit_card_box">
+								<div class="head">Кредитная карта Citibank Cashback  <a href class="right">Детали предложения</a></div>
+
+								<div class="content">
+									<figure><img src="img/card_img_b.png" alt=""></figure>
+									<aside>
+										<table>
+											<tr>
+												<td>
+													<div>Годовая процентная ставка
+														<strong>от 18,9%</strong>
+													</div>
+												</td>
+												<td>
+													<div>Льготный период
+														<strong>до 55 дней</strong>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div>Кредитный лимит
+														<strong>до 300 000<span class="rur"> P<span></strong>
+													</div>
+												</td>
+												<td>
+													<div>Стоимость обслуживания
+														<strong>500 в год</strong>
+													</div>
+												</td>
+											</tr>
+										</table>
+									</aside>
+									<div class="required_rating tooltip">
+										<div class="hint">
+											Здесь указано минимальное значение рейтинга, необходимое для получения карты
+										</div>
+										Требуемый рейтинг
+										<span>650</span>
+									</div>
+									<div class="grey-border"></div>
+									<a href="" class="button left">Оформить карту</a>
+									<div class="stars">
+										<div data-rateit-resetable="false"  data-rateit-ispreset="true" class="rateit"></div>
+									</div>
+									<div class="comments">
+										<img src="img/comments.png" alt="">
+										<a href="">124</a>
+									</div>
+									<div class="probability_of_approval">
+										<label for="">Вероятность одобрения:</label>
+										<div>
+											<figure class="stats-box box-1"></figure>
+											<figure class="stats-box box-2"></figure>
+											<figure class="stats-box box-3"></figure>
+											<figure class="stats-box box-4"></figure>
+											<figure class="stats-box box-5"></figure>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<a href="" class="blue_button more"><span>Показать больше предложений</span></a>
+						
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+
+			<div id="footer">
+				<div class="nav-wrapper">
+					<div class="nav credit-history">
+						<div class="header">
+							<h1>Кредитная история</h1>
+						</div>
+						<ul>
+							<li><a href="#">Бюро кредитных историй</a></li>
+							<li><a href="#">Закон о кредитных историях</a></li>
+							<li><a href="#">Как узнать кредитную историю?</a></li>
+							<li><a href="#">Исправление кредитной истории</a></li>
+							<li><a href="#">Получение кредита</a></li>
+						</ul>
+					</div>
+					<div class="nav for-users">
+						<div class="header">
+							<h1>Пользователям</h1>
+						</div>
+						<ul>
+							<li><a href="#">Симулятор</a></li>
+							<li><a href="#">Входи с паролем</a></li>
+							<li><a href="#">Регистрация в системе</a></li>
+							<li><a href="#">Демо-режим</a></li>
+							<li><a href="#">Презентация</a></li>
+						</ul>
+					</div>
+					<div class="nav about">
+						<div class="header">
+							<h1>О проекте</h1>
+						</div>
+						<ul>
+							<li><a href="#">Контактная информация</a></li>
+							<li><a href="#">Юридическая информация</a></li>
+							<li><a href="#">Заявление о конфиденциальности</a></li>
+							<li><a href="#">Наша команда</a></li>
+							<li><a href="#">Поддержка</a></li>
+						</ul>
+					</div>
+					<div class="nav credit-info">
+						<div class="header">
+							<h1>Кредитная информация</h1>
+						</div>
+						<ul>
+							<li><a href="#">Ваши данные в банках</a></li>
+							<li><a href="#">Обработка данных</a></li>
+							<li><a href="#">Защита персональных данных</a></li>
+							<li><a href="#">Хранение кредитной истории</a></li>
+						</ul>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="tell-about-us">
+					<div class="social-icons">
+						<a href="#" class="vk social"></a> 
+						<a href="#" class="fb social"></a> 
+						<a href="#" class="tw social"></a>
+					</div>
+					<p>Расскажите о нас: </p>
+				</div>
+				<a class="go-up"></a>
+				<p class="copyright"> 
+					c 2013 BK-INFO Все права защищены
+				</p>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>	
+
+</body>
+</html>

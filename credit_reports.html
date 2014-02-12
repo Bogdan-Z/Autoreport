@@ -1,0 +1,4100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet/less" type="text/css" href="css/style.less">
+	<link rel="stylesheet" type="text/css" href="css/rateit.css"/>
+    <link rel="stylesheet" href="css/ion.rangeSlider.css" />
+    <link rel="stylesheet" href="css/ion.rangeSlider.skinFlat.css" />
+	<link rel="stylesheet" href="css/rubl.css" />
+	<title></title>
+	<script src="js/libs/jquery-1.10.2.js"></script>
+
+	<script type="text/javascript" src="js/application.js"></script>
+	<script type="text/javascript" src="js/libs/less.js"></script>
+	<script type="text/javascript" src="js/libs/selectivizr-min.js"></script>
+	<script type="text/javascript" src="js/libs/vendor.js"></script>
+	<script type="text/javascript" src="js/libs/ion.rangeSlider.js"></script>
+	<script type="text/javascript" src="js/filter.js"></script>
+
+	<script src="js/libs/d3.js"></script>
+	<script src="js/libs/d3.tip.v0.6.3.js"></script>
+	
+	
+
+</head>
+<body>
+	<div class="header">
+		<div class="container">
+			<!--
+			<div class="userbar">
+				<img src="img/userpic.png" class="userpic">
+				<span class="name"> Алексей П.</span>
+				<a href="">Выход</a>
+			</div>
+			-->
+			<div class="userbar">
+				<img src="img/userpic.png" class="userpic">
+				<label>Вход для пользователей</label>
+				<div class="hidden">
+					<input type="text" placeholder="Введите ваш e-mail" class="autoreport_input">
+					<input type="text" placeholder="Введите желаемый пароль" class="autoreport_input">
+					<a href="">Забыли пароль?</a>
+					<input type="text" value="Войти" class="button">
+
+					<div class="social-icons">
+						<label for="">Войти через:</label>
+						<a href="#" class="vk social"></a> 
+						<a href="#" class="fb social"></a> 
+						<a href="#" class="g_plus social"></a>
+						<a href="#" class="vector social"></a>
+					</div>
+
+				</div>
+			</div>
+			<div class="clearfix"></div>
+			<div class="nav" id="menu1">
+				<a href="#" class="logo"><img src="img/logo.png"></a>
+				<ul>
+					<li><a href="#">Кредитные истории</a></li>
+					<li><a href="#">Симулятор</a></li>
+					<li><a href="#">Предложение</a></li>
+					<li><a href="#">О проекте</a></li>
+					<li><a href="#">Контакты</a></li>
+				</ul>
+			</div> 
+		</div>
+	</div>
+	<div class="container">
+		<div id="menu2" class="nav">
+			<a href="" class="message-notifier">
+				<div class="counter">3</div>
+			</a>
+			<table class="table_menu">
+				<tr>
+				<td><a href="#">Сводка</a></td>
+				<td>
+					<a href="#">Услуги</a>
+					<div class="sub_menu">
+					<ul>
+						<li><a href="">Кредитный рейтинг</a></li>
+						<li><a href="">Кредитные отчеты</a></li>
+						<li><a href="">Кредитный симулятор</a></li>
+						<li><a href="">Мои расходы</a></li>
+						<li><a href="">Мои рекомендации</a></li>
+						<li><a href="">Кредитные карты</a></li>
+					</ul>
+					</div>
+				</td>
+				<td class="active"><a href="credit_reports.html">Мои финансы</a></td>
+				<td><a href="credit_cards.html">Кредитные карты</a></td>
+				<td><a href="credits.html">Кредиты</a>
+					<div class="sub_menu">
+						<ul>
+							<li><a href="">Потребительские кредиты</a></li>
+							<li><a href="">Автокредиты</a></li>
+							<li><a href="">Ипотека</a></li>
+						</ul>
+					</div>
+				</td>
+				<td><a href="reports.html">Отчеты</a></td>
+				<td><a href="#">Инструменты</a></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+	<div class="main">
+		<div class="container">
+
+			<div id="credits" class="clearfix">
+				<div class="header">
+					<h1>Мои финансы</h1>
+				</div>
+				<div class="nav">
+					<ul>
+						<li class="active credit_rating" data-tabs="credit_raiting" >
+							
+							Кредитный <br>рейтинг
+						</li>
+						<li class="credit_reports" data-tabs="general-reports"> 
+							Кредитные <br>отчеты
+						</li>
+						<li class="credit_simulator">
+							Кредитный <br> симулятор
+						</li>
+						<li data-tabs="my_expenses" class="my_expenses">
+							Мои расходы
+						</li>
+						<li class="my_recommendations" data-tabs="my_recomendations">
+							Мои рекомендации
+						</li>
+						<li class="consumer-loans" data-tabs="consumer-loans">
+							Потребительские <br>кредиты
+						</li>
+						<li data-tabs="credit_cards" class="credit-cards">
+							Кредитные карты
+						</li>
+
+					</ul>
+				</div>
+				<div class="content-container border-box">
+
+
+					<!--Кредитный рейтинг-->
+					<div id="credit_raiting"  class="credits_tabs" data-tabs="credit_raiting">
+						<h1>
+							Кредитный рейтинг
+						</h1>
+						<table id="general-reports-table" class="general-reports-table">
+							<tr>
+								<td class="active" style="border-radius: 5px 0px 0px 5px;"><img src="img/rating1.png"></td>
+								<td><img src="img/rating2.png"></td>
+								<td style="border-right:none;border-radius: 0px 5px 5px 0px;"><img src="img/rating3.png"></td>
+							</tr>
+						</table>
+						<div class="rating_line">
+							<div class="rating_line_number">
+								<figure>678</figure>
+								<span>Нормально</span>
+							</div>
+							<input type="text" class="filter">
+							<figure class="box-1"><span style="margin-left: 0px;">300</span><label for="" class="color-1">Очень плохо</label></figure>
+							<figure class="box-2"><span>580</span><label for="" class="color-2" style="margin-left: 55px;">Плохо</label></figure>
+							<figure class="box-3"><span>640</span><label for="" class="color-3"  style="margin-left: 49px;">Нормально</label></figure>
+							<figure class="box-4"><span>700</span><label for="" class="color-4" style="margin-left: 52px;">Хорошо</label></figure>
+							<figure class="box-5"><span>750</span><label for="" class="color-5">Великолепно</label></figure>
+							<figure style="width:0px;"><span style="margin-left: -21px;">850</span></figure>
+						</div>
+						<div class="grey-border"></div>
+
+						<div class="cardUseGraph">
+							<ul class="blueTabs">
+								<li class="active" data-cardUseGraph="lineChartCreditRatingMonth">1 месяц</li>
+								<li data-cardUseGraph="lineChartCreditRating3Month">3 месяца</li>
+								<li data-cardUseGraph="lineChartCreditRating6Month">6 месяцев</li>
+								<li data-cardUseGraph="lineChartCreditRatingYear">Год</li>
+								<li data-cardUseGraph="lineChartCreditRatingAllTime">Весь период</li>
+							</ul>
+							
+								<div class="charts--container" data-cardUseGraph="lineChartCreditRatingMonth">
+								    <div class="chart">
+								      <div id="lineChartCreditRatingMonth">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+								<div class="charts--container" data-cardUseGraph="lineChartCreditRating3Month">
+								    <div class="chart">
+								      <div id="lineChartCreditRating3Month">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+								<div class="charts--container" data-cardUseGraph="lineChartCreditRating6Month">
+								    <div class="chart">
+								      <div id="lineChartCreditRating6Month">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+								<div class="charts--container" data-cardUseGraph="lineChartCreditRatingYear">
+								    <div class="chart">
+								      <div id="lineChartCreditRatingYear">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+								<div class="charts--container" data-cardUseGraph="lineChartCreditRatingAllTime">
+								    <div class="chart">
+								      <div id="lineChartCreditRatingAllTime">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+
+						</div>
+						<div class="grey-border"></div>
+						<div class="formCard"> 
+							<div>Мы нашли для вас предложение, основанное на вашей кредитной истории!</div>
+							<img src="img/card_img.png" alt="">
+							<aside>
+								<div>экономия</div>
+								<strong>3 200<span class="rur"> P<span></strong>
+								<div>в год</div>
+							</aside>
+							<figure>
+								<a href="" class="more big">Оформить карту</a>
+								<a href="" style="display:block">Больше предложений</a>
+							</figure>
+						</div>
+						<div class="grey-border"></div>
+
+						<div class="credit_activity_report">
+							<h3>Отчет кредитной активности
+								<div class="select">
+									<a href="#" class="slct">Вся активность</a>
+									<ul class="drop" style="display: none;">
+										<li>Вся активность</li>
+									</ul>
+									<input type="hidden" name="occupation">
+								</div>
+							</h3>
+							<div id="credit_activity_report" class="striped-odd">
+								
+								<div>
+									<span><a href="" class="link">20.11.13</a></span>
+									<span>Добавлены 2 новых отчета</span>
+									<span class="last">Дебиторская активность</span>
+								</div>
+								<div>
+									<span><a href="" class="link">20.11.13</a></span>
+									<span>Добавлены 2 новых отчета</span>
+									<span class="last">Кредитные лимиты</span>
+									<div class="hidden">
+										<div class="info_data" style="border-top:none;">
+												<span>Банк</span>
+												<span class="type">Тип</span>
+												<span class="opening_date">Дата открытия</span>
+												<span class="limit">Лимит</span>
+												<span class="balance">Баланс</span>
+										</div>
+										<div class="info_data">
+												<span><a href="">US Bank</a></span>
+												<span class="type">Кредитная карта</span>
+												<span class="opening_date">14.09.13</span>
+												<span class="limit">22 000</span>
+												<span class="balance">16 062</span>
+										</div>
+										<div class="info_data">
+												<span><a href="">Cap one</a></span>
+												<span class="type">Кредитная карта</span>
+												<span class="opening_date">14.09.13</span>
+												<span class="limit">22 000</span>
+												<span class="balance">16 062</span>
+										</div>
+									</div>
+
+								</div>
+								<div>
+									<span><a href="" class="link">20.11.13</a></span>
+									<span>Добавлены 2 новых отчета</span>
+									<span class="last">Дебиторская активность</span>
+								</div>
+								<div>
+									<span><a href="" class="link">20.11.13</a></span>
+									<span>Добавлены 2 новых отчета</span>
+									<span class="last">Кредитные лимиты</span>
+									<div class="hidden">
+										<div class="info_data" style="border-top:none;">
+												<span>Банк</span>
+												<span class="type">Тип</span>
+												<span class="opening_date">Дата открытия</span>
+												<span class="limit">Лимит</span>
+												<span class="balance">Баланс</span>
+										</div>
+										<div class="info_data">
+												<span><a href="">US Bank</a></span>
+												<span class="type">Кредитная карта</span>
+												<span class="opening_date">14.09.13</span>
+												<span class="limit">22 000</span>
+												<span class="balance">16 062</span>
+										</div>
+										<div class="info_data">
+												<span><a href="">Cap one</a></span>
+												<span class="type">Кредитная карта</span>
+												<span class="opening_date">14.09.13</span>
+												<span class="limit">22 000</span>
+												<span class="balance">16 062</span>
+										</div>
+									</div>
+
+								</div>
+
+							</div>
+
+							<div class="pagination">
+								<label>Показывать по:</label>
+								<div style="margin-left:6px;">
+									<span class="active"><i>10</i></span>
+									<span><i>25</i></span>
+									<span><i>50</i></span>
+								</div>
+								<div class="pagination_number">
+									<span class="active"><i>1</i></span>
+									<span><i>2</i></span>
+									<span><i>3</i></span>
+									<span><i>4</i></span>
+									<span><i>5</i></span>
+									<span><i>6</i></span>
+									<span><i>7</i></span>
+								</div>
+								<div class="table_buttons">
+									<img src="img/left_arrow.png" alt="" class="opacity_06">
+									<img src="img/right_arrow.png" alt="">
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+					<!--Кредитные отчеты-->
+					<div id="general-reports" class="credits_tabs" data-tabs="general-reports">
+						<h1>
+							Кредитные отчеты
+						</h1>
+						<table id="general-reports-table" class="general-reports-table">
+							<tr>
+								<td class="active" style="border-radius: 5px 0px 0px 5px;"><img src="img/rating1.png"></td>
+								<td><img src="img/rating2.png"></td>
+								<td style="border-right:none;border-radius: 0px 5px 5px 0px;"><img src="img/rating3.png"></td>
+							</tr>
+						</table>
+						<div id="general-stats">
+							<h3>Общая оценка</h3>
+							<div>
+								<figure class="general-stats-box">
+									<div>C</div>
+									<figure class="stats-box box-1"></figure>
+									<figure class="stats-box box-2"></figure>
+									<figure class="stats-box box-3 active"></figure>
+									<figure class="stats-box box-4"></figure>
+									<figure class="stats-box box-5"></figure>	
+								</figure>
+							</div>
+							<div class="general-stats-hint">
+								Ваша средняя оценка определяется исходя из суммирования показателей всех категорий отчетов
+							</div>
+						</div>
+						<div class="grey-border"></div>
+						<div class="сard-operations">
+							<div style="height:60px;" class="clearfix">
+								<table id="сard-operations-table">
+									<tr>
+									<td>	
+									<figure class="active">
+										<div class="box-1">D</div>
+										<span>Использование кредитных карт</span>
+									</figure>
+									</td>
+									<td>	
+									<figure>
+										<div class="box-4">A</div>
+										<span>История платежей</span>
+									</figure>
+									</td>
+
+									<td>	
+									<figure>
+										<div class="box-1">D</div>
+										<span>Возраст кредитной истории</span>
+									</figure>
+									</td>
+
+									<td>	
+									<figure>
+										<div class="box-1">D</div>
+										<span>Вся отчетность</span>
+									</figure>
+									</td>
+
+									<td>
+									<figure>
+										<div class="box-3">C</div>
+										<span>Кредитные запросы</span>
+									</figure>
+									</td>
+									</tr>
+								</table>
+							</div>
+							<div class="сard-operations-hint">Этот показатель отображает процент использования ваших кредитных лимитов.Он рассчитывается путем разделения лимита по картым. Обычно, чем больше использование кредитных карт, тем ниже счет кредита.</div>
+						</div>
+						<div class="general-reports-points">
+							<h4>Баллы</h4>
+							
+							<div class="BarChart">
+
+								<div id="creditReportsBarChart"></div>
+
+								<div class="bar-link"><label class="bar_label">С</label></div>
+								<div class="bar-link"><label class="bar_label">A</label></div>
+								<div class="bar-link"><label class="bar_label">B</label></div>
+								<div class="bar-link"><label class="bar_label">C</label></div>
+								<div class="bar-link"><label class="bar_label">D</label></div>
+								<div class="bar-link"><label class="bar_label">F</label></div>
+								<div class="bar-link"><label class="bar_label">N/A</label></div>
+
+								<label for="">% использования</label>
+							</div>
+
+							<div class="general-reports-points-info">
+								<figure class="box-2">D</figure>
+								<span>Использование кредитных карт</span>
+								<div style="line-height:24px;">
+									<div>Использование карт........74%</div>
+									<div>Задолженность.....342 800</div>
+									<div>Кредитный лимит......690 800</div>
+								</div>
+								<aside>Этот показатель имеет высокие влияние на ваш кредитный рейтинг</aside>
+							</div>
+						</div>
+						<div class="grey-border"></div>
+						<div class="formCard clearfix"> 
+							<div style="margin-bottom:10px;">Мы нашли для вас предложение, основанное на вашей кредитной истории!</div>
+							<img src="img/card_img.png" alt="">
+							<aside>
+								<div>экономия</div>
+								<strong>3 200<span class="rur"> P<span></strong>
+								<div>в год</div>
+							</aside>
+							<figure>
+								<a href="" class="more big">Оформить карту</a>
+								<a href="" style="display:block">Больше предложений</a>
+							</figure>
+						</div>
+						<div class="grey-border"></div>
+							
+						<div class="cardUseGraph">
+							<h3>График использования кредитных карт</h3>
+							<ul class="blueTabs">
+								<li class="active" data-cardUseGraph="lineChartGeneralReportsMonth">1 месяц</li>
+								<li data-cardUseGraph="lineChartGeneralReports3Month">3 месяца</li>
+								<li data-cardUseGraph="lineChartGeneralReports6Month">6 месяцев</li>
+								<li data-cardUseGraph="lineChartGeneralReportsYear">Год</li>
+								<li data-cardUseGraph="lineChartGeneralReportsAllTime">Весь период</li>
+							</ul>
+							
+								<div class="charts--container" data-cardUseGraph="lineChartGeneralReportsMonth">
+								    <div class="chart">
+								      <div id="lineChartGeneralReportsMonth">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+								<div class="charts--container" data-cardUseGraph="lineChartGeneralReports3Month">
+								    <div class="chart">
+								      <div id="lineChartGeneralReports3Month">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+								<div class="charts--container" data-cardUseGraph="lineChartGeneralReports6Month">
+								    <div class="chart">
+								      <div id="lineChartGeneralReports6Month">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+								<div class="charts--container" data-cardUseGraph="lineChartGeneralReportsYear">
+								    <div class="chart">
+								      <div id="lineChartGeneralReportsYear">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+								<div class="charts--container" data-cardUseGraph="lineChartGeneralReportsAllTime">
+								    <div class="chart">
+								      <div id="lineChartGeneralReportsAllTime">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+
+
+						</div>
+					</div>
+					<!--Мои расходы-->
+					<div id="my_expenses" class="credits_tabs" data-tabs="my_expenses">
+						<h1>
+							Мои расходы
+						</h1>
+						<div class="internal_tabs my_expenses">
+							<ul class="blueTabs">
+								<li class="active" data-my-expenses-tabs="by_сategory">По категориям</li>
+								<li data-my-expenses-tabs="by_source">По источникам</li>
+								<li data-my-expenses-tabs="during_the_time_period">За временной период</li>
+							</ul>
+						</div>
+
+						<div class="select">
+							<label for="">Расходы по:</label>
+							<a href="#" class="slct">Все категории</a>
+							<ul class="drop" style="display: none;">
+								<li>Все категории</li>
+							</ul>
+							<input type="hidden" name="occupation">
+						</div>
+
+						<div class="select">
+							<label for="">Счета</label>
+							<a href="#" class="slct">Все счета</a>
+							<ul class="drop" style="display: none;">
+								<li>Все счета</li>
+							</ul>
+							<input type="hidden" name="occupation">
+						</div>
+
+						<div class="select">
+							<label for="">Период</label>
+							<a href="#" class="slct">За все время</a>
+							<ul class="drop" style="display: none;">
+								<li>За все время</li>
+							</ul>
+							<input type="hidden" name="occupation">
+						</div>
+						<button class="grey_button">Сбросить</button>
+
+						<!--По категориям-->
+						<div class="my-expenses" data-my-expenses-tabs="by_сategory">
+							<div class="grey-border"></div>
+							<div class="total_purchases">
+								<div>
+									<h3>Всего покупок</h3>
+									<span>24</span> 
+								</div>
+								<div>
+									<h3>Всего потрачено</h3>
+									<span>65 389<span class="rur"> P<span></span> 
+								</div>
+							</div>
+							<div class="grey-border"></div>
+							<div class="card_chart">
+							
+							<div class="card_chart_figure" id="donut_my_exp">
+
+							<svg xmlns="http://www.w3.org/2000/svg"
+							    xmlns:xlink="http://www.w3.org/1999/xlink">
+
+							    <style type="text/css" >
+							      <![CDATA[
+
+							       .arc{
+								       stroke: #fff;
+								       fill:   red;
+								       stroke-width:3px;
+							    	}
+							    	
+							    	.arc text{
+								      stroke-width:1px;
+								    }
+
+							      ]]>
+							    </style>
+							</svg>
+
+								</div>
+								<div class="card_chart_table">
+									<table class="basic_table striped-odd">
+										<tr>
+											<td></td>
+											<td>Категория</td>
+											<td>Расходы</td>
+										</tr>
+										<tr class="data-donut" data-donut="0">
+											<td class="box-2"></td>
+											<td>Путешествия</td>
+											<td>12 340<span class="rur"> P<span></td>
+										</tr>
+										<tr class="data-donut" data-donut="1">
+											<td class="box-6"></td>
+											<td>Сервисное обслуживание/Тарифы</td>
+											<td>12 340<span class="rur"> P<span></td>
+										</tr>
+										<tr class="data-donut" data-donut="2">
+											<td class="box-8"></td>
+											<td>Без категории</td>
+											<td>12 340<span class="rur"> P<span></td>
+										</tr>
+									</table>
+									<a href="" class="blue_button more more-888"><span>Показать еще</span></a>
+								</div>
+							</div>
+							<div class="grey-border"></div>
+							<div class="">
+								<h3 style="margin-top: 28px;">Операции</h3>
+
+								<div class="credit_activity_report">
+									<table id="credit_activity_report"  class="striped-odd">
+										<tbody>
+										<tr>
+											<td>Дата</td>
+											<td>Описание</td>
+											<td>Категория</td>
+											<td>Сумма</td>
+										</tr>
+										<tr>
+											<td>20.11.13</td>
+											<td>Членский взнос 10.09.12-10.10.13</td>
+											<td>Обслуживание/тарифы</td>
+											<td>-1 500<span class="rur"> P<span></td>
+										</tr>
+										<tr>
+											<td>20.11.13</td>
+											<td>Членский взнос 10.09.12-10.10.13</td>
+											<td>Обслуживание/тарифы</td>
+											<td>-1 500<span class="rur"> P<span></td>
+										</tr>
+										<tr>
+											<td>20.11.13</td>
+											<td>Членский взнос 10.09.12-10.10.13</td>
+											<td>Обслуживание/тарифы</td>
+											<td>-1 500<span class="rur"> P<span></td>
+										</tr>
+										<tr>
+											<td>20.11.13</td>
+											<td>Членский взнос 10.09.12-10.10.13</td>
+											<td>Обслуживание/тарифы</td>
+											<td>-1 500<span class="rur"> P<span></td>
+										</tr>
+										<tr>
+											<td>20.11.13</td>
+											<td>Членский взнос 10.09.12-10.10.13</td>
+											<td>Обслуживание/тарифы</td>
+											<td>-1 500<span class="rur"> P<span></td>
+										</tr>
+										<tr>
+											<td>20.11.13</td>
+											<td>Членский взнос 10.09.12-10.10.13</td>
+											<td>Обслуживание/тарифы</td>
+											<td>-1 500<span class="rur"> P<span></td>
+										</tr>
+										<tr>
+											<td>20.11.13</td>
+											<td>Членский взнос 10.09.12-10.10.13</td>
+											<td>Обслуживание/тарифы</td>
+											<td>-1 500<span class="rur"> P<span></td>
+										</tr>
+										<tr>
+											<td>20.11.13</td>
+											<td>Членский взнос 10.09.12-10.10.13</td>
+											<td>Обслуживание/тарифы</td>
+											<td>-1 500<span class="rur"> P<span></td>
+										</tr>
+									</tbody></table>
+									<div class="pagination">
+										<label>Показывать по:</label>
+										<div style="margin-left:6px;">
+											<span class="active"><i>10</i></span>
+											<span><i>25</i></span>
+											<span><i>50</i></span>
+										</div>
+										<div class="pagination_number">
+											<span class="active"><i>1</i></span>
+											<span><i>2</i></span>
+											<span><i>3</i></span>
+											<span><i>4</i></span>
+											<span><i>5</i></span>
+											<span><i>6</i></span>
+											<span><i>7</i></span>
+										</div>
+										<div class="table_buttons">
+											<img src="img/left_arrow.png" alt="" class="opacity_06">
+											<img src="img/right_arrow.png" alt="">
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<!--По источникам-->
+						<div class="my-expenses hidden" data-my-expenses-tabs="by_source">
+							<div class="grey-border"></div>
+							<div class="total_purchases">
+								<div>
+									<h3>Всего покупок</h3>
+									<span>24</span> 
+								</div>
+								<div>
+									<h3>Всего потрачено</h3>
+									<span>65 389<span class="rur"> P<span></span> 
+								</div>
+							</div>
+							<div class="grey-border"></div>
+							<div class="card_chart">
+								<div class="card_chart_figure" id="donut_by_sources">
+								</div>
+								<div class="card_chart_table">
+									<table class="basic_table striped-odd">
+										<tr>
+											<td></td>
+											<td>Источники</td>
+											<td>Расходы</td>
+										</tr>
+										<tr class="data-donut" data-donut="0">
+											<td class="box-2"></td>
+											<td>Кредитные карты</td>
+											<td>12 340<span class="rur"> P<span></td>
+										</tr>
+										<tr class="data-donut" data-donut="1">
+											<td class="box-6"></td>
+											<td>City Diamond</td>
+											<td>12 340<span class="rur"> P<span></td>
+										</tr>
+										<tr class="data-donut" data-donut="2">
+											<td class="box-5"></td>
+											<td>Ипотека</td>
+											<td>12 340<span class="rur"> P<span></td>
+										</tr>
+										<tr class="data-donut" data-donut="3">
+											<td class="box-8"></td>
+											<td>Потребительские кредиты</td>
+											<td>12 340<span class="rur"> P<span></td>
+										</tr>
+									</table>
+									<a href="" class="blue_button more"><span>Показать еще</span></a>
+								</div>
+							</div>
+							<div class="grey-border"></div>
+							<div class="">
+								<h3 style="margin-top: 28px;">Операции</h3>
+
+								<div class="credit_activity_report">
+									<table id="credit_activity_report"  class="striped-odd">
+										<tbody>
+										<tr>
+											<td>Дата</td>
+											<td>Описание</td>
+											<td>Категория</td>
+											<td>Сумма</td>
+										</tr>
+										<tr>
+											<td>20.11.13</td>
+											<td>Членский взнос 10.09.12-10.10.13</td>
+											<td>Обслуживание/тарифы</td>
+											<td>-1 500<span class="rur"> P<span></td>
+										</tr>
+										<tr>
+											<td>20.11.13</td>
+											<td>Членский взнос 10.09.12-10.10.13</td>
+											<td>Обслуживание/тарифы</td>
+											<td>-1 500<span class="rur"> P<span></td>
+										</tr>
+										<tr>
+											<td>20.11.13</td>
+											<td>Членский взнос 10.09.12-10.10.13</td>
+											<td>Обслуживание/тарифы</td>
+											<td>-1 500<span class="rur"> P<span></td>
+										</tr>
+										<tr>
+											<td>20.11.13</td>
+											<td>Членский взнос 10.09.12-10.10.13</td>
+											<td>Обслуживание/тарифы</td>
+											<td>-1 500<span class="rur"> P<span></td>
+										</tr>
+										<tr>
+											<td>20.11.13</td>
+											<td>Членский взнос 10.09.12-10.10.13</td>
+											<td>Обслуживание/тарифы</td>
+											<td>-1 500<span class="rur"> P<span></td>
+										</tr>
+										<tr>
+											<td>20.11.13</td>
+											<td>Членский взнос 10.09.12-10.10.13</td>
+											<td>Обслуживание/тарифы</td>
+											<td>-1 500<span class="rur"> P<span></td>
+										</tr>
+										<tr>
+											<td>20.11.13</td>
+											<td>Членский взнос 10.09.12-10.10.13</td>
+											<td>Обслуживание/тарифы</td>
+											<td>-1 500<span class="rur"> P<span></td>
+										</tr>
+										<tr>
+											<td>20.11.13</td>
+											<td>Членский взнос 10.09.12-10.10.13</td>
+											<td>Обслуживание/тарифы</td>
+											<td>-1 500<span class="rur"> P<span></td>
+										</tr>
+									</tbody></table>
+									<div class="pagination">
+										<label>Показывать по:</label>
+										<div style="margin-left:6px;">
+											<span class="active"><i>10</i></span>
+											<span><i>25</i></span>
+											<span><i>50</i></span>
+										</div>
+										<div class="pagination_number">
+											<span class="active"><i>1</i></span>
+											<span><i>2</i></span>
+											<span><i>3</i></span>
+											<span><i>4</i></span>
+											<span><i>5</i></span>
+											<span><i>6</i></span>
+											<span><i>7</i></span>
+										</div>
+										<div class="table_buttons">
+											<img src="img/left_arrow.png" alt="" class="opacity_06">
+											<img src="img/right_arrow.png" alt="">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!--За временной период-->
+						<div class="my-expenses hidden" data-my-expenses-tabs="during_the_time_period">
+							<div class="grey-border"></div>
+							<div class="total_purchases during_the_time_period">
+								<div>
+									<h3>Максимальные расходы</h3>
+									<span>750</span>
+									<label for="">ноябрь, 2013</label> 
+								</div>
+								<div>
+									<h3>Минимальные расходы</h3>
+									<span>65 389<span class="rur"> P<span></span> 
+									<label for="">ноябрь, 2013</label>
+								</div>
+								<div>
+									<h3>Средние расходы</h3>
+									<span>65 389<span class="rur"> P<span></span> 
+									<label for="">в месяц</label>
+								</div>
+							</div>
+							<div class="grey-border"></div>
+							<div class="my_expenses_diagram">
+								<div id="myExpensesBarChart"></div>
+							</div>
+							<div class="grey-border"></div>
+							<div class="">
+								<h3 style="margin-top: 28px;">Операции</h3>
+
+								<div class="credit_activity_report">
+									<table id="credit_activity_report"  class="striped-odd">
+										<tbody>
+										<tr>
+											<td>Дата</td>
+											<td>Описание</td>
+											<td>Категория</td>
+											<td>Сумма</td>
+										</tr>
+										<tr>
+											<td>20.11.13</td>
+											<td>Членский взнос 10.09.12-10.10.13</td>
+											<td>Обслуживание/тарифы</td>
+											<td>-1 500<span class="rur"> P<span></td>
+										</tr>
+										<tr>
+											<td>20.11.13</td>
+											<td>Членский взнос 10.09.12-10.10.13</td>
+											<td>Обслуживание/тарифы</td>
+											<td>-1 500<span class="rur"> P<span></td>
+										</tr>
+										<tr>
+											<td>20.11.13</td>
+											<td>Членский взнос 10.09.12-10.10.13</td>
+											<td>Обслуживание/тарифы</td>
+											<td>-1 500<span class="rur"> P<span></td>
+										</tr>
+										<tr>
+											<td>20.11.13</td>
+											<td>Членский взнос 10.09.12-10.10.13</td>
+											<td>Обслуживание/тарифы</td>
+											<td>-1 500<span class="rur"> P<span></td>
+										</tr>
+										<tr>
+											<td>20.11.13</td>
+											<td>Членский взнос 10.09.12-10.10.13</td>
+											<td>Обслуживание/тарифы</td>
+											<td>-1 500<span class="rur"> P<span></td>
+										</tr>
+										<tr>
+											<td>20.11.13</td>
+											<td>Членский взнос 10.09.12-10.10.13</td>
+											<td>Обслуживание/тарифы</td>
+											<td>-1 500<span class="rur"> P<span></td>
+										</tr>
+										<tr>
+											<td>20.11.13</td>
+											<td>Членский взнос 10.09.12-10.10.13</td>
+											<td>Обслуживание/тарифы</td>
+											<td>-1 500<span class="rur"> P<span></td>
+										</tr>
+										<tr>
+											<td>20.11.13</td>
+											<td>Членский взнос 10.09.12-10.10.13</td>
+											<td>Обслуживание/тарифы</td>
+											<td>-1 500<span class="rur"> P<span></td>
+										</tr>
+									</tbody></table>
+									<div class="pagination">
+										<label>Показывать по:</label>
+										<div style="margin-left:6px;">
+											<span class="active"><i>10</i></span>
+											<span><i>25</i></span>
+											<span><i>50</i></span>
+										</div>
+										<div class="pagination_number">
+											<span class="active"><i>1</i></span>
+											<span><i>2</i></span>
+											<span><i>3</i></span>
+											<span><i>4</i></span>
+											<span><i>5</i></span>
+											<span><i>6</i></span>
+											<span><i>7</i></span>
+										</div>
+										<div class="table_buttons">
+											<img src="img/left_arrow.png" alt="" class="opacity_06">
+											<img src="img/right_arrow.png" alt="">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+					<!--Мои рекомендации-->
+					<div id="my_recomendations" class="credits_tabs" data-tabs="my_recomendations">
+						
+						<div class="my_recomendations_detail" data-tabs-details="cityBank">
+						<h1>
+							Мои рекомендации
+							<p>Получите кредитную карту, которая поможет вам рефинансировать займ и сэкономить средства.</p>
+						</h1>
+						
+						<div class="clearfix width_100">
+							<div class="card_options">
+								<h3>Ваша экономия</h3>
+								<span>до 5 200</span> 
+							</div>
+							<div class="financial_profile">
+									<table>
+										<tr>
+											<td>Финансовый профиль</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>Кредитный рейтинг</td>
+											<td class='orange_color'>678</td>
+										</tr>
+										<tr>
+											<td>Долг по крдитным картам</td>
+											<td> 56 000</td>
+										</tr>
+										<tr>
+											<td>Открыто кредитных карт</td>
+											<td>9</td>
+										</tr>
+									</table>
+							</div>
+						</div>
+
+						<div class="grey-border"></div>
+						<h3>Zaimix рекомендует</h3>
+					
+						<div class="credit_card_box">
+								<div class="content">
+									<figure><img src="img/card_img_v_b.png" alt=""></figure>
+
+
+									<figure class="general-stats-box tooltip">
+										<div class="hint">
+											Эта оценка показывает шанс получения новой карты. Она основана на данных вашего кредитного рейтинга
+										</div>
+										<div>C</div>
+										<figure class="stats-box box-1"></figure>
+										<figure class="stats-box box-2"></figure>
+										<figure class="stats-box box-3 active"></figure>
+										<figure class="stats-box box-4"></figure>
+										<figure class="stats-box box-5"></figure>	
+									</figure>
+									<div class="card_description"><a href="">Кредитная карта Тинькофф Platinum</a></div>
+									
+									<aside class="clearfix">
+										<table class="left">
+											<tbody>
+											<tr>
+												<td>
+													<div>Годовое обслуживание:</div>
+												</td>
+												<td><strong>500</strong></td>
+											</tr>
+											<tr>
+												<td>
+													<div>Кредитный лимит</div>
+												</td>
+												<td><strong>5000 - 300 000</strong></td>
+											</tr>
+											<tr>
+												<td>
+													<div>Процентная ставка</div>
+												</td>
+												<td><strong>29,9%</strong></td>
+											</tr>
+										</tbody>
+										</table>
+
+										<table class="right">
+											<tbody>
+											<tr>
+												<td>
+													<div>Льготный период:</div>
+												</td>
+												<td><strong>55 дней</strong></td>
+											</tr>
+											<tr>
+												<td>
+													<div>Комиссия за покупки</div>
+												</td>
+												<td><strong>0%</strong></td>
+											</tr>
+											<tr>
+												<td>
+													<div>Комиссия за снятие наличных</div>
+												</td>
+												<td><strong>25,4%</strong></td>
+											</tr>
+										</tbody>
+										</table>
+									</aside>
+								
+									<div class="clearfix width_100">
+										<a href="" class="left dashed">Требуемые документы и сроки рассмотрения</a>
+										<a href="" class="button right">Оформить карту</a>
+									</div>
+
+									<div class="grey-border" style="margin-top: 3px;"></div>
+									<div class="bottom">
+										<div class="stars">
+											<div data-rateit-resetable="false"  data-rateit-ispreset="true" class="rateit"></div>
+										</div>
+										<div class="comments">
+											<img src="img/comments.png" alt="">
+											<a href="" class="dashed">124</a>
+										</div>
+
+									</div>
+									<div class="grey-border"></div>
+
+								</div>
+							</div>
+
+							<div class="text_block">
+								<h3>Почему мы рекомендуем это предложение</h3>
+								<p>Правильное использование этой карты поможет вам сэкономить средства:</p>
+								<span>Рефинансировав свой займ с одной из текущих карт на новую карту, вы сможете сэкономиь средства на оплате текущей задолженности по кредитным картам.</span>
+							</div>
+							<div class="grey-border" style="margin: 25px 0px 35px 0px;"></div>
+							
+							<div class="text_block">
+								<h3>Ваши шансы на получение данного предложения</h3>
+								<p>Ваш шанс на получение данного кредита: Очень высокий</p>
+								<span>Мы проанализировали ваш финансовый профиль и кредитный рейтинг и пришли к выводу что вы имеете очень высокие шансы на одобрение кредита по данному предложению.</span>
+								
+							</div>
+							<div class="grey-border"></div>
+							<div class="rating_line">
+								<input type="text" class="filter">
+								<figure class="box-1"><span style="margin-left: 0px;">300</span><label for="" class="color-1">Очень плохо</label></figure>
+								<figure class="box-2"><span>580</span><label for="" class="color-2" style="margin-left: 55px;">Плохо</label></figure>
+								<figure class="box-3"><span>640</span><label for="" class="color-3" style="margin-left: 49px;">Нормально</label></figure>
+								<figure class="box-4"><span>700</span><label for="" class="color-4" style="margin-left: 52px;">Хорошо</label></figure>
+								<figure class="box-5"><span>750</span><label for="" class="color-5">Великолепно</label></figure>
+								<figure style="width:0px;"><span style="margin-left: -21px;">850</span></figure>
+							</div>
+
+							<div class="grey-border" style="margin-bottom:16px;"></div>
+
+							<div class="clearfix width_100">
+								<a href="" class="my_rec_button button_prev left"><i class="left_arrow"></i>Предыдущее предложение</a>
+								<a href="" class="my_rec_button button_all">Все предложение</a>
+								<a href="" class="my_rec_button button_next right">Следующее предложение<i class="right_arrow"></i></a>
+							</div>
+
+							<div class="grey-border" style="margin: 9px 0px 31px 0px;"></div>
+							
+							<h3>Комментарии от держателей карт
+								<div class="search_result right">
+									<div class="select">
+										<a href="#" class="slct">Все отзывы</a>
+										<ul class="drop" style="display: none;">
+											<li>Все отзывы</li>
+										</ul>
+										<input type="hidden" name="question">
+									</div>
+								</div>
+							</h3>
+							<a href="" class="dashed leave_comment">Оставить комментарий</a>
+							<div class="main_comment_block">
+								<form action="" class="my_rec_form">
+									<table>
+										<tr>
+											<td>Ваш опыт использования карты: </td>
+											<td>
+												<div class="select">
+													<a href="#" class="slct">Я подал заявку на этот продукт</a>
+													<ul class="drop">
+														<li>Я подал заявку на этот продукт</li>
+													</ul>
+													<input type="hidden" name="question">
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>Оцените эту карту:</td>
+											<td><div data-rateit-resetable="false"  data-rateit-ispreset="true" class="rateit"></div></td>
+										</tr>
+										<tr>
+											<td>Заголовок комментария:</td>
+											<td><input type="text"></td>
+										</tr>
+										<tr>
+											<td style="vertical-align: top;padding-top: 17px;">Текст комментария:</td>
+											<td><textarea name=""></textarea></td>
+										</tr>
+										<tr>
+											<td>Оставить комментарий как:</td>
+											<td>
+												<div class="radioblock">
+													<div class="radio active" data-radio="man">От имени профиля</div>
+													<div class="radio" data-radio="woman">Анонимно</div>
+													<input type="hidden" value="true" name="sex">
+												</div>
+											</td>
+										</tr>
+									</table>
+									<div class="clearfix width_100">
+										<div class="checkboxes">
+												<div class="check">
+													Отправлять на e-mail ответы на мой комментарий
+		 											<input type="checkbox" value="have">
+												</div>
+											</div>
+										<a href="" class="right button">Отправить</a>
+									</div>
+								</form>
+
+								<div class="grey-border"></div>
+
+								<div class="comment_block">
+									<figure><label for="">Федор Михайлов</label></figure>
+									<div class="comment_block_text">
+										Нестандартный подход, в рамках сегодняшних воззрений, пока плохо отталкивает принцип восприятия, невзирая на действия конкурентов.Нестандартный подход, в рамках сегодняшних воззрений, пока плохо отталкивает принцип восприятия, невзирая на действия конкурентов.Нестандартный подход, в рамках сегодняшних воззрений, пока плохо отталкивает принцип восприятия, невзирая на действия конкурентов.Нестандартный подход, в рамках сегодняшних воззрений, пока плохо отталкивает принцип восприятия, невзирая на действия конкурентов.
+										Нестандартный подход, в рамках сегодняшних воззрений, пока плохо отталкивает принцип восприятия, невзирая на действия конкурентов.Нестандартный подход, в рамках сегодняшних воззрений, пока плохо отталкивает принцип восприятия, невзирая на действия конкурентов.
+										Нестандартный подход, в рамках сегодняшних воззрений, пока плохо отталкивает принцип восприятия, невзирая на действия конкурентов.
+									</div>
+									<div class="comment_block_stats">
+										
+										<div class="stars left">
+											<span>06.12.13</span>
+											<div data-rateit-resetable="false"  data-rateit-ispreset="true" class="rateit"></div>
+										</div>
+										<div class="stats">
+											<span>Оцените комментарий: </span>
+											<ul>
+												<li><img src="img/plus.png" alt=""></li>
+												<li><img src="img/minus.png" alt=""></li>
+											</ul>
+											<span>+25</span>
+										</div>
+										<a href="" class="right dashed">Ответить на комментарий</a>
+									</div>
+								</div>
+
+								<div class="comment_block answer">
+									<figure><label for="">Михаил Лаемберг <span>(ответил на коментарий)</span></label></figure>
+									<div class="comment_block_text">
+										Нестандартный подход, в рамках сегодняшних воззрений, пока плохо отталкивает принцип восприятия, невзирая на действия конкурентов.Нестандартный подход, в рамках сегодняшних воззрений, пока плохо отталкивает принцип восприятия, невзирая на действия конкурентов.Нестандартный подход, в рамках сегодняшних воззрений, пока плохо отталкивает принцип восприятия, невзирая на действия конкурентов.Нестандартный подход, в рамках сегодняшних воззрений, пока плохо 
+									</div>
+									<div class="comment_block_stats">
+										
+										<div class="stars left"><span>06.12.13</span></div>
+										<div class="stats">
+											<span>Оцените комментарий: </span>
+											<ul>
+												<li><img src="img/plus.png" alt=""></li>
+												<li><img src="img/minus.png" alt=""></li>
+											</ul>
+											<span>+25</span>
+										</div>
+										<a href="" class="right dashed">Ответить на комментарий</a>
+									</div>
+								</div>
+								<div class="comment_block">
+									<figure><label for="">Федор Михайлов</label></figure>
+									<div class="comment_block_text">
+										Нестандартный подход, в рамках сегодняшних воззрений, пока плохо отталкивает принцип восприятия, невзирая на действия конкурентов.Нестандартный подход, в рамках сегодняшних воззрений, пока плохо отталкивает принцип восприятия, невзирая на действия конкурентов.Нестандартный подход, в рамках сегодняшних воззрений, пока плохо отталкивает принцип восприятия, невзирая на действия конкурентов.Нестандартный подход, в рамках сегодняшних воззрений, пока плохо отталкивает принцип восприятия, невзирая на действия конкурентов.
+										Нестандартный подход, в рамках сегодняшних воззрений, пока плохо отталкивает принцип восприятия, невзирая на действия конкурентов.Нестандартный подход, в рамках сегодняшних воззрений, пока плохо отталкивает принцип восприятия, невзирая на действия конкурентов.
+										Нестандартный подход, в рамках сегодняшних воззрений, пока плохо отталкивает принцип восприятия, невзирая на действия конкурентов.
+									</div>
+									<div class="comment_block_stats">
+										
+										<div class="stars left">
+											<span>06.12.13</span>
+											<div data-rateit-resetable="false"  data-rateit-ispreset="true" class="rateit"></div>
+										</div>
+										<div class="stats">
+											<span>Оцените комментарий: </span>
+											<ul>
+												<li><img src="img/plus.png" alt=""></li>
+												<li><img src="img/minus.png" alt=""></li>
+											</ul>
+											<span>+25</span>
+										</div>
+										<a href="" class="right dashed">Ответить на комментарий</a>
+									</div>
+								</div>
+
+								<a href="" class="blue_button more"><span>Показать больше предложений</span></a>
+								<div class="grey-border"></div>
+								<small>*Обращаем ваше внимание,что предложения, представленные нашим сервисом, основаны на данных вашего профиля и кредитной истории. Расчет эономии и процентной ставки служит в первую очередь для иллююстрации и может не совпадать с реальными данными, не смотря на то, что мы прилагаем все усилия, для отображения точных данных. Более подробною информацию по кредиту, вы можете узнать у банка-кредитора.</small>
+							</div>
+							
+							</div>
+
+							
+							<h1>Мои рекомендации
+								<p>Здесь представлены лучшие финансовые предложения по экономии средств, рекомендованные для вас.</p>
+								<p>Они основаны на анализе вашей кредитной истории и общих данных финансового профился.</p>
+							</h1>
+
+							<div class="clearfix width_100" style="margin-top: -87px;">
+								<div class="financial_profile">
+									<table>
+										<tr>
+											<td>Финансовый профиль</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>Кредитный рейтинг:</td>
+											<td class='orange_color'>678</td>
+										</tr>
+										<tr>
+											<td style="padding-bottom: 24px;">Общий долг по кредитам:</td>
+											<td> 124 000</td>
+										</tr>
+										<tr class="blue_bg">
+											<td style="padding-top: 12px;">Найдено вариантов:</td>
+											<td>12</td>
+										</tr>
+										<tr class="blue_bg">
+											<td>Общая сумма экономии:</td>
+											<td>3 984</td>
+										</tr>
+									</table>
+								</div>
+							</div>
+
+							<div class="grey-border" style="margin: 16px 0px 30px 0px;"></div>
+
+							<ul class="blueTabs consumer_credit">
+								<li class="active" data-my-rec-tabs="costumer">Потребительские кредиты</li>
+								<li data-my-rec-tabs="credit_card">Кредитные карты</li>
+								<li>Автокредиты</li>
+								<li>Ипотека</li>
+								<li>Другие кредиты</li>
+							</ul>
+							
+							<table class="my_rec_table my_rec_tabs" data-my-rec-tabs="costumer">
+								<tr>
+									<td>
+										<div class="my_rec_card_block">
+											<div>
+												<figure>
+													<img src="img/bank.png" alt="">
+												</figure>
+												<a href="">Потребительский кредит от Сбербанка</a>
+												<ul>
+													<li>
+														<p>Годовая процентная ставка</p>
+														<span>18,9%</span>
+													</li>
+													<li>
+														<p>Сумма кредита</p>
+														<span>1 000 - 300 000</span>
+													</li>
+													<li>
+														<p>Ваша экономия</p>
+														<span>до 1 200</span>
+													</li>
+												</ul>
+
+												<a href="" class="button">Оформить кредит</a>
+												<a href="" class="center details" data-tabs-details="cityBank">Больше данных</a>
+											</div>
+											
+											<div class="bottom">
+												<div data-rateit-resetable="false"  data-rateit-ispreset="true" class="rateit left"></div>
+
+												<div class="comments right">
+													<img src="img/comments.png" alt="">
+													<a href="">124</a>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td>
+										<div class="my_rec_card_block">
+											<div>
+												<figure>
+													<img src="img/bank.png" alt="">
+												</figure>
+												<a href="">Потребительский кредит от Сбербанка</a>
+												<ul>
+													<li>
+														<p>Годовая процентная ставка</p>
+														<span>18,9%</span>
+													</li>
+													<li>
+														<p>Сумма кредита</p>
+														<span>1 000 - 300 000</span>
+													</li>
+													<li>
+														<p>Ваша экономия</p>
+														<span>до 1 200</span>
+													</li>
+												</ul>
+
+												<a href="" class="button">Оформить кредит</a>
+												<a href="" class="center">Больше данных</a>
+											</div>
+											
+											<div class="bottom">
+												<div data-rateit-resetable="false"  data-rateit-ispreset="true" class="rateit left"></div>
+
+												<div class="comments right">
+													<img src="img/comments.png" alt="">
+													<a href="">124</a>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td>
+										<div class="my_rec_card_block">
+											<div>
+												<figure>
+													<img src="img/bank.png" alt="">
+												</figure>
+												<a href="">Потребительский кредит от Сбербанка</a>
+												<ul>
+													<li>
+														<p>Годовая процентная ставка</p>
+														<span>18,9%</span>
+													</li>
+													<li>
+														<p>Сумма кредита</p>
+														<span>1 000 - 300 000</span>
+													</li>
+													<li>
+														<p>Ваша экономия</p>
+														<span>до 1 200</span>
+													</li>
+												</ul>
+
+												<a href="" class="button">Оформить кредит</a>
+												<a href="" class="center">Больше данных</a>
+											</div>
+											
+											<div class="bottom">
+												<div data-rateit-resetable="false"  data-rateit-ispreset="true" class="rateit left"></div>
+
+												<div class="comments right">
+													<img src="img/comments.png" alt="">
+													<a href="">124</a>
+												</div>
+											</div>
+										</div>
+									</td>
+								</tr>
+							</table>
+
+							<table class="my_rec_table my_rec_tabs hidden" data-my-rec-tabs="credit_card">
+								<tr>
+									<td>
+										<div class="my_rec_card_block">
+											<div>
+												<figure class="text-align-left">
+													<img src="img/card_img.png" alt="">
+												</figure>
+												<a href="">Потребительский кредит от Сбербанка</a>
+												<ul>
+													<li>
+														<p>Годовая процентная ставка</p>
+														<span>18,9%</span>
+													</li>
+													<li>
+														<p>Сумма кредита</p>
+														<span>1 000 - 300 000</span>
+													</li>
+													<li>
+														<p>Ваша экономия</p>
+														<span>до 1 200</span>
+													</li>
+												</ul>
+
+												<a href="" class="button">Оформить кредит</a>
+												<a href="" class="center">Больше данных</a>
+											</div>
+											
+											<div class="bottom">
+												<div data-rateit-resetable="false"  data-rateit-ispreset="true" class="rateit left"></div>
+
+												<div class="comments right">
+													<img src="img/comments.png" alt="">
+													<a href="">124</a>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td>
+										<div class="my_rec_card_block">
+											<div>
+												<figure class="text-align-left">
+													<img src="img/bank.png" alt="">
+												</figure>
+												<a href="">Потребительский кредит от Сбербанка</a>
+												<ul>
+													<li>
+														<p>Годовая процентная ставка</p>
+														<span>18,9%</span>
+													</li>
+													<li>
+														<p>Сумма кредита</p>
+														<span>1 000 - 300 000</span>
+													</li>
+													<li>
+														<p>Ваша экономия</p>
+														<span>до 1 200</span>
+													</li>
+												</ul>
+
+												<a href="" class="button">Оформить кредит</a>
+												<a href="" class="center">Больше данных</a>
+											</div>
+											
+											<div class="bottom">
+												<div data-rateit-resetable="false"  data-rateit-ispreset="true" class="rateit left"></div>
+
+												<div class="comments right">
+													<img src="img/comments.png" alt="">
+													<a href="">124</a>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td>
+										<div class="my_rec_card_block">
+											<div>
+												<figure class="text-align-left">
+													<img src="img/bank.png" alt="" />
+												</figure>
+												<a href="">Потребительский кредит от Сбербанка</a>
+												<ul>
+													<li>
+														<p>Годовая процентная ставка</p>
+														<span>18,9%</span>
+													</li>
+													<li>
+														<p>Сумма кредита</p>
+														<span>1 000 - 300 000</span>
+													</li>
+													<li>
+														<p>Ваша экономия</p>
+														<span>до 1 200</span>
+													</li>
+												</ul>
+
+												<a href="" class="button">Оформить кредит</a>
+												<a href="" class="center">Больше данных</a>
+											</div>
+											
+											<div class="bottom">
+												<div data-rateit-resetable="false"  data-rateit-ispreset="true" class="rateit left"></div>
+
+												<div class="comments right">
+													<img src="img/comments.png" alt="">
+													<a href="">124</a>
+												</div>
+											</div>
+										</div>
+									</td>
+								</tr>
+							</table>
+
+							<div class="grey-border"></div>
+							<small>*Обращаем ваше внимание,что предложения, представленные нашим сервисом, основаны на данных вашего профиля и кредитной истории. Расчет эономии и процентной ставки служит в первую очередь для иллююстрации и может не совпадать с реальными данными, не смотря на то, что мы прилагаем все усилия, для отображения точных данных. Более подробною информацию по кредиту, вы можете узнать у банка-кредитора.</small>
+					
+					</div>
+					<!--Мои рекомендации-->
+
+					<!--Потребительские кредиты-->
+					<div id="consumer-loans" class="credits_tabs margin0px" data-tabs="consumer-loans">
+						<h1>
+							Потпебительские кредиты
+						</h1>
+						<table id="general-reports-table" class="general-reports-table">
+							<tr>
+								<td class="active" style="border-radius: 5px 0px 0px 5px;"><img src="img/rating1.png"></td>
+								<td><img src="img/rating2.png"></td>
+								<td style="border-right:none;border-radius: 0px 5px 5px 0px;"><img src="img/rating3.png"></td>
+							</tr>
+						</table>
+						<div class="internal_tabs credit_cards_tabs">
+							<ul class="blueTabs">
+								<li class="active" data-credit-cards-tabs="balance">Баланс</li>
+								<li data-credit-cards-tabs="debt">Задолженность</li>
+								<li data-credit-cards-tabs="monthly_payment">Ежемесячный платеж</li>
+								<li data-credit-cards-tabs="late_payments">Просроченные платежи</li>
+								<li data-credit-cards-tabs="interest_rate">Процентная ставка</li>
+								<li data-credit-cards-tabs="time">Сроки</li>
+							</ul>
+						</div>
+
+												
+						<div class="one_potr_credit_card" data-one-potr-credit-card="City_Diamond">
+								<div class="data_updates">
+									<label for="">Последняя дата обновления</label>
+									<figure><img src="img/updates.png" alt="">13.04.13</figure>
+								</div>
+						
+								<div class="grey-border"></div>
+								<div class="current_balance clearfix width_100">
+									<figure><img src="img/sberbank.png" alt=""></figure>
+									<aside>
+										<h3>Сбербанк России</h3>
+										<ul>
+											<li>Тип кредита: Потребительский</li>
+											<li>Валюта кредита: Рубли</li>
+											<li>Годовая процентная ставка: 45,9</li>
+											<li><a href="">Редактировать</a></li>
+										</ul>
+									</aside>
+									<div>
+										<label for="">Текущий баланс</label>
+										<h3>124 000<span class="rur"> P<span></h3>
+									</div>
+								</div>
+								<div class="grey-border"></div>
+								<div class="details clearfix width_100">
+									<div class="list">
+										<div class="info">
+											<h3>Детальная информация</h3>
+											<ul>
+												<li>Сумма кредита: <span>224<span class="rur"> P<span></span></li>
+												<li>Доступный остаток: <span>224<span class="rur"> P<span></span></li>
+												<li>Текущая задолженность: <span>224<span class="rur"> P<span></span></li>
+											</ul>
+										</div>
+										<div class="grey-border"></div>
+										<div class="payments">
+											<h3>Платежи</h3>
+											<ul>
+												<li>Ежемесячный платеж: <span>9 000<span class="rur"> P<span></span></li>
+												<li>Дата следующего платежа: <span>11.10.13</span></li>
+												<li>Осталось платежей: <span>10</span></li>
+											</ul>
+										</div>
+									</div>
+									<table class="striped-odd">
+											<tbody><tr>
+												<td>Все потребительские кредиты</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td><a href="">Сбербанк России</a></td>
+												<td>50 000<span class="rur"> P<span></td>
+											</tr>
+											<tr>
+												<td><a href="">ТКС Банк</a></td>
+												<td>50 000<span class="rur"> P<span></td>
+											</tr>
+											<tr>
+												<td><a href="">Citibank</a></td>
+												<td>50 000<span class="rur"> P<span></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="grey-border"></div>
+								<div class="credit_term_block">
+									<h3>Срок кредита</h3>
+									<label for="">12.04.13-12.03.16(3 года)</label>
+									<div class="bar"><label for=""></label><figure></figure></div>
+								</div>
+								<div class="grey-border"></div>
+								<div class="credit_report_data">
+									<h3>Данные из кредитного отчета</h3>
+									<div class="list clearfix width_100">
+										<div class="info">
+											<ul>
+												<li>Банк: <span>Сбербанк России</span></li>
+												<li>Дата открытия: <span>12.04.13</span></li>
+												<li>Текущая задолженность: <span>11/16</span></li>
+											</ul>
+										</div>
+										<div class="payments">
+											<ul>
+												<li>Суииа кредита: <span>9 000<span class="rur"> P<span></span></li>
+												<li>Доступный остаток: <span>11.10.13</span></li>
+												<li>Текущая задолженность: <span>11.10.13</span></li>
+												<li>Пропущенные платежи: <span>3</span></li>
+											</ul>
+										</div>
+									</div>
+									<div class="verification clearfix width_100 box-sizing">
+										<div class="left">
+											<b>Являются ли данные из отчета верными?</b><br>
+											<span>Получите полный кредитный отчет от бюро Equifax</span>
+										</div>
+										<a href="" class="button right">Получить отчет</a>
+									</div>
+								</div>
+								<div class="grey-border"></div>
+								<div class="internal_tabs credit_cards_tabs">
+									<ul class="blueTabs">
+										<li class="active" data-credit-cards-tabs="recomendations">Рекомендации</li>
+										<li data-credit-cards-tabs="changes_history">История изменений</li>
+										<li data-credit-cards-tabs="late_payments">Просроченные платежи</li>
+									</ul>
+								</div>
+
+								<div class="credit-cards-tabs" data-credit-cards-tabs="recomendations">
+									<p>Здесь вы найдете рекомендованные для вас предложения, основанные на данных вашего профиля</p>
+									<div class="repayment_credit_box clearfix width_100">
+										<p>Погасите свой кредит с помощью потребительского кредита от «ТКС Банка» и сэкономте до 25 000 <span class="rur"> P<span> в течение 3-х лет</p>
+										<div class="bank_logo">
+											<img src="img/sberbank_sm.png" alt="">
+											<img src="img/repayment_credit_arrow.png" alt="" style='margin: 6px 8px -1px 9px'>
+											<img src="img/sberbank_sm.png" alt="">
+										</div>
+										<aside>
+											<div>экономия</div>
+											<strong>3 200<span class="rur"> P<span></span></span></strong>
+											<div>в год</div>
+										</aside>
+
+										<figure class="right">
+											<a href="" class="button">Оформить кредит</a>
+											<a href="">Больше предложений</a>
+										</figure>
+									</div>
+									<div class="offer_details clearfix width_100">
+										<h3>Детали предложения</h3>
+										<figure class="general-stats-box">
+											<div>C</div>
+											<figure class="stats-box box-1"></figure>
+											<figure class="stats-box box-2"></figure>
+											<figure class="stats-box box-3 active"></figure>
+											<figure class="stats-box box-4"></figure>
+											<figure class="stats-box box-5"></figure>	
+										</figure>
+										<div class="card_options">
+											<b>Процент за погашение</b>
+											<span>3%</span> 
+											<label>До марта 2014</label>
+										</div>
+										<div class="card_options">
+											<b>Годовая процентная ставка</b>
+											<span>12,9 - 18,5%*</span> 
+											<label>Варьируется</label>
+										</div>
+
+									</div>
+									<table class="results_table striped-odd width_100">
+												<tbody><tr>
+													<td>Детали</td>
+													<td>Новый кредит</td>
+													<td>Текущий кредит</td>
+													<td>Экономия</td>
+												</tr>
+												<tr>
+													<td>Процент за погашение</td>
+													<td class="red">3%</td>
+													<td>0%</td>
+													<td>---</td>
+												</tr>
+												<tr>
+													<td>Проценты за 1-й год</td>
+													<td>2 506</td>
+													<td class="red">8 430</td>
+													<td class="green">5924</td>
+												</tr>
+												<tr>
+													<td>Проценты за 2-й год</td>
+													<td>2 506</td>
+													<td class="red">8 430</td>
+													<td class="green">5924</td>
+												</tr>
+												<tr>
+													<td>Проценты за 3-й год</td>
+													<td>2 506</td>
+													<td class="red">8 430</td>
+													<td class="green">5924</td>
+												</tr>
+												<tr class="bold">
+													<td>Итог</td>
+													<td>2 506</td>
+													<td class="red">8 430</td>
+													<td class="green">5924</td>
+												</tr>
+											</tbody>
+									</table>
+
+									<small>* Приведенные расчеты предпологают, что вы погасили кредит досрочно с помощью нового и выплачивали его в течении 3-х лет</small>
+								</div>
+								<div class="credit-cards-tabs" data-credit-cards-tabs="changes_history">
+							
+									<div class="cardUseGraph">
+									<ul class="blueTabs">
+										<li class="active" data-cardUseGraph="lineChartСonsumer_loansChangesHistoryMonth">1 месяц</li>
+										<li data-cardUseGraph="lineChartСonsumer_loansChangesHistory3Month">3 месяца</li>
+										<li data-cardUseGraph="lineChartСonsumer_loansChangesHistory6Month">6 месяцев</li>
+										<li data-cardUseGraph="lineChartСonsumer_loansChangesHistoryYear">Год</li>
+										<li data-cardUseGraph="lineChartСonsumer_loansChangesHistoryAllTime">Весь период</li>
+									</ul>
+								
+									<div class="charts--container" data-cardUseGraph="lineChartСonsumer_loansChangesHistoryMonth">
+									    <div class="chart">
+									      <div id="lineChartСonsumer_loansChangesHistoryMonth">
+									        <svg class="lineChart--svg">
+									          <defs>
+									            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+									              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+									              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+									            </linearGradient>
+									          </defs>
+									        </svg>
+									      </div>
+									    </div>
+									</div>
+									<div class="charts--container" data-cardUseGraph="lineChartСonsumer_loansChangesHistory3Month">
+									    <div class="chart">
+									      <div id="lineChartСonsumer_loansChangesHistory3Month">
+									        <svg class="lineChart--svg">
+									          <defs>
+									            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+									              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+									              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+									            </linearGradient>
+									          </defs>
+									        </svg>
+									      </div>
+									    </div>
+									</div>
+									<div class="charts--container" data-cardUseGraph="lineChartСonsumer_loansChangesHistory6Month">
+									    <div class="chart">
+									      <div id="lineChartСonsumer_loansChangesHistory6Month">
+									        <svg class="lineChart--svg">
+									          <defs>
+									            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+									              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+									              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+									            </linearGradient>
+									          </defs>
+									        </svg>
+									      </div>
+									    </div>
+									</div>
+									<div class="charts--container" data-cardUseGraph="lineChartСonsumer_loansChangesHistoryYear">
+									    <div class="chart">
+									      <div id="lineChartСonsumer_loansChangesHistoryYear">
+									        <svg class="lineChart--svg">
+									          <defs>
+									            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+									              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+									              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+									            </linearGradient>
+									          </defs>
+									        </svg>
+									      </div>
+									    </div>
+									</div>
+									<div class="charts--container" data-cardUseGraph="lineChartСonsumer_loansChangesHistoryAllTime">
+									    <div class="chart">
+									      <div id="lineChartСonsumer_loansChangesHistoryAllTime">
+									        <svg class="lineChart--svg">
+									          <defs>
+									            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+									              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+									              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+									            </linearGradient>
+									          </defs>
+									        </svg>
+									      </div>
+									    </div>
+									</div>
+
+
+									</div>
+								</div>
+
+								<div class="credit-cards-tabs" data-credit-cards-tabs="late_payments">
+										<div class="late_payments_info">
+											<h3>Текущая просроченная задолженность</h3>
+											<span>4 4349<span class="rur"> P<span></span> 
+											</span></span>
+										</div>
+
+										<div class="late_payments_info">
+											<h3>Максимальная просроченная задолженность</h3>
+											<span>14 4349<span class="rur"> P<span></span> 
+											</span></span>
+										</div>
+
+										<div class="late_payments_info" style="width:170px;">
+											<h3>Текущая просроченная задолженность,дней</h3>
+											<span>35</span> 
+										</div>
+										<div class="grey-border"></div>
+										<div class="number_of_delinquency">
+											<label for="" class="left">Количество просрочек</label>
+											<div id="consumerLoansBarChart">
+												
+											</div>
+											<label for="">Периоды просрочки(дни)</label>
+											
+										</div>
+										
+
+								</div>
+
+						</div>
+			
+
+						<!--Баланс-->
+						<div class="credit-cards-tabs" data-credit-cards-tabs="balance">
+							<div class="card_options">
+								<h3>Общий баланс по потребительским кредитам</h3>
+								<span>589 340<span class="rur"> P<span></span> 
+							</div>
+							<div class="grey-border"></div>
+							<div class="card_chart">
+								<div class="card_chart_figure" id="donut_consumer_loans_balance">
+
+								</div>
+								<div class="card_chart_table">
+									<table class="basic_table striped-odd">
+										<tr>
+											<td></td>
+											<td>Банк</td>
+											<td>Баланс</td>
+											<td>Дата обновления</td>
+										</tr>
+										<tr class="data-donut" data-donut="0">
+											<td class="box-4"></td>
+											<td><a href="" data-one-potr-credit-card="City_Diamond" class="one_potr_credit_link">City Diamond</a></td>
+											<td>12 340<span class="rur"> P<span></td>
+											<td>13.04.13</td>
+										</tr>
+										<tr class="data-donut" data-donut="1">
+											<td class="box-6"></td>
+											<td><a href="" data-one-potr-credit-card="City_Diamond" class="one_potr_credit_link">City Diamond</a></td>
+											<td>12 340<span class="rur"> P<span></td>
+											<td>13.04.13</td>
+										</tr>
+										<tr class="data-donut" data-donut="2">
+											<td class="box-2"></td>
+											<td><a href="" data-one-potr-credit-card="City_Diamond" class="one_potr_credit_link">City Diamond</a></td>
+											<td>12 340<span class="rur"> P<span></td>
+											<td>13.04.13</td>
+										</tr>
+									</table>
+									<a href="" class="blue_button more"><span>Показать еще</span></a>
+								</div>
+							</div>
+							<div class="grey-border"></div>
+							<div class="cardUseGraph">
+								<h3>График изменения баланса по потребительским кредитам</h3>
+							<ul class="blueTabs">
+								<li class="active" data-cardUseGraph="lineChartСonsumer_loansBalanceMonth">1 месяц</li>
+								<li data-cardUseGraph="lineChartСonsumer_loansBalance3Month">3 месяца</li>
+								<li data-cardUseGraph="lineChartСonsumer_loansBalance6Month">6 месяцев</li>
+								<li data-cardUseGraph="lineChartСonsumer_loansBalanceYear">Год</li>
+								<li data-cardUseGraph="lineChartСonsumer_loansBalanceAllTime">Весь период</li>
+							</ul>
+							
+								<div class="charts--container" data-cardUseGraph="lineChartСonsumer_loansBalanceMonth">
+								    <div class="chart">
+								      <div id="lineChartСonsumer_loansBalanceMonth">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+								<div class="charts--container" data-cardUseGraph="lineChartСonsumer_loansBalance3Month">
+								    <div class="chart">
+								      <div id="lineChartСonsumer_loansBalance3Month">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+								<div class="charts--container" data-cardUseGraph="lineChartСonsumer_loansBalance6Month">
+								    <div class="chart">
+								      <div id="lineChartСonsumer_loansBalance6Month">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+								<div class="charts--container" data-cardUseGraph="lineChartСonsumer_loansBalanceYear">
+								    <div class="chart">
+								      <div id="lineChartСonsumer_loansBalanceYear">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+								<div class="charts--container" data-cardUseGraph="lineChartСonsumer_loansBalanceAllTime">
+								    <div class="chart">
+								      <div id="lineChartСonsumer_loansBalanceAllTime">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+
+
+							</div>
+							<div class="grey-border"></div>
+							<div class="formCard clearfix"> 
+								<div style="margin-bottom:10px;">Мы нашли для вас предложение, основанное на вашей кредитной истории!</div>
+								<img src="img/card_img.png" alt="">
+								<aside>
+									<div>экономия</div>
+									<strong>3 200<span class="rur"> P<span></strong>
+									<div>в год</div>
+								</aside>
+								<figure>
+									<a href="" class="more big">Оформить карту</a>
+									<a href="" style="display:block">Больше предложений</a>
+								</figure>
+							</div>
+						</div>
+						<!--Задолженность-->
+						<div class="credit-cards-tabs" data-credit-cards-tabs="debt">
+							<div class="card_options">
+								<h3>Общая задолженность по потребительским кредитам</h3>
+								<span>589 340<span class="rur"> P<span></span> 
+							</div>
+							<div class="grey-border"></div>
+							<div class="card_chart">
+								<div class="card_chart_figure" id="donut_сonsumer_loans_debt">
+
+								</div>
+								<div class="card_chart_table">
+									<table class="basic_table striped-odd">
+										<tr>
+											<td></td>
+											<td>Карта</td>
+											<td>Задолженность</td>
+											<td>Дата обновления</td>
+										</tr>
+										<tr class="data-donut" data-donut="0">
+											<td class="box-4"></td>
+											<td><a href="">City Diamond</a></td>
+											<td>12 340<span class="rur"> P<span></td>
+											<td>13.04.13</td>
+										</tr>
+										<tr class="data-donut" data-donut="1">
+											<td class="box-6"></td>
+											<td><a href="">City Diamond</a></td>
+											<td>12 340<span class="rur"> P<span></td>
+											<td>13.04.13</td>
+										</tr>
+										<tr class="data-donut" data-donut="2">
+											<td class="box-2"></td>
+											<td><a href="">City Diamond</a></td>
+											<td>12 340<span class="rur"> P<span></td>
+											<td>13.04.13</td>
+										</tr>
+									</table>
+									<a href="" class="blue_button more"><span>Показать еще</span></a>
+								</div>
+							</div>
+							<div class="grey-border"></div>
+							<div class="cardUseGraph">
+								<h3>График изменения задолженности по потребительским кредитам</h3>
+							<ul class="blueTabs">
+								<li class="active" data-cardUseGraph="lineChartСonsumer_loansDebtMonth">1 месяц</li>
+								<li data-cardUseGraph="lineChartСonsumer_loansDebt3Month">3 месяца</li>
+								<li data-cardUseGraph="lineChartСonsumer_loansDebt6Month">6 месяцев</li>
+								<li data-cardUseGraph="lineChartСonsumer_loansDebtYear">Год</li>
+								<li data-cardUseGraph="lineChartСonsumer_loansDebtAllTime">Весь период</li>
+							</ul>
+							
+								<div class="charts--container" data-cardUseGraph="lineChartСonsumer_loansDebtMonth">
+								    <div class="chart">
+								      <div id="lineChartСonsumer_loansDebtMonth">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+								<div class="charts--container" data-cardUseGraph="lineChartСonsumer_loansDebt3Month">
+								    <div class="chart">
+								      <div id="lineChartСonsumer_loansDebt3Month">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+								<div class="charts--container" data-cardUseGraph="lineChartСonsumer_loansDebt6Month">
+								    <div class="chart">
+								      <div id="lineChartСonsumer_loansDebt6Month">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+								<div class="charts--container" data-cardUseGraph="lineChartСonsumer_loansDebtYear">
+								    <div class="chart">
+								      <div id="lineChartСonsumer_loansDebtYear">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+								<div class="charts--container" data-cardUseGraph="lineChartСonsumer_loansDebtAllTime">
+								    <div class="chart">
+								      <div id="lineChartСonsumer_loansDebtAllTime">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+
+							</div>
+							<div class="grey-border"></div>
+							<div class="formCard clearfix"> 
+								<div style="margin-bottom:10px;">Мы нашли для вас предложение, основанное на вашей кредитной истории!</div>
+								<img src="img/card_img.png" alt="">
+								<aside>
+									<div>экономия</div>
+									<strong>3 200<span class="rur"> P<span></strong>
+									<div>в год</div>
+								</aside>
+								<figure>
+									<a href="" class="more big">Оформить карту</a>
+									<a href="" style="display:block">Больше предложений</a>
+								</figure>
+							</div>
+						</div>
+						<!--Ежемесячный платеж-->
+						<div class="credit-cards-tabs" data-credit-cards-tabs="monthly_payment">
+							<div class="card_options">
+								<h3>Общий ежемесячный платеж по потребительским кредитам</h3>
+								<span>589 340<span class="rur"> P<span></span> 
+							</div>
+							<div class="grey-border"></div>
+							<div class="card_chart">
+								<div class="card_chart_figure" id="donut_сonsumer_loans_monthly_payment">
+									
+								</div>
+								<div class="card_chart_table">
+									<table class="basic_table striped-odd">
+										<tr>
+											<td></td>
+											<td>Карта</td>
+											<td>Платеж</td>
+											<td>Дата обновления</td>
+										</tr>
+										<tr class="data-donut" data-donut="0">
+											<td class="box-4"></td>
+											<td><a href="">City Diamond</a></td>
+											<td>12 340<span class="rur"> P<span></td>
+											<td>13.04.13</td>
+										</tr>
+										<tr class="data-donut" data-donut="1">
+											<td class="box-6"></td>
+											<td><a href="">City Diamond</a></td>
+											<td>12 340<span class="rur"> P<span></td>
+											<td>13.04.13</td>
+										</tr>
+										<tr class="data-donut" data-donut="2">
+											<td class="box-2"></td>
+											<td><a href="">City Diamond</a></td>
+											<td>12 340<span class="rur"> P<span></td>
+											<td>13.04.13</td>
+										</tr>
+										<tr class="data-donut" data-donut="3">
+											<td class="box-7"></td>
+											<td><a href="">City Diamond</a></td>
+											<td>12 340<span class="rur"> P<span></td>
+											<td>13.04.13</td>
+										</tr>
+										<tr class="data-donut" class="data-donut" data-donut="4">
+											<td class="box-8"></td>
+											<td><a href="">City Diamond</a></td>
+											<td>12 340<span class="rur"> P<span></td>
+											<td>13.04.13</td>
+										</tr>
+									</table>
+									<a href="" class="blue_button more"><span>Показать еще</span></a>
+								</div>
+							</div>
+							<div class="grey-border"></div>
+							<div class="cardUseGraph">
+								<h3>График изменения ежемесячного платежа по потребительским кредитам</h3>
+							<ul class="blueTabs">
+								<li class="active" data-cardUseGraph="lineChartСonsumer_loansMonthlyPaymentMonth">1 месяц</li>
+								<li data-cardUseGraph="lineChartСonsumer_loansMonthlyPayment3Month">3 месяца</li>
+								<li data-cardUseGraph="lineChartСonsumer_loansMonthlyPayment6Month">6 месяцев</li>
+								<li data-cardUseGraph="lineChartСonsumer_loansMonthlyPaymentYear">Год</li>
+								<li data-cardUseGraph="lineChartСonsumer_loansMonthlyPaymentAllTime">Весь период</li>
+							</ul>
+							
+								<div class="charts--container" data-cardUseGraph="lineChartСonsumer_loansMonthlyPaymentMonth">
+								    <div class="chart">
+								      <div id="lineChartСonsumer_loansMonthlyPaymentMonth">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+								<div class="charts--container" data-cardUseGraph="lineChartСonsumer_loansMonthlyPayment3Month">
+								    <div class="chart">
+								      <div id="lineChartСonsumer_loansMonthlyPayment3Month">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+								<div class="charts--container" data-cardUseGraph="lineChartСonsumer_loansMonthlyPayment6Month">
+								    <div class="chart">
+								      <div id="lineChartСonsumer_loansMonthlyPayment6Month">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+								<div class="charts--container" data-cardUseGraph="lineChartСonsumer_loansMonthlyPaymentYear">
+								    <div class="chart">
+								      <div id="lineChartСonsumer_loansMonthlyPaymentYear">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+								<div class="charts--container" data-cardUseGraph="lineChartСonsumer_loansMonthlyPaymentAllTime">
+								    <div class="chart">
+								      <div id="lineChartСonsumer_loansMonthlyPaymentAllTime">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+
+							</div>
+							<div class="grey-border"></div>
+							<div class="formCard clearfix"> 
+								<div style="margin-bottom:10px;">Мы нашли для вас предложение, основанное на вашей кредитной истории!</div>
+								<img src="img/card_img.png" alt="">
+								<aside>
+									<div>экономия</div>
+									<strong>3 200<span class="rur"> P<span></strong>
+									<div>в год</div>
+								</aside>
+								<figure>
+									<a href="" class="more big">Оформить карту</a>
+									<a href="" style="display:block">Больше предложений</a>
+								</figure>
+							</div>
+						</div>
+
+						<!--Просроченные платежи-->
+						<div class="credit-cards-tabs" data-credit-cards-tabs="late_payments">
+							<div class="late_payments_info">
+								<h3>Текущая общая просроченная задолженность</h3>
+								<span>4 4349<span class="rur"> P<span></span> 
+							</div>
+							<div class="late_payments_info">
+								<h3>Максимальная общая просроченная задолженность</h3>
+								<span>14 4349<span class="rur"> P<span></span> 
+							</div>
+							<div class="late_payments_info" style="width:170px;">
+								<h3>Общая просроченная задолженность,дней</h3>
+								<span>35</span> 
+							</div>
+							<div class="grey-border"></div>
+
+							<div class="number_of_delinquency">
+								<label for="" class="left">Количество просрочек</label>
+								<div id="consumerLoansLatePaymentsBarChart">
+									
+								</div>
+								<label for="">Периоды просрочки(дни)</label>
+								
+							</div>
+
+							<div class="grey-border"></div>
+							<div class="late_payments_table ">
+									<table class="striped-odd">
+										<tr>
+											<td>Карта</td>
+											<td>Текущая сумма просрочки</td>
+											<td>Кол-во дней</td>
+											<td>Макс. сумма просрочки</td>
+										</tr>
+										<tr>
+											<td><a href="">Сбербанк России</a></td>
+											<td>9 845<span class="rur"> P<span></td>
+											<td>3</td>
+											<td>9 845<span class="rur"> P<span></td>
+										</tr>
+										<tr>
+											<td><a href="">ТКС Банк</a></td>
+											<td>9 845<span class="rur"> P<span></td>
+											<td>3</td>
+											<td>9 845<span class="rur"> P<span></td>
+										</tr>
+										<tr>
+											<td><a href="">Citibank</a></td>
+											<td>9 845<span class="rur"> P<span></td>
+											<td>3</td>
+											<td>9 845<span class="rur"> P<span></td>
+										</tr>
+									</table>
+									<a href="" class="blue_button more"><span>Показать еще</span></a>
+							</div>
+							
+								
+							<div class="grey-border"></div>
+							<div class="formCard clearfix"> 
+								<div style="margin-bottom:10px;">Мы нашли для вас предложение, основанное на вашей кредитной истории!</div>
+								<img src="img/card_img.png" alt="">
+								<aside>
+									<div>экономия</div>
+									<strong>3 200<span class="rur"> P<span></strong>
+									<div>в год</div>
+								</aside>
+								<figure>
+									<a href="" class="more big">Оформить карту</a>
+									<a href="" style="display:block">Больше предложений</a>
+								</figure>
+							</div>
+						</div>
+
+						<!--Процентная ставка-->
+						<div class="credit-cards-tabs" data-credit-cards-tabs="interest_rate">
+							<div class="card_options">
+								<h3>Общая процентная ставка</h3>
+								<span>29%</span> 
+							</div>
+							<div class="grey-border"></div>
+							<div class="card_chart">
+								<div class="card_chart_table interest_rate width_100">
+									<table class="basic_table striped-odd" style="border-bottom: 2px solid #D7D7D7;border-right: 2px solid #D7D7D7;">
+										<tr>
+											<td></td>
+											<td>Банк</td>
+											<td>Дата обновления</td>
+											<td>Процентная ставка</td>
+										</tr>
+										<tr class="data-donut" data-donut="0">
+											<td class="box-4"></td>
+											<td><a href="">City Diamond</a></td>
+											<td>13.04.13</td>
+											<td><span></span><div class="interest_rate"><figure style="width:55%;"></figure></div></td>
+										</tr>
+										<tr class="data-donut" data-donut="1">
+											<td class="box-6"></td>
+											<td><a href="">City Diamond</a></td>
+											<td>13.04.13</td>
+											<td><span></span><div class="interest_rate"><figure style="width:40%;"></figure></div></td>
+										</tr>
+										<tr class="data-donut" data-donut="2">
+											<td class="box-2"></td>
+											<td><a href="">City Diamond</a></td>
+											<td>13.04.13</td>
+											<td><span></span><div class="interest_rate"><figure style="width:33%;"></figure></div></td>
+										</tr>
+									</table>
+									
+								</div>
+							</div>
+							<div class="grey-border"></div>
+							<div class="cardUseGraph">
+								<h3>График изменения процентной ставки по картам</h3>
+							<ul class="blueTabs">
+								<li class="active" data-cardUseGraph="lineChartСonsumer_loansInterestRateMonth">1 месяц</li>
+								<li data-cardUseGraph="lineChartСonsumer_loansInterestRate3Month">3 месяца</li>
+								<li data-cardUseGraph="lineChartСonsumer_loansInterestRate6Month">6 месяцев</li>
+								<li data-cardUseGraph="lineChartСonsumer_loansInterestRateYear">Год</li>
+								<li data-cardUseGraph="lineChartСonsumer_loansInterestRateAllTime">Весь период</li>
+							</ul>
+							
+								<div class="charts--container" data-cardUseGraph="lineChartСonsumer_loansInterestRateMonth">
+								    <div class="chart">
+								      <div id="lineChartСonsumer_loansInterestRateMonth">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+								<div class="charts--container" data-cardUseGraph="lineChartСonsumer_loansInterestRate3Month">
+								    <div class="chart">
+								      <div id="lineChartСonsumer_loansInterestRate3Month">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+								<div class="charts--container" data-cardUseGraph="lineChartСonsumer_loansInterestRate6Month">
+								    <div class="chart">
+								      <div id="lineChartСonsumer_loansInterestRate6Month">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+								<div class="charts--container" data-cardUseGraph="lineChartСonsumer_loansInterestRateYear">
+								    <div class="chart">
+								      <div id="lineChartСonsumer_loansInterestRateYear">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+								<div class="charts--container" data-cardUseGraph="lineChartСonsumer_loansInterestRateAllTime">
+								    <div class="chart">
+								      <div id="lineChartСonsumer_loansInterestRateAllTime">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+								
+
+							</div>
+							<div class="grey-border"></div>
+							<div class="formCard clearfix"> 
+								<div style="margin-bottom:10px;">Мы нашли для вас предложение, основанное на вашей кредитной истории!</div>
+								<img src="img/card_img.png" alt="">
+								<aside>
+									<div>экономия</div>
+									<strong>3 200<span class="rur"> P<span></strong>
+									<div>в год</div>
+								</aside>
+								<figure>
+									<a href="" class="more big">Оформить карту</a>
+									<a href="" style="display:block">Больше предложений</a>
+								</figure>
+							</div>
+						</div>
+
+						
+						<!--Сроки-->
+						<div class="credit-cards-tabs" data-credit-cards-tabs="time">
+							<div class="card_options">
+								<h3>Общая срок потребительских кредитов</h3>
+								<span>3 года, 4 месяца</span> 
+							</div>
+							<div class="grey-border"></div>
+							<div class="card_chart">
+								<div class="card_chart_table interest_rate width_100">
+									<table class="basic_table striped-odd" style="border-bottom: 2px solid #D7D7D7;border-right: 2px solid #D7D7D7;">
+										<tr>
+											<td></td>
+											<td>Банк</td>
+											<td>Дата обновления</td>
+											<td>Срок кредита</td>
+										</tr>
+										<tr class="data-donut" data-donut="0">
+											<td class="box-4"></td>
+											<td><a href="">City Diamond</a></td>
+											<td>13.04.13</td>
+											<td><span></span><div class="interest_rate"><figure style="width:33%;"></figure></div></td>
+										</tr>
+										<tr class="data-donut" data-donut="1">
+											<td class="box-6"></td>
+											<td><a href="">City Diamond</a></td>
+											<td>13.04.13</td>
+											<td><span></span><div class="interest_rate"><figure style="width:22%;"></figure></div></td>
+										</tr>
+										<tr class="data-donut" data-donut="2">
+											<td class="box-2"></td>
+											<td><a href="">City Diamond</a></td>
+											<td>13.04.13</td>
+											<td><span></span><div class="interest_rate"><figure style="width:44%;"></figure></div></td>
+										</tr>
+									</table>
+									
+								</div>
+							</div>
+							<div class="grey-border"></div>
+							<div class="cardUseGraph">
+								<h3>График изменения сроков по потребительским кредитам</h3>
+							<ul class="blueTabs">
+								<li class="active" data-cardUseGraph="lineChartСonsumer_loansTimeMonth">1 месяц</li>
+								<li data-cardUseGraph="lineChartСonsumer_loansTime3Month">3 месяца</li>
+								<li data-cardUseGraph="lineChartСonsumer_loansTime6Month">6 месяцев</li>
+								<li data-cardUseGraph="lineChartСonsumer_loansTimeYear">Год</li>
+								<li data-cardUseGraph="lineChartСonsumer_loansTimeAllTime">Весь период</li>
+							</ul>
+							
+								<div class="charts--container" data-cardUseGraph="lineChartСonsumer_loansTimeMonth">
+								    <div class="chart">
+								      <div id="lineChartСonsumer_loansTimeMonth">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+								<div class="charts--container" data-cardUseGraph="lineChartСonsumer_loansTime3Month">
+								    <div class="chart">
+								      <div id="lineChartСonsumer_loansTime3Month">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+								<div class="charts--container" data-cardUseGraph="lineChartСonsumer_loansTime6Month">
+								    <div class="chart">
+								      <div id="lineChartСonsumer_loansTime6Month">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+								<div class="charts--container" data-cardUseGraph="lineChartСonsumer_loansTimeYear">
+								    <div class="chart">
+								      <div id="lineChartСonsumer_loansTimeYear">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+								<div class="charts--container" data-cardUseGraph="lineChartСonsumer_loansTimeAllTime">
+								    <div class="chart">
+								      <div id="lineChartСonsumer_loansTimeAllTime">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+								
+
+							</div>
+							<div class="grey-border"></div>
+							<div class="formCard clearfix"> 
+								<div style="margin-bottom:10px;">Мы нашли для вас предложение, основанное на вашей кредитной истории!</div>
+								<img src="img/card_img.png" alt="">
+								<aside>
+									<div>экономия</div>
+									<strong>3 200<span class="rur"> P<span></strong>
+									<div>в год</div>
+								</aside>
+								<figure>
+									<a href="" class="more big">Оформить карту</a>
+									<a href="" style="display:block">Больше предложений</a>
+								</figure>
+							</div>
+						</div>
+
+					
+					</div>
+					<!--Потребительские кредиты-->
+
+					<!--Кредитные карты-->
+					<div id="credit_cards" class="credits_tabs" data-tabs="credit_cards">
+						<h1>
+							Кредитные карты
+						</h1>
+						<table id="general-reports-table" class="general-reports-table">
+							<tr>
+								<td class="active" style="border-radius: 5px 0px 0px 5px;"><img src="img/rating1.png"></td>
+								<td><img src="img/rating2.png"></td>
+								<td style="border-right:none;border-radius: 0px 5px 5px 0px;"><img src="img/rating3.png"></td>
+							</tr>
+						</table>
+						<div class="internal_tabs credit_cards_tabs">
+							<ul class="blueTabs">
+								<li class="active" data-credit-cards-tabs="balance">Баланс</li>
+								<li data-credit-cards-tabs="debt">Задолженность</li>
+								<li data-credit-cards-tabs="limit">Лимит</li>
+								<li data-credit-cards-tabs="monthly_payment">Ежемесячный платеж</li>
+								<li data-credit-cards-tabs="late_payments">Просроченные платежи</li>
+								<li data-credit-cards-tabs="interest_rate">Процентная ставка</li>
+							</ul>
+						</div>
+
+
+						<div class="one_potr_credit_card" data-one-potr-credit-card="City_Diamond">
+								<div class="data_updates">
+									<label for="">Последняя дата обновления</label>
+									<figure><img src="img/updates.png" alt="">13.04.13</figure>
+								</div>
+						
+								<div class="grey-border"></div>
+								<div class="current_balance clearfix width_100">
+									<figure  class="bank_img"></figure>
+									<aside>
+										<h3>Citybank<br>cashback</h3>
+										<ul>
+											<li>Годовая процентная ставка: 19,9%</li>
+											<li><a href="">Редактировать</a></li>
+										</ul>
+									</aside>
+									<div>
+										<label for="">Текущий баланс</label>
+										<h3>124 000<span class="rur"> P<span></h3>
+									</div>
+								</div>
+								<div class="grey-border"></div>
+								<div class="details clearfix width_100">
+									<div class="list">
+										<div class="info">
+											<h3>Детальная информация</h3>
+											<ul>
+												<li>Кредитный лимит: <span>214 000<span class="rur"> P<span></span></li>
+												<li>Доступный остаток: <span>124 000<span class="rur"> P<span></span></li>
+												<li>Текущая задолженность: <span>90 000<span class="rur"> P<span></span></li>
+											</ul>
+										</div>
+										<div class="grey-border"></div>
+										<div class="payments">
+											<h3>Минимальный платеж</h3>
+											<ul>
+												<li>Непогашенная сумма: <span>12 000<span class="rur"> P<span></span></li>
+												<li>Оплатить до: <span>11.10.13</span></li>
+											</ul>
+										</div>
+										<div class="grey-border"></div>
+										<div class="period">
+											<h3>За период с 17.09.13</h3>
+											<ul>
+												<li>Cумма поступлений: <span>54 000<span class="rur"> P<span></span></li>
+												<li>Сумма расходов: <span>32 200</span></li>
+											</ul>
+										</div>
+									</div>
+
+									<div class="right">
+										<table class="striped-odd float_none">
+												<tbody>
+												<tr>
+													<td>Все карты</td>
+													<td></td>
+												</tr>
+												<tr>
+													<td><a href="">City Diamond <br>Preferred Card</a></td>
+													<td>12 340<span class="rur"> P<span></td>
+												</tr>
+												<tr>
+													<td><a href="">US Bank</a></td>
+													<td>50 000<span class="rur"> P<span></td>
+												</tr>
+												<tr>
+													<td><a href="">CHASE</a></td>
+													<td>50 000<span class="rur"> P<span></td>
+												</tr>
+												<tr>
+													<td><a href="">GECRB/CHEVRO</a></td>
+													<td>50 000<span class="rur"> P<span></td>
+												</tr>
+												<tr>
+													<td><a href="">CAP ONE</a></td>
+													<td>50 000<span class="rur"> P<span></td>
+												</tr>
+												<tr>
+													<td><a href="">CAP ONE</a></td>
+													<td>50 000<span class="rur"> P<span></td>
+												</tr>
+
+												</tbody>
+
+										</table>
+										<a href="" class="blue_button more"><span>Показать еще</span></a>
+									</div>
+
+								</div>
+								<div class="grey-border"></div>
+								<div class="credit_report_data">
+									<h3>Данные из кредитного отчета</h3>
+									<div class="list clearfix width_100">
+										<div class="info">
+											<ul>
+												<li>Банк: <span>Citibank</span></li>
+												<li>Дата открытия: <span>12.08.13</span></li>
+												<li>Текущая задолженность: <span>11/16</span></li>
+											</ul>
+										</div>
+										<div class="payments">
+											<ul>
+												<li>Баланс: <span>124 000<span class="rur"> P<span></span></li>
+												<li>Процент использования: <span>98,7%</span></li>
+												<li>Кредитный лимит: <span>214 000<span class="rur"> P<span></span></li>
+												<li>Пропущенные платежи: <span>0</span></li>
+											</ul>
+										</div>
+									</div>
+									<div class="verification clearfix width_100 box-sizing">
+										<div class="left">
+											<b>Являются ли данные из отчета верными?</b><br>
+											<span>Получите полный кредитный отчет от бюро Equifax</span>
+										</div>
+										<a href="" class="button right">Получить отчет</a>
+									</div>
+								</div>
+								<div class="grey-border"></div>
+								<div class="internal_tabs credit_cards_tabs">
+									<ul class="blueTabs">
+										<li class="active" data-credit-cards-tabs="operations">Операции</li>
+										<li data-credit-cards-tabs="recomendations">Рекомендации</li>
+										<li data-credit-cards-tabs="changes_history">История изменений</li>
+										<li data-credit-cards-tabs="late_payments">Просроченные платежи</li>
+									</ul>
+								</div>
+
+
+								<div class="credit-cards-tabs operations" data-credit-cards-tabs="operations">
+									<div id="my_expenses">
+										<div class="select">
+											<label for="">Операции по:</label>
+											<a href="#" class="slct">Все категории</a>
+											<ul class="drop" style="display: none;">
+												<li>Все категории</li>
+												<li>Все категории1</li>
+											</ul>
+											<input type="hidden" name="occupation">
+										</div>
+										<div class="select">
+											<label for="">Период:</label>
+											<a href="#" class="slct">Последние 7 дней</a>
+											<ul class="drop" style="display: none;">
+												<li>Последние 7 дней</li>
+											</ul>
+											<input type="hidden" name="occupation">
+										</div>
+									</div>
+
+									<div class="grey-border"></div>
+									<div class="late_payments_info">
+										<h3>Всего операций</h3>
+										<span>15</span>
+									</div>
+									<div class="late_payments_info">
+										<h3>Всего потрачено</h3>
+										<span>65 389<span class="rur"> P<span></span> 
+										</span></span>
+									</div>
+									<div class="grey-border"></div>
+										<div class="credit_activity_report">
+											<table class="striped-odd ">
+												<tbody>
+												<tr>
+													<td>Дата</td>
+													<td>Описание</td>
+													<td>Категория</td>
+													<td>Сумма</td>
+												</tr>
+												<tr>
+													<td>20.11.13</td>
+													<td>Членский взнос 10.09.12-10.10.13</td>
+													<td>Обслуживание/тарифы</td>
+													<td>-1 500<span class="rur"> P<span></span></span></td>
+												</tr>
+												<tr>
+													<td>20.11.13</td>
+													<td>Членский взнос 10.09.12-10.10.13</td>
+													<td>Обслуживание/тарифы</td>
+													<td>-1 500<span class="rur"> P<span></span></span></td>
+												</tr>
+												<tr>
+													<td>20.11.13</td>
+													<td>Членский взнос 10.09.12-10.10.13</td>
+													<td>Обслуживание/тарифы</td>
+													<td>-1 500<span class="rur"> P<span></span></span></td>
+												</tr>
+												<tr>
+													<td>20.11.13</td>
+													<td>Членский взнос 10.09.12-10.10.13</td>
+													<td>Обслуживание/тарифы</td>
+													<td>-1 500<span class="rur"> P<span></span></span></td>
+												</tr>
+												<tr>
+													<td>20.11.13</td>
+													<td>Членский взнос 10.09.12-10.10.13</td>
+													<td>Обслуживание/тарифы</td>
+													<td>-1 500<span class="rur"> P<span></span></span></td>
+												</tr>
+												<tr>
+													<td>20.11.13</td>
+													<td>Членский взнос 10.09.12-10.10.13</td>
+													<td>Обслуживание/тарифы</td>
+													<td>-1 500<span class="rur"> P<span></span></span></td>
+												</tr>
+												<tr>
+													<td>20.11.13</td>
+													<td>Членский взнос 10.09.12-10.10.13</td>
+													<td>Обслуживание/тарифы</td>
+													<td>-1 500<span class="rur"> P<span></span></span></td>
+												</tr>
+												<tr>
+													<td>20.11.13</td>
+													<td>Членский взнос 10.09.12-10.10.13</td>
+													<td>Обслуживание/тарифы</td>
+													<td>-1 500<span class="rur"> P<span></span></span></td>
+												</tr>
+
+											</tbody></table>
+											<div class="pagination">
+												<label>Показывать по:</label>
+												<div style="margin-left:6px;">
+													<span class="active"><i>10</i></span>
+													<span><i>25</i></span>
+													<span><i>50</i></span>
+												</div>
+												<div class="pagination_number">
+													<span class="active"><i>1</i></span>
+													<span><i>2</i></span>
+													<span><i>3</i></span>
+													<span><i>4</i></span>
+													<span><i>5</i></span>
+													<span><i>6</i></span>
+													<span><i>7</i></span>
+												</div>
+												<div class="table_buttons">
+													<img src="img/left_arrow.png" alt="" class="opacity_06">
+													<img src="img/right_arrow.png" alt="">
+												</div>
+											</div>
+										</div>
+								</div>
+								<div class="credit-cards-tabs" data-credit-cards-tabs="recomendations">
+									<p>Здесь вы найдете рекомендованные для вас предложения, основанные на данных вашего профиля</p>
+									<div class="repayment_credit_box cr_card clearfix width_100">
+										<p>Погасите свой кредит с помощью потребительского кредита от «ТКС Банка» и сэкономте до 25 000<span class="rur"> P<span> в течение 3-х лет</p>
+										<div class="bank_logo">
+											<div><a href="">Кредитная карта ТКС Платинум</a></div>
+											<img src="img/card_img_s.png" alt="">
+											<img src="img/repayment_credit_arrow.png" alt="" style='margin: 6px 8px 13px 9px'>
+											<img src="img/card_img_s.png" alt="">
+											
+										</div>
+										<aside>
+											<div>экономия</div>
+											<strong>3 200<span class="rur"> P<span></span></span></strong>
+											<div>в год</div>
+										</aside>
+
+										<figure class="right">
+											<a href="" class="button">Оформить кредит</a>
+											<a href="">Больше предложений</a>
+										</figure>
+									</div>
+									<div class="offer_details clearfix width_100">
+										<h3>Детали предложения</h3>
+										<figure class="general-stats-box">
+											<div>C</div>
+											<figure class="stats-box box-1"></figure>
+											<figure class="stats-box box-2"></figure>
+											<figure class="stats-box box-3 active"></figure>
+											<figure class="stats-box box-4"></figure>
+											<figure class="stats-box box-5"></figure>	
+										</figure>
+										<div class="card_options">
+											<b>Процент за погашение</b>
+											<span>3%</span> 
+											<label>До марта 2014</label>
+										</div>
+										<div class="card_options">
+											<b>Годовая процентная ставка</b>
+											<span>12,9 - 18,5%*</span> 
+											<label>Варьируется</label>
+										</div>
+
+									</div>
+									<table class="results_table striped-odd width_100">
+												<tbody><tr>
+													<td>Детали</td>
+													<td>Новый кредит</td>
+													<td>Текущий кредит</td>
+													<td>Экономия</td>
+												</tr>
+												<tr>
+													<td>Процент за погашение</td>
+													<td class="red">3%</td>
+													<td>0%</td>
+													<td>---</td>
+												</tr>
+												<tr>
+													<td>Проценты за 1-й год</td>
+													<td>2 506</td>
+													<td class="red">8 430</td>
+													<td class="green">5924</td>
+												</tr>
+												<tr>
+													<td>Проценты за 2-й год</td>
+													<td>2 506</td>
+													<td class="red">8 430</td>
+													<td class="green">5924</td>
+												</tr>
+												<tr>
+													<td>Проценты за 3-й год</td>
+													<td>2 506</td>
+													<td class="red">8 430</td>
+													<td class="green">5924</td>
+												</tr>
+												<tr class="bold">
+													<td>Итог</td>
+													<td>2 506</td>
+													<td class="red">8 430</td>
+													<td class="green">5924</td>
+												</tr>
+											</tbody>
+									</table>
+
+									<small>* Приведенные расчеты предпологают, что вы погасили кредит досрочно с помощью нового и выплачивали его в течении 3-х лет</small>
+								</div>
+								<div class="credit-cards-tabs" data-credit-cards-tabs="changes_history">
+							
+									<div class="cardUseGraph">
+									<ul class="blueTabs">
+										<li class="active" data-cardUseGraph="lineChartCredit_cardsChangesHistoryMonth">1 месяц</li>
+										<li data-cardUseGraph="lineChartCredit_cardsChangesHistory3Month">3 месяца</li>
+										<li data-cardUseGraph="lineChartCredit_cardsChangesHistory6Month">6 месяцев</li>
+										<li data-cardUseGraph="lineChartCredit_cardsChangesHistoryYear">Год</li>
+										<li data-cardUseGraph="lineChartCredit_cardsChangesHistoryAllTime">Весь период</li>
+									</ul>
+								
+									<div class="charts--container" data-cardUseGraph="lineChartCredit_cardsChangesHistoryMonth">
+									    <div class="chart">
+									      <div id="lineChartCredit_cardsChangesHistoryMonth">
+									        <svg class="lineChart--svg">
+									          <defs>
+									            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+									              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+									              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+									            </linearGradient>
+									          </defs>
+									        </svg>
+									      </div>
+									    </div>
+									</div>
+									<div class="charts--container" data-cardUseGraph="lineChartCredit_cardsChangesHistory3Month">
+									    <div class="chart">
+									      <div id="lineChartCredit_cardsChangesHistory3Month">
+									        <svg class="lineChart--svg">
+									          <defs>
+									            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+									              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+									              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+									            </linearGradient>
+									          </defs>
+									        </svg>
+									      </div>
+									    </div>
+									</div>
+									<div class="charts--container" data-cardUseGraph="lineChartCredit_cardsChangesHistory6Month">
+									    <div class="chart">
+									      <div id="lineChartCredit_cardsChangesHistory6Month">
+									        <svg class="lineChart--svg">
+									          <defs>
+									            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+									              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+									              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+									            </linearGradient>
+									          </defs>
+									        </svg>
+									      </div>
+									    </div>
+									</div>
+									<div class="charts--container" data-cardUseGraph="lineChartCredit_cardsChangesHistoryYear">
+									    <div class="chart">
+									      <div id="lineChartCredit_cardsChangesHistoryYear">
+									        <svg class="lineChart--svg">
+									          <defs>
+									            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+									              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+									              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+									            </linearGradient>
+									          </defs>
+									        </svg>
+									      </div>
+									    </div>
+									</div>
+									<div class="charts--container" data-cardUseGraph="lineChartCredit_cardsChangesHistoryAllTime">
+									    <div class="chart">
+									      <div id="lineChartCredit_cardsChangesHistoryAllTime">
+									        <svg class="lineChart--svg">
+									          <defs>
+									            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+									              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+									              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+									            </linearGradient>
+									          </defs>
+									        </svg>
+									      </div>
+									    </div>
+									</div>
+
+
+									</div>
+								</div>
+								<div class="credit-cards-tabs" data-credit-cards-tabs="late_payments">
+										<div class="late_payments_info">
+											<h3>Текущая просроченная задолженность</h3>
+											<span>4 4349<span class="rur"> P<span></span> 
+											</span></span>
+										</div>
+
+										<div class="late_payments_info">
+											<h3>Максимальная просроченная задолженность</h3>
+											<span>14 4349<span class="rur"> P<span></span> 
+											</span></span>
+										</div>
+
+										<div class="late_payments_info" style="width:170px;">
+											<h3>Текущая просроченная задолженность,дней</h3>
+											<span>35</span> 
+										</div>
+										<div class="grey-border"></div>
+										<div class="number_of_delinquency">
+											<label for="" class="left">Количество просрочек</label>
+											<div id="creditCardsLatePaymentsBarChart">
+												
+											</div>
+											<label for="">Периоды просрочки(дни)</label>
+											
+										</div>
+
+								</div>
+
+						</div>
+
+						<!--Баланс-->
+						<div class="credit-cards-tabs" data-credit-cards-tabs="balance">
+							<div class="card_options">
+								<h3>Общий баланс по картам</h3>
+								<span>589 340<span class="rur"> P<span></span> 
+							</div>
+							<div class="grey-border"></div>
+							<div class="card_chart">
+								<div class="card_chart_figure" id="donut_balance">
+
+								</div>
+								<div class="card_chart_table">
+									<table class="basic_table striped-odd">
+										<tr>
+											<td></td>
+											<td>Карта</td>
+											<td>Баланс</td>
+											<td>Дата обновления</td>
+										</tr>
+										<tr class="data-donut" data-donut="0">
+											<td class="box-4"></td>
+											<td><a href="" data-one-potr-credit-card="City_Diamond" class="one_credit_link">City Diamond</a></td>
+											<td>12 340<span class="rur"> P<span></td>
+											<td>13.04.13</td>
+										</tr>
+										<tr class="data-donut" data-donut="1">
+											<td class="box-6"></td>
+											<td><a href="" data-one-potr-credit-card="City_Diamond" class="one_credit_link">City Diamond</a></td>
+											<td>12 340<span class="rur"> P<span></td>
+											<td>13.04.13</td>
+										</tr>
+										<tr class="data-donut" data-donut="2">
+											<td class="box-2"></td>
+											<td><a href="" data-one-potr-credit-card="City_Diamond" class="one_credit_link">City Diamond</a></td>
+											<td>12 340<span class="rur"> P<span></td>
+											<td>13.04.13</td>
+										</tr>
+										<tr class="data-donut" data-donut="3">
+											<td class="box-7"></td>
+											<td><a href="" data-one-potr-credit-card="City_Diamond" class="one_credit_link">City Diamond</a></td>
+											<td>12 340<span class="rur"> P<span></td>
+											<td>13.04.13</td>
+										</tr>
+										<tr class="data-donut" data-donut="4">
+											<td class="box-8"></td>
+											<td><a href="" data-one-potr-credit-card="City_Diamond" class="one_credit_link">City Diamond</a></td>
+											<td>12 340<span class="rur"> P<span></td>
+											<td>13.04.13</td>
+										</tr>
+									</table>
+									<a href="" class="blue_button more"><span>Показать еще</span></a>
+								</div>
+							</div>
+							<div class="grey-border"></div>
+							<div class="cardUseGraph">
+								<h3>График баланса по картам</h3>
+							<ul class="blueTabs">
+								<li class="active" data-cardUseGraph="lineChartBalanceMonth">1 месяц</li>
+								<li data-cardUseGraph="lineChartBalance3Month">3 месяца</li>
+								<li data-cardUseGraph="lineChartBalance6Month">6 месяцев</li>
+								<li data-cardUseGraph="lineChartBalanceYear">Год</li>
+								<li data-cardUseGraph="lineChartBalanceAllTime">Весь период</li>
+							</ul>
+							
+								<div class="charts--container" data-cardUseGraph="lineChartBalanceMonth">
+								    <div class="chart">
+								      <div id="lineChartBalanceMonth">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+								<div class="charts--container" data-cardUseGraph="lineChartBalance3Month">
+								    <div class="chart">
+								      <div id="lineChartBalance3Month">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+								<div class="charts--container" data-cardUseGraph="lineChartBalance6Month">
+								    <div class="chart">
+								      <div id="lineChartBalance6Month">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+								<div class="charts--container" data-cardUseGraph="lineChartBalanceYear">
+								    <div class="chart">
+								      <div id="lineChartBalanceYear">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+								<div class="charts--container" data-cardUseGraph="lineChartBalanceAllTime">
+								    <div class="chart">
+								      <div id="lineChartBalanceAllTime">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+
+
+							</div>
+							<div class="grey-border"></div>
+							<div class="formCard clearfix"> 
+								<div style="margin-bottom:10px;">Мы нашли для вас предложение, основанное на вашей кредитной истории!</div>
+								<img src="img/card_img.png" alt="">
+								<aside>
+									<div>экономия</div>
+									<strong>3 200<span class="rur"> P<span></strong>
+									<div>в год</div>
+								</aside>
+								<figure>
+									<a href="" class="more big">Оформить карту</a>
+									<a href="" style="display:block">Больше предложений</a>
+								</figure>
+							</div>
+						</div>
+						<!--Задолженность-->
+						<div class="credit-cards-tabs" data-credit-cards-tabs="debt">
+							<div class="card_options">
+								<h3>Общая задолженность по картам</h3>
+								<span>589 340<span class="rur"> P<span></span> 
+							</div>
+							<div class="grey-border"></div>
+							<div class="card_chart">
+								<div class="card_chart_figure" id="donut_debt">
+
+								</div>
+								<div class="card_chart_table">
+									<table class="basic_table striped-odd">
+										<tr>
+											<td></td>
+											<td>Карта</td>
+											<td>Задолженность</td>
+											<td>Дата обновления</td>
+										</tr>
+										<tr class="data-donut" data-donut="0">
+											<td class="box-4"></td>
+											<td><a href="">City Diamond</a></td>
+											<td>12 340<span class="rur"> P<span></td>
+											<td>13.04.13</td>
+										</tr>
+										<tr class="data-donut" data-donut="1">
+											<td class="box-6"></td>
+											<td><a href="">City Diamond</a></td>
+											<td>12 340<span class="rur"> P<span></td>
+											<td>13.04.13</td>
+										</tr>
+										<tr class="data-donut" data-donut="2">
+											<td class="box-2"></td>
+											<td><a href="">City Diamond</a></td>
+											<td>12 340<span class="rur"> P<span></td>
+											<td>13.04.13</td>
+										</tr>
+										<tr class="data-donut" data-donut="3">
+											<td class="box-7"></td>
+											<td><a href="">City Diamond</a></td>
+											<td>12 340<span class="rur"> P<span></td>
+											<td>13.04.13</td>
+										</tr>
+										<tr class="data-donut" data-donut="4">
+											<td class="box-8"></td>
+											<td><a href="">City Diamond</a></td>
+											<td>12 340<span class="rur"> P<span></td>
+											<td>13.04.13</td>
+										</tr>
+									</table>
+									<a href="" class="blue_button more"><span>Показать еще</span></a>
+								</div>
+							</div>
+							<div class="grey-border"></div>
+							<div class="cardUseGraph">
+								<h3>График задолженности по картам</h3>
+							<ul class="blueTabs">
+								<li class="active" data-cardUseGraph="lineChartDebtMonth">1 месяц</li>
+								<li data-cardUseGraph="lineChartDebt3Month">3 месяца</li>
+								<li data-cardUseGraph="lineChartDebt6Month">6 месяцев</li>
+								<li data-cardUseGraph="lineChartDebtYear">Год</li>
+								<li data-cardUseGraph="lineChartDebtAllTime">Весь период</li>
+							</ul>
+							
+								<div class="charts--container" data-cardUseGraph="lineChartDebtMonth">
+								    <div class="chart">
+								      <div id="lineChartDebtMonth">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+								<div class="charts--container" data-cardUseGraph="lineChartDebt3Month">
+								    <div class="chart">
+								      <div id="lineChartDebt3Month">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+								<div class="charts--container" data-cardUseGraph="lineChartDebt6Month">
+								    <div class="chart">
+								      <div id="lineChartDebt6Month">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+								<div class="charts--container" data-cardUseGraph="lineChartDebtYear">
+								    <div class="chart">
+								      <div id="lineChartDebtYear">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+								<div class="charts--container" data-cardUseGraph="lineChartDebtAllTime">
+								    <div class="chart">
+								      <div id="lineChartDebtAllTime">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+
+							</div>
+							<div class="grey-border"></div>
+							<div class="formCard clearfix"> 
+								<div style="margin-bottom:10px;">Мы нашли для вас предложение, основанное на вашей кредитной истории!</div>
+								<img src="img/card_img.png" alt="">
+								<aside>
+									<div>экономия</div>
+									<strong>3 200<span class="rur"> P<span></strong>
+									<div>в год</div>
+								</aside>
+								<figure>
+									<a href="" class="more big">Оформить карту</a>
+									<a href="" style="display:block">Больше предложений</a>
+								</figure>
+							</div>
+						</div>
+						<!--Лимит-->
+						<div class="credit-cards-tabs" data-credit-cards-tabs="limit">
+							<div class="card_options">
+								<h3>Общий доступный лимит по картам</h3>
+								<span>589 340<span class="rur"> P<span></span> 
+							</div>
+							<div class="grey-border"></div>
+							<div class="card_chart">
+								<div class="card_chart_figure" id="donut_limit">
+									
+								</div>
+								<div class="card_chart_table">
+									<table class="basic_table striped-odd">
+										<tr>
+											<td></td>
+											<td>Карта</td>
+											<td>Лимит</td>
+											<td>Дата обновления</td>
+										</tr>
+										<tr class="data-donut" data-donut="0">
+											<td class="box-4"></td>
+											<td><a href="">City Diamond</a></td>
+											<td>12 340<span class="rur"> P<span></td>
+											<td>13.04.13</td>
+										</tr>
+										<tr class="data-donut" data-donut="1">
+											<td class="box-6"></td>
+											<td><a href="">City Diamond</a></td>
+											<td>12 340<span class="rur"> P<span></td>
+											<td>13.04.13</td>
+										</tr>
+										<tr class="data-donut" data-donut="2">
+											<td class="box-2"></td>
+											<td><a href="">City Diamond</a></td>
+											<td>12 340<span class="rur"> P<span></td>
+											<td>13.04.13</td>
+										</tr>
+										<tr class="data-donut" data-donut="3">
+											<td class="box-7"></td>
+											<td><a href="">City Diamond</a></td>
+											<td>12 340<span class="rur"> P<span></td>
+											<td>13.04.13</td>
+										</tr>
+										<tr class="data-donut" data-donut="4">
+											<td class="box-8"></td>
+											<td><a href="">City Diamond</a></td>
+											<td>12 340<span class="rur"> P<span></td>
+											<td>13.04.13</td>
+										</tr>
+									</table>
+									<a href="" class="blue_button more"><span>Показать еще</span></a>
+								</div>
+							</div>
+							<div class="grey-border"></div>
+							<div class="cardUseGraph">
+								<h3>График изменения лимита по картам</h3>
+							<ul class="blueTabs">
+								<li class="active" data-cardUseGraph="lineChartLimitMonth">1 месяц</li>
+								<li data-cardUseGraph="lineChartLimit3Month">3 месяца</li>
+								<li data-cardUseGraph="lineChartLimit6Month">6 месяцев</li>
+								<li data-cardUseGraph="lineChartLimitYear">Год</li>
+								<li data-cardUseGraph="lineChartLimitAllTime">Весь период</li>
+							</ul>
+							
+								<div class="charts--container" data-cardUseGraph="lineChartLimitMonth">
+								    <div class="chart">
+								      <div id="lineChartLimitMonth">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+								<div class="charts--container" data-cardUseGraph="lineChartLimit3Month">
+								    <div class="chart">
+								      <div id="lineChartLimit3Month">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+								<div class="charts--container" data-cardUseGraph="lineChartLimit6Month">
+								    <div class="chart">
+								      <div id="lineChartLimit6Month">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+								<div class="charts--container" data-cardUseGraph="lineChartLimitYear">
+								    <div class="chart">
+								      <div id="lineChartLimitYear">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+								<div class="charts--container" data-cardUseGraph="lineChartLimitAllTime">
+								    <div class="chart">
+								      <div id="lineChartLimitAllTime">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+
+							</div>
+							<div class="grey-border"></div>
+							<div class="formCard clearfix"> 
+								<div style="margin-bottom:10px;">Мы нашли для вас предложение, основанное на вашей кредитной истории!</div>
+								<img src="img/card_img.png" alt="">
+								<aside>
+									<div>экономия</div>
+									<strong>3 200<span class="rur"> P<span></strong>
+									<div>в год</div>
+								</aside>
+								<figure>
+									<a href="" class="more big">Оформить карту</a>
+									<a href="" style="display:block">Больше предложений</a>
+								</figure>
+							</div>
+						</div>
+						<!--Ежемесячный платеж-->
+						<div class="credit-cards-tabs" data-credit-cards-tabs="monthly_payment">
+							<div class="card_options">
+								<h3>Общий ежемесячный платеж по картам</h3>
+								<span>589 340<span class="rur"> P<span></span> 
+							</div>
+							<div class="grey-border"></div>
+							<div class="card_chart">
+								<div class="card_chart_figure" id="donut_monthly_payment">
+									
+								</div>
+								<div class="card_chart_table">
+									<table class="basic_table striped-odd">
+										<tr>
+											<td></td>
+											<td>Карта</td>
+											<td>Платеж</td>
+											<td>Дата обновления</td>
+										</tr>
+										<tr class="data-donut" data-donut="0">
+											<td class="box-4"></td>
+											<td><a href="">City Diamond</a></td>
+											<td>12 340<span class="rur"> P<span></td>
+											<td>13.04.13</td>
+										</tr>
+										<tr class="data-donut" data-donut="1">
+											<td class="box-6"></td>
+											<td><a href="">City Diamond</a></td>
+											<td>12 340<span class="rur"> P<span></td>
+											<td>13.04.13</td>
+										</tr>
+										<tr class="data-donut" data-donut="3">
+											<td class="box-2"></td>
+											<td><a href="">City Diamond</a></td>
+											<td>12 340<span class="rur"> P<span></td>
+											<td>13.04.13</td>
+										</tr>
+										<tr class="data-donut" data-donut="4">
+											<td class="box-7"></td>
+											<td><a href="">City Diamond</a></td>
+											<td>12 340<span class="rur"> P<span></td>
+											<td>13.04.13</td>
+										</tr>
+										<tr class="data-donut" data-donut="5">
+											<td class="box-8"></td>
+											<td><a href="">City Diamond</a></td>
+											<td>12 340<span class="rur"> P<span></td>
+											<td>13.04.13</td>
+										</tr>
+									</table>
+									<a href="" class="blue_button more"><span>Показать еще</span></a>
+								</div>
+							</div>
+							<div class="grey-border"></div>
+							<div class="cardUseGraph">
+								<h3>График изменения ежемесячного платежа по картам</h3>
+							<ul class="blueTabs">
+								<li class="active" data-cardUseGraph="lineChartMonthlyPaymentMonth">1 месяц</li>
+								<li data-cardUseGraph="lineChartMonthlyPayment3Month">3 месяца</li>
+								<li data-cardUseGraph="lineChartMonthlyPayment6Month">6 месяцев</li>
+								<li data-cardUseGraph="lineChartMonthlyPaymentYear">Год</li>
+								<li data-cardUseGraph="lineChartMonthlyPaymentAllTime">Весь период</li>
+							</ul>
+							
+								<div class="charts--container" data-cardUseGraph="lineChartMonthlyPaymentMonth">
+								    <div class="chart">
+								      <div id="lineChartMonthlyPaymentMonth">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+								<div class="charts--container" data-cardUseGraph="lineChartMonthlyPayment3Month">
+								    <div class="chart">
+								      <div id="lineChartMonthlyPayment3Month">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+								<div class="charts--container" data-cardUseGraph="lineChartMonthlyPayment6Month">
+								    <div class="chart">
+								      <div id="lineChartMonthlyPayment6Month">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+								<div class="charts--container" data-cardUseGraph="lineChartMonthlyPaymentYear">
+								    <div class="chart">
+								      <div id="lineChartMonthlyPaymentYear">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+								<div class="charts--container" data-cardUseGraph="lineChartMonthlyPaymentAllTime">
+								    <div class="chart">
+								      <div id="lineChartMonthlyPaymentAllTime">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+
+							</div>
+							<div class="grey-border"></div>
+							<div class="formCard clearfix"> 
+								<div style="margin-bottom:10px;">Мы нашли для вас предложение, основанное на вашей кредитной истории!</div>
+								<img src="img/card_img.png" alt="">
+								<aside>
+									<div>экономия</div>
+									<strong>3 200<span class="rur"> P<span></strong>
+									<div>в год</div>
+								</aside>
+								<figure>
+									<a href="" class="more big">Оформить карту</a>
+									<a href="" style="display:block">Больше предложений</a>
+								</figure>
+							</div>
+						</div>
+
+						<!--Просроченные платежи-->
+						<div class="credit-cards-tabs" data-credit-cards-tabs="late_payments">
+							<div class="late_payments_info">
+								<h3>Текущая общая просроченная задолженность</h3>
+								<span>4 4349<span class="rur"> P<span></span> 
+							</div>
+							<div class="late_payments_info">
+								<h3>Максимальная общая просроченная задолженность</h3>
+								<span>14 4349<span class="rur"> P<span></span> 
+							</div>
+							<div class="late_payments_info" style="width:170px;">
+								<h3>Общая просроченная задолженность,дней</h3>
+								<span>35</span> 
+							</div>
+							<div class="grey-border"></div>
+
+							<div class="number_of_delinquency">
+								<label for="" class="left">Количество просрочек</label>
+								<div id="creditCardsBarChart">
+									
+								</div>
+								<label for="">Периоды просрочки(дни)</label>
+								
+							</div>
+
+							<div class="grey-border"></div>
+							<div class="late_payments_table ">
+									<table class="striped-odd">
+										<tr>
+											<td>Карта</td>
+											<td>Текущая сумма просрочки</td>
+											<td>Кол-во дней</td>
+											<td>Макс. сумма просрочки</td>
+										</tr>
+										<tr>
+											<td><a href="">City Diamond Preferred Card</a></td>
+											<td>9 845<span class="rur"> P<span></td>
+											<td>3</td>
+											<td>9 845<span class="rur"> P<span></td>
+										</tr>
+										<tr>
+											<td><a href="">City Diamond Preferred Card</a></td>
+											<td>9 845<span class="rur"> P<span></td>
+											<td>3</td>
+											<td>9 845<span class="rur"> P<span></td>
+										</tr>
+										<tr>
+											<td><a href="">City Diamond Preferred Card</a></td>
+											<td>9 845<span class="rur"> P<span></td>
+											<td>3</td>
+											<td>9 845<span class="rur"> P<span></td>
+										</tr>
+										<tr>
+											<td><a href="">City Diamond Preferred Card</a></td>
+											<td>9 845<span class="rur"> P<span></td>
+											<td>3</td>
+											<td>9 845<span class="rur"> P<span></td>
+										</tr>
+										<tr>
+											<td><a href="">City Diamond Preferred Card</a></td>
+											<td>9 845<span class="rur"> P<span></td>
+											<td>3</td>
+											<td>9 845<span class="rur"> P<span></td>
+										</tr>
+									</table>
+									<a href="" class="blue_button more"><span>Показать еще</span></a>
+							</div>
+							
+								
+							<div class="grey-border"></div>
+							<div class="formCard clearfix"> 
+								<div style="margin-bottom:10px;">Мы нашли для вас предложение, основанное на вашей кредитной истории!</div>
+								<img src="img/card_img.png" alt="">
+								<aside>
+									<div>экономия</div>
+									<strong>3 200<span class="rur"> P<span></strong>
+									<div>в год</div>
+								</aside>
+								<figure>
+									<a href="" class="more big">Оформить карту</a>
+									<a href="" style="display:block">Больше предложений</a>
+								</figure>
+							</div>
+						</div>
+
+						<!--Процентная ставка-->
+						<div class="credit-cards-tabs" data-credit-cards-tabs="interest_rate">
+							<div class="card_options">
+								<h3>Общая процентная ставка</h3>
+								<span>29%</span> 
+							</div>
+							<div class="grey-border"></div>
+							<div class="card_chart">
+								<div class="card_chart_table interest_rate">
+									<table class="basic_table striped-odd">
+										<tr>
+											<td></td>
+											<td>Карта</td>
+											<td>Дата обновления</td>
+											<td>Процентная ставка</td>
+										</tr>
+										<tr class="data-donut" data-donut="0">
+											<td class="box-4"></td>
+											<td><a href="">City Diamond</a></td>
+											<td>13.04.13</td>
+											<td><span></span><div class="interest_rate"><figure style="width:55%;"></figure></div></td>
+										</tr>
+										<tr class="data-donut" data-donut="1">
+											<td class="box-6"></td>
+											<td><a href="">City Diamond</a></td>
+											<td>13.04.13</td>
+											<td><span></span><div class="interest_rate"><figure style="width:44%;"></figure></div></td>
+										</tr>
+										<tr class="data-donut" data-donut="2">
+											<td class="box-2"></td>
+											<td><a href="">City Diamond</a></td>
+											<td>13.04.13</td>
+											<td><span></span><div class="interest_rate"><figure style="width:33%;"></figure></div></td>
+										</tr>
+										<tr class="data-donut" data-donut="3">
+											<td class="box-7"></td>
+											<td><a href="">City Diamond</a></td>
+											<td>13.04.13</td>
+											<td><span></span><div class="interest_rate"><figure style="width:22%;"></figure></div></td>
+										</tr>
+										<tr class="data-donut" data-donut="4">
+											<td class="box-8"></td>
+											<td><a href="">City Diamond</a></td>
+											<td>13.04.13</td>
+											<td><span></span><div class="interest_rate"><figure style="width:11%;"></figure></div></td>
+										</tr>
+									</table>
+									<a href="" class="blue_button more"><span>Показать еще</span></a>
+								</div>
+							</div>
+							<div class="grey-border"></div>
+							<div class="cardUseGraph">
+								<h3>График изменения процентной ставки по картам</h3>
+							<ul class="blueTabs">
+								<li class="active" data-cardUseGraph="lineChartInterestRateMonth">1 месяц</li>
+								<li data-cardUseGraph="lineChartInterestRate3Month">3 месяца</li>
+								<li data-cardUseGraph="lineChartInterestRate6Month">6 месяцев</li>
+								<li data-cardUseGraph="lineChartInterestRateYear">Год</li>
+								<li data-cardUseGraph="lineChartInterestRateAllTime">Весь период</li>
+							</ul>
+							
+								<div class="charts--container" data-cardUseGraph="lineChartInterestRateMonth">
+								    <div class="chart">
+								      <div id="lineChartInterestRateMonth">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+								<div class="charts--container" data-cardUseGraph="lineChartInterestRate3Month">
+								    <div class="chart">
+								      <div id="lineChartInterestRate3Month">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+								<div class="charts--container" data-cardUseGraph="lineChartInterestRate6Month">
+								    <div class="chart">
+								      <div id="lineChartInterestRate6Month">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+								<div class="charts--container" data-cardUseGraph="lineChartInterestRateYear">
+								    <div class="chart">
+								      <div id="lineChartInterestRateYear">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+								<div class="charts--container" data-cardUseGraph="lineChartInterestRateAllTime">
+								    <div class="chart">
+								      <div id="lineChartInterestRateAllTime">
+								        <svg class="lineChart--svg">
+								          <defs>
+								            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+								              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+								              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+								            </linearGradient>
+								          </defs>
+								        </svg>
+								      </div>
+								    </div>
+								</div>
+								
+
+							</div>
+							<div class="grey-border"></div>
+							<div class="formCard clearfix"> 
+								<div style="margin-bottom:10px;">Мы нашли для вас предложение, основанное на вашей кредитной истории!</div>
+								<img src="img/card_img.png" alt="">
+								<aside>
+									<div>экономия</div>
+									<strong>3 200<span class="rur"> P<span></strong>
+									<div>в год</div>
+								</aside>
+								<figure>
+									<a href="" class="more big">Оформить карту</a>
+									<a href="" style="display:block">Больше предложений</a>
+								</figure>
+							</div>
+						</div>
+
+					</div>
+					<!--Кредитные карты-->
+
+
+
+
+				</div>
+			</div>
+
+			<div id="footer">
+				<div class="nav-wrapper">
+					<div class="nav credit-history">
+						<div class="header">
+							<h1>Кредитная история</h1>
+						</div>
+						<ul>
+							<li><a href="#">Бюро кредитных историй</a></li>
+							<li><a href="#">Закон о кредитных историях</a></li>
+							<li><a href="#">Как узнать кредитную историю?</a></li>
+							<li><a href="#">Исправление кредитной истории</a></li>
+							<li><a href="#">Получение кредита</a></li>
+						</ul>
+					</div>
+					<div class="nav for-users">
+						<div class="header">
+							<h1>Пользователям</h1>
+						</div>
+						<ul>
+							<li><a href="#">Симулятор</a></li>
+							<li><a href="#">Входи с паролем</a></li>
+							<li><a href="#">Регистрация в системе</a></li>
+							<li><a href="#">Демо-режим</a></li>
+							<li><a href="#">Презентация</a></li>
+						</ul>
+					</div>
+					<div class="nav about">
+						<div class="header">
+							<h1>О проекте</h1>
+						</div>
+						<ul>
+							<li><a href="#">Контактная информация</a></li>
+							<li><a href="#">Юридическая информация</a></li>
+							<li><a href="#">Заявление о конфиденциальности</a></li>
+							<li><a href="#">Наша команда</a></li>
+							<li><a href="#">Поддержка</a></li>
+						</ul>
+					</div>
+					<div class="nav credit-info">
+						<div class="header">
+							<h1>Кредитная информация</h1>
+						</div>
+						<ul>
+							<li><a href="#">Ваши данные в банках</a></li>
+							<li><a href="#">Обработка данных</a></li>
+							<li><a href="#">Защита персональных данных</a></li>
+							<li><a href="#">Хранение кредитной истории</a></li>
+						</ul>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="tell-about-us">
+					<div class="social-icons">
+						<a href="#" class="vk social"></a> 
+						<a href="#" class="fb social"></a> 
+						<a href="#" class="tw social"></a>
+					</div>
+					<p>Расскажите о нас: </p>
+				</div>
+				<a class="go-up"></a>
+				<p class="copyright"> 
+					c 2013 BK-INFO Все права защищены
+				</p>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>	
+
+
+	<script src="js/chart-data.js"></script>
+	<script src="js/barChart.js"></script>
+</body>
+</html>

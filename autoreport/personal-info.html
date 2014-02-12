@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet/less" type="text/css" href="css/style.less">
+	<title></title>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/libs/ui.datepicker-ru.js"></script>
+	<script type="text/javascript" src="js/libs/modernizr.js"></script>
+	<script type="text/javascript" src="js/libs/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="js/application.js"></script>
+	<script type="text/javascript" src="js/libs/less.js"></script>
+	<script type="text/javascript" src="js/libs/selectivizr-min.js"></script>
+</head>
+<script>
+	$(document).ready(function(){
+		//Validation
+		 $(".basic.security").validate({
+			rules: {        	        		
+						new_pass :"required",
+						confirmpassword:{
+							equalTo: "#new_pass"
+					    }		
+			    	},  	                          
+				    messages: {
+			    		new_pass :"Введите новый пароль",
+			    		confirmpassword :"Не совпадают пароли"
+				    }
+		 });
+			//Calendar perdonal-info
+			$.datepicker.setDefaults( $.datepicker.regional[ "ru" ] );
+			$( "#birthday" ).datepicker({ showMonthAfterYear: true });
+			$( "#date_of_issue" ).datepicker({ showMonthAfterYear: true });
+	
+	});
+</script>
+<body class="prersonal_info">
+
+	<div class="header">
+		<div class="container">
+			<!--
+			<div class="userbar">
+				<img src="img/userpic.png" class="userpic">
+				<span class="name"> Алексей П.</span>
+				<a href="">Выход</a>
+			</div>
+			-->
+			<div class="userbar">
+				<img src="img/userpic.png" class="userpic">
+				<label>Вход для пользователей</label>
+				<div class="hidden">
+					<input type="text" placeholder="Введите ваш e-mail" class="autoreport_input">
+					<input type="text" placeholder="Введите желаемый пароль" class="autoreport_input">
+					<a href="">Забыли пароль?</a>
+					<input type="text" value="Войти" class="button">
+
+					<div class="social-icons">
+						<label for="">Войти через:</label>
+						<a href="#" class="vk social"></a> 
+						<a href="#" class="fb social"></a> 
+						<a href="#" class="g_plus social"></a>
+						<a href="#" class="vector social"></a>
+					</div>
+
+				</div>
+			</div>
+			<div class="clearfix"></div>
+			<div class="nav" id="menu1">
+				<a href="#" class="logo"><img src="img/logo.png"></a>
+				<ul>
+					<li><a href="#">Кредитные истории</a></li>
+					<li><a href="#">Симулятор</a></li>
+					<li><a href="#">Предложение</a></li>
+					<li><a href="#">О проекте</a></li>
+					<li><a href="#">Контакты</a></li>
+				</ul>
+			</div> 
+		</div>
+	</div>
+
+	<div class="container">
+
+		<div id="menu2" class="nav">
+			<a href="" class="message-notifier">
+				<div class="counter">3</div>
+			</a>
+			<table class="table_menu">
+				<tr>
+				<td><a href="#">Сводка</a></td>
+				<td>
+					<a href="#">Услуги</a>
+					<div class="sub_menu">
+					<ul>
+						<li><a href="">Кредитный рейтинг</a></li>
+						<li><a href="">Кредитные отчеты</a></li>
+						<li><a href="">Кредитный симулятор</a></li>
+						<li><a href="">Мои расходы</a></li>
+						<li><a href="">Мои рекомендации</a></li>
+						<li><a href="">Кредитные карты</a></li>
+					</ul>
+					</div>
+				</td>
+				<td><a href="credit_reports.html">Мои финансы</a></td>
+				<td><a href="credit_cards.html">Кредитные карты</a></td>
+				<td><a href="credits.html">Кредиты</a>
+					<div class="sub_menu">
+						<ul>
+							<li><a href="">Потребительские кредиты</a></li>
+							<li><a href="">Автокредиты</a></li>
+							<li><a href="">Ипотека</a></li>
+						</ul>
+					</div>
+				</td>
+				<td><a href="reports.html">Отчеты</a></td>
+				<td><a href="#">Инструменты</a></td>
+				</tr>
+			</table>
+		</div>
+
+	</div>
+
+	<div class="main">
+		<div class="container">
+
+			<div id="credits" class="clearfix">
+				<div class="header">
+					<h1>Личная информация</h1>
+				</div>
+				<div class="nav">
+					<ul>
+						<li  class="active personal-info-b" data-tabs="personal-info">
+							Личные данные
+						</li>
+						<li data-tabs="contacts" class="contacts-b"> 
+							Контактные <br>данные
+						</li>
+						<li data-tabs="security" class="security-b">
+							Безопасность
+						</li>
+					</ul>
+				</div>
+				<div class="content-container border-box">
+					<!--личные данные-->
+					<div id="personal-info"  class="credits_tabs" data-tabs="personal-info">
+						
+						<form class="personal-info basic">
+							<div class="control-group clearfix">
+								<div class="label">Имя:</div>
+								<div class="controls">
+									<input type="text" name="firstname" placeholder="Алексей">
+								</div>
+							</div>
+							<div class="control-group clearfix">
+								<div class="label">Фамилия:</div>
+								<div class="controls">
+									<input type="text" name="lastname" placeholder="Перепалов">
+								</div>
+							</div>
+							<div class="control-group clearfix">
+								<div class="label">Отчество:</div>
+								<div class="controls">
+									<input type="text" name="middlename" placeholder="Михайлович">
+								</div>
+							</div>
+							<div class="control-group clearfix">
+								<div class="label">Пол:</div>
+								<div class="controls">
+									<div class="radioblock">
+										<div class="radio active" data-radio="man">Мужской</div>
+										<div class="radio" data-radio="woman">Женский</div>
+										<input type="hidden" value="true" name="sex">
+									</div>
+								</div>
+							</div>
+							<div class="control-group clearfix">
+								<div class="label">Дата рождения:</div>
+								<div class="controls width28">
+									<input type="text" name="birthday" id="birthday">
+								</div>
+							</div>
+							<div class="control-group clearfix">
+								<div class="label">Место рождения:</div>
+								<div class="controls">
+									<input type="text" name="bpl">
+								</div>
+							</div>
+							<div class="control-group clearfix">
+								<div class="label">Документ:</div>
+								<div class="controls">
+									<div class="select">
+										<a href="#" class="slct">Паспорт</a>
+										<ul class="drop">
+											<li>Паспорт</li>
+											<li>Паспорт</li>
+											<li>Паспорт</li>
+											<li>Паспорт</li>
+										</ul>
+										<input type="hidden" name="occupation" />
+									</div>
+								</div>
+							</div>
+
+							<div class="control-group clearfix">
+								<div class="label">Серия/номер:</div>
+								<div class="controls width20">
+									<input type="text" name="serial">
+								</div>
+								<div class="controls width28">
+									<input type="text" name="number">
+								</div>
+							</div>
+
+							<div class="control-group clearfix">
+								<div class="label">Дата выдачи:</div>
+								<div class="controls width28">
+									<input type="text" name="date_of_issue" id="date_of_issue">
+								</div>
+							</div>
+
+							<div class="control-group clearfix">
+								<div class="label">Кем выдан:</div>
+								<div class="controls">
+									<input type="text" name="date_of_issue">
+								</div>
+							</div>
+
+							<div class="control-group clearfix">
+								<div class="label" style="padding-top:8px;">Адрес постоянной регистрации:</div>
+								<div class="controls">
+									<input type="text" name="date_of_issue">
+								</div>
+							</div>
+							<div class="control-group clearfix">
+								<div class="label">Адрес проживания:</div>
+								<div class="controls">
+									<input type="text" name="date_of_issue">
+								</div>
+							</div>
+
+							<div class="control-group photo_upload clearfix">
+								<div class="label">Ваше фото:</div>
+								<div class="controls">
+									<div class="photo_upload_image"></div>
+									<button class="upload-photo">+ Загрузить фото</button>
+								</div>
+							</div>
+
+							<div class="control-group clearfix hidden">
+								<div class="label">Идентификация</div>
+								<div class="controls ok_status">
+									<label for="">Выполнена</label>
+									<ul>
+										<li>Способ идентификации:<span class="ident_type">Заказное письмо</span></li>
+										<li>Статус:<span class="status">Идентификация выполнена, пользователь ввел верые данные</span></li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="control-group clearfix hidden">
+								<div class="label">Идентификация</div>
+								<div class="controls processing_status">
+									<label for="">Выполняется</label>
+									<ul>
+										<li>Способ идентификации:<span class="ident_type">Заказное письмо</span></li>
+										<li>Статус:<span class="status">В обработке</span></li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="control-group clearfix hidden">
+								<div class="label">Идентификация</div>
+								<div class="controls processing_status">
+									<label for="">Выполняется</label>
+									<ul>
+										<li>Способ идентификации:<span class="ident_type">Заказное письмо</span></li>
+										<li>Статус:<span class="status">Отправлено: 12.04.13. <a href="">Проверить состояние отправления</a></span></li>
+									</ul>
+									<input type="text" placeholder="Введите код из письма">
+								</div>
+							</div>
+
+							<div class="control-group clearfix hidden">
+								<div class="label">Идентификация</div>
+								<div class="controls suspended_status">
+									<label for="">Приостановлена</label>
+									<ul>
+										<li>Способ идентификации:<span class="ident_type">Телеграмма</span></li>
+										<li>Статус:<span class="status">Отказано (неверно указана фамилия)</span></li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="control-group clearfix">
+								<div class="label">Идентификация</div>
+								<div class="controls not_ok_status">
+									<label for="">Не выполнена</label><a href="" class="dashed" id="reg_popup_opener">Пройти идентификацию</a>
+									<p>В силу того, что ваш кредитный отчет имеет большое количество персональных данных Мы обязательно должны удостовериться в вашей личности.Это позволяет сделать наш сервис безопасным</p>
+								</div>
+							</div>
+
+							<button type="submit" class="right save">Сохранить</button>
+						</form>
+					</div>
+
+
+					<!--контактные данные-->
+					<div id="contacts" class="credits_tabs hidden" data-tabs="contacts">
+						<form class="contacts basic">
+							<div class="control-group clearfix">
+								<div class="label">Индекс:</div>
+								<div class="controls">
+									<input type="text" name="addressindex" placeholder="556980" class="width_auto">
+								</div>
+							</div>
+							<div class="control-group clearfix">
+								<div class="label">Город:</div>
+								<div class="controls">
+									<div class="select">
+										<a href="#" class="slct">Москва</a>
+										<ul class="drop">
+											<li>Москва</li>
+											<li>Санкт Петербург</li>
+										</ul>
+										<input type="hidden" name="town" />
+									</div>
+								</div>
+							</div>
+							<div class="control-group clearfix">
+								<div class="label">Улица:</div>
+								<div class="controls">
+									<input type="text" name="street" placeholder="Проспект Мира">
+								</div>
+							</div>
+							<div class="control-group clearfix">
+								<div class="label">Дом:</div>
+								<div class="controls">
+									<input type="text" name="building" placeholder="35" class="width_auto">
+								</div>
+							</div>
+							<div class="control-group clearfix">
+								<div class="label">Корпус:</div>
+								<div class="controls">
+									<input type="text" name="appartment" placeholder="23" class="width_auto">
+								</div>
+							</div>
+							<div class="control-group clearfix underline">
+								<div class="label">Квартира:</div>
+								<div class="controls">
+									<input type="text" name="flat" placeholder="15" class="width_auto">
+								</div>
+							</div>
+							<div class="control-group clearfix">
+								<div class="label">Телефон:</div>
+								<div class="controls">
+									<input type="text" name="phone" placeholder="+7 495 809-90-87">
+								</div>
+							</div>
+							<div class="control-group clearfix">
+								<div class="label">E-mail:</div>
+								<div class="controls">
+									<input type="text" name="email" placeholder="ander@yandex.ru">
+								</div>
+							</div>
+							<div class="control-group clearfix">
+								<div class="label">Skype:</div>
+								<div class="controls">
+									<input type="text" name="appartment" placeholder="ander903">
+								</div>
+							</div>
+							<button type="submit" class="right save">Сохранить</button>
+						</form>
+					</div>
+
+					<!--безопасноть-->
+					<div id="security" class="credits_tabs hidden" data-tabs="security">
+						<form class="basic security">
+							<div class="control-group clearfix">
+								<div class="label">Текущий e-mail:</div>
+								<div class="controls" style="margin-top: 15px;">
+									ander@yandex.ru
+								</div>
+							</div>
+							<div class="control-group clearfix">
+								<div class="label">Новый e-mail:</div>
+								<div class="controls">
+									<input type="text" name="new-email" placeholder="">
+								</div>
+							</div>
+							<div class="control-group clearfix underline">
+								<div class="label">Повторите новый e-mail:</div>
+								<div class="controls">
+									<input type="text" name="repeat-new-email" placeholder="">
+								</div>
+							</div>
+							<div class="control-group clearfix">
+								<div class="label">Текущий пароль:</div>
+								<div class="controls">
+									<input type="password" name="password" placeholder="">
+								</div>
+							</div>
+							<div class="control-group clearfix">
+								<div class="label">Новый пароль:</div>
+								<div class="controls">
+									<input type="password" name="new_pass" placeholder="" id="new_pass" class="required">
+								</div>
+							</div>
+							<div class="control-group clearfix underline">
+								<div class="label">Повторите новый пароль:</div>
+								<div class="controls">
+									<input type="password" name="confirmpassword" placeholder="" id="confirmpassword" class="required">
+								</div>
+							</div>
+							<div class="control-group clearfix">
+								<div class="label">Секретный вопрос:</div>
+								<div class="controls">
+									<div class="select">
+										<a href="#" class="slct">Девичья фамилия матери</a>
+										<ul class="drop">
+											<li>Москва</li>
+											<li>Санкт Петербург</li>
+										</ul>
+										<input type="hidden" name="question" />
+									</div>
+								</div>
+							</div>
+
+							<div class="control-group clearfix">
+								<div class="label">Ответ на вопрос:</div>
+								<div class="controls">
+									<input type="text" name="answer" placeholder="">
+								</div>
+							</div>
+							<button type="submit" class="right save">Сохранить</button>
+						</form>
+					</div>
+
+
+
+				</div>
+			</div>
+
+			<div id="footer">
+				<div class="nav-wrapper">
+					<div class="nav credit-history">
+						<div class="header">
+							<h1>Кредитная история</h1>
+						</div>
+						<ul>
+							<li><a href="#">Бюро кредитных историй</a></li>
+							<li><a href="#">Закон о кредитных историях</a></li>
+							<li><a href="#">Как узнать кредитную историю?</a></li>
+							<li><a href="#">Исправление кредитной истории</a></li>
+							<li><a href="#">Получение кредита</a></li>
+						</ul>
+					</div>
+					<div class="nav for-users">
+						<div class="header">
+							<h1>Пользователям</h1>
+						</div>
+						<ul>
+							<li><a href="#">Симулятор</a></li>
+							<li><a href="#">Входи с паролем</a></li>
+							<li><a href="#">Регистрация в системе</a></li>
+							<li><a href="#">Демо-режим</a></li>
+							<li><a href="#">Презентация</a></li>
+						</ul>
+					</div>
+					<div class="nav about">
+						<div class="header">
+							<h1>О проекте</h1>
+						</div>
+						<ul>
+							<li><a href="#">Контактная информация</a></li>
+							<li><a href="#">Юридическая информация</a></li>
+							<li><a href="#">Заявление о конфиденциальности</a></li>
+							<li><a href="#">Наша команда</a></li>
+							<li><a href="#">Поддержка</a></li>
+						</ul>
+					</div>
+					<div class="nav credit-info">
+						<div class="header">
+							<h1>Кредитная информация</h1>
+						</div>
+						<ul>
+							<li><a href="#">Ваши данные в банках</a></li>
+							<li><a href="#">Обработка данных</a></li>
+							<li><a href="#">Защита персональных данных</a></li>
+							<li><a href="#">Хранение кредитной истории</a></li>
+						</ul>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="tell-about-us">
+					<div class="social-icons">
+						<a href="#" class="vk social"></a> 
+						<a href="#" class="fb social"></a> 
+						<a href="#" class="tw social"></a>
+					</div>
+					<p>Расскажите о нас: </p>
+				</div>
+				<a href="#" class="go-up"></a>
+				<p class="copyright"> 
+					c 2013 BK-INFO Все права защищены
+				</p>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>	
+
+	<div class="reg_popup personal-popup" id="reg_popup">
+			<div class='ident_type_list'>
+				<div class="close"></div>
+				<h4>Выберете наиболее удобный для вас вариант идентификации</h4>
+
+				<div>
+					<div class="ident_type" data-popup-tabs="registered_letter">
+						<img src="img/registered_letter.png" alt="">
+						<a href="">Заказное письмо</a>
+						<span>Получите на ваш адрес заказное письмо с уникальным кодом. После получения письма, вам необходимо ввести код на сайте для подтверждения своих данных и завершения идентификации</span>
+					</div>
+					<div class="ident_type" data-popup-tabs="identification_telegram">
+						<img src="img/identification_telegram.png" alt="">
+						<a href="">Телеграма с идентификацией</a>
+						<span>Отправьте от своего имени телеграму по адресу: г.Москва, ул.Академика Королева,д. 12,офис 403. В телеграмме укажите свои фамилию,имя и отчество</span>
+					</div>
+					<div class="ident_type">
+						<img src="img/visit_office.png" alt="">
+						<a href="">Посетить офис компании</a>
+						<span>Посетите офис нашей компании по адресу: г,Москва, ул. Академика Королева,д.12,офис 403. При себе вам необходимо иметь оригинал паспорта. Офис работает с понедельника по пятницу, с 10:00 до 19:00 без обеда</span>
+					</div>
+					<div class="ident_type">
+						<img src="img/call_carrier.png" alt="">
+						<a href="">Вызов курьера</a>
+						<span>Для прохождения идентификации, вы можете вызвать курьера, который приедет к вам в удобное время для подтверждения персональных данных</span>
+					</div>
+					<div class="ident_type">
+						<img src="img/check_history.png" alt="">
+						<a href="">Проверка по кредитной истории</a>
+						<span>Вы можете пройти идентификацию, ответив на несколько вопросов по вашей кредитной истории. Стоимость услуги составляет 100р.В случае,если идентификация не будет пройдена, средства будут возвращены.</span>
+					</div>
+					<div class="ident_type">
+						<img src="img/test_card _payment.png" alt="">
+						<a href="">Тестовый платеж картой</a>
+						<span>Вы можете пройти идентификацию, проведя тестовую оплату на наш счет вашей кредитной или дебетовой карты. После совершения процедуры с вашего счета спишется небольшая сумма, в специальном окне, вам нужно будет указать размер списанной суммы для подтверждения данных.После завершения процедуры, списанная сумма вернется на ваш счет</span>
+					</div>
+				</div>	
+			</div>
+
+			<div class="popup-tabs hidden" data-popup-tabs="registered_letter">
+				<div class="close"></div>
+				<h4><img src="img/pers_popup_back.png" alt="" class="back"><span><img src="img/registered_letter.png" alt="">Заказное письмо</span></h4>
+
+				<div>
+					<p>Получите на ваш адрес заказное письмо с уникальным кодом. После получения письма, вам необходимо ввести код на сайте для подтверждения своих данных и завершения идентификации.</p>
+					<h3>Адрес для отправки письма:</h3>
+					<div class="checkboxes">
+						<div class="check">
+							Совпадает с адресом проживания
+							<input type="checkbox" value="have">
+						</div>
+					</div>
+
+					<div class="height80px">
+						<label for="">Индекс:</label>
+						<input type="text" class="width330px">
+					</div>
+
+					<div class="height80px">
+						<label for="">Город:</label>
+						<input type="text" class="width330px">
+					</div>
+
+					<div class="height80px">
+						<label for="">Улица:</label>
+						<input type="text" class="width330px">
+					</div>
+
+					<div class="height80px last">
+						<label for="">Дом/корпус/квартира:</label>
+						<input type="text" class="width100px">
+						<input type="text" class="width100px">
+						<input type="text" class="width100px">
+					</div>
+					
+					<div class="captcha">
+						<label for="">Введите символы изображенные на рисунке:</label>
+						<div>
+							<img src="img/captcha.jpg" alt=""><br>
+							<a href="">Обновить</a>
+						</div>
+						<input type="text">
+					</div>
+					<input type="submit" class="button" value="Отправить">
+				</div>
+			</div>
+
+			<div class="popup-tabs hidden" data-popup-tabs="identification_telegram">
+				<div class="close"></div>
+				<h4><img src="img/pers_popup_back.png" alt="" class="back"><span><img src="img/registered_letter.png" alt="">Телеграма с идентификацией</span></h4>
+
+				<div>
+					<p>Получите на ваш адрес заказное письмо с уникальным кодом. После получения письма, вам необходимо ввести код на сайте для подтверждения своих данных и завершения идентификации.</p>
+					<h3>Адрес для отправки письма:</h3>
+					<div class="checkboxes">
+						<div class="check">
+							Совпадает с адресом проживания
+							<input type="checkbox" value="have">
+						</div>
+					</div>
+
+					<div class="height80px">
+						<label for="">Индекс:</label>
+						<input type="text" class="width330px">
+					</div>
+
+					<div class="height80px">
+						<label for="">Город:</label>
+						<input type="text" class="width330px">
+					</div>
+
+					<div class="height80px">
+						<label for="">Улица:</label>
+						<input type="text" class="width330px">
+					</div>
+
+					<div class="height80px last">
+						<label for="">Дом/корпус/квартира:</label>
+						<input type="text" class="width100px">
+						<input type="text" class="width100px">
+						<input type="text" class="width100px">
+					</div>
+					
+					<div class="captcha">
+						<label for="">Введите символы изображенные на рисунке:</label>
+						<div>
+							<img src="img/captcha.jpg" alt=""><br>
+							<a href="">Обновить</a>
+						</div>
+						<input type="text">
+					</div>
+					<input type="submit" class="button" value="Отправить">
+				</div>
+			</div>
+			
+	</div>
+	<div class="reg_popup" id="reg_popup_ty">
+		<div class="close"></div>
+		<h4>Ваша заявка успешно отправлена</h4>
+		<div>
+			<div>
+				<h2>Спасибо!</h2>
+				<p>Благодарим вас за интерес к нашему сервису.</p>
+				<p>Ваша заявка на прохождение идентифткации посредством получения заказного письма успешно отправлена и будет обработана в самое ближайшее время</p>
+				<p>Отслеживать статус заявки вы можете в разделе "Личные данные" своего профиля</p>
+			</div>
+		</div>	
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet/less" type="text/css" href="css/style.less">
+	<title></title>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/libs/ui.datepicker-ru.js"></script>
+	<script type="text/javascript" src="js/libs/modernizr.js"></script>
+	<script type="text/javascript" src="js/libs/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="js/application.js"></script>
+	<script type="text/javascript" src="js/libs/less.js"></script>
+	<script type="text/javascript" src="js/libs/selectivizr-min.js"></script>
+</head>
+
+<body>
+	<div class="header">
+		<div class="container">
+			<!--
+			<div class="userbar">
+				<img src="img/userpic.png" class="userpic">
+				<span class="name"> Алексей П.</span>
+				<a href="">Выход</a>
+			</div>
+			-->
+			<div class="userbar">
+				<img src="img/userpic.png" class="userpic">
+				<label>Вход для пользователей</label>
+				<div class="hidden">
+					<input type="text" placeholder="Введите ваш e-mail" class="autoreport_input">
+					<input type="text" placeholder="Введите желаемый пароль" class="autoreport_input">
+					<a href="">Забыли пароль?</a>
+					<input type="text" value="Войти" class="button">
+
+					<div class="social-icons">
+						<label for="">Войти через:</label>
+						<a href="#" class="vk social"></a> 
+						<a href="#" class="fb social"></a> 
+						<a href="#" class="g_plus social"></a>
+						<a href="#" class="vector social"></a>
+					</div>
+
+				</div>
+			</div>
+			<div class="clearfix"></div>
+			<div class="nav" id="menu1">
+				<a href="#" class="logo"><img src="img/logo.png"></a>
+				<ul>
+					<li><a href="#">Кредитные истории</a></li>
+					<li><a href="#">Симулятор</a></li>
+					<li><a href="#">Предложение</a></li>
+					<li><a href="#">О проекте</a></li>
+					<li><a href="#">Контакты</a></li>
+				</ul>
+			</div> 
+		</div>
+	</div>
+	<div class="container">
+		<div id="menu2" class="nav">
+			<a href="" class="message-notifier">
+				<div class="counter">3</div>
+			</a>
+			<table class="table_menu">
+				<tr>
+				<td><a href="#">Сводка</a></td>
+				<td>
+					<a href="#">Услуги</a>
+					<div class="sub_menu">
+					<ul>
+						<li><a href="">Кредитный рейтинг</a></li>
+						<li><a href="">Кредитные отчеты</a></li>
+						<li><a href="">Кредитный симулятор</a></li>
+						<li><a href="">Мои расходы</a></li>
+						<li><a href="">Мои рекомендации</a></li>
+						<li><a href="">Кредитные карты</a></li>
+					</ul>
+					</div>
+				</td>
+				<td><a href="credit_reports.html">Мои финансы</a></td>
+				<td><a href="credit_cards.html">Кредитные карты</a></td>
+				<td><a href="credits.html">Кредиты</a>
+					<div class="sub_menu">
+						<ul>
+							<li><a href="">Потребительские кредиты</a></li>
+							<li><a href="">Автокредиты</a></li>
+							<li><a href="">Ипотека</a></li>
+						</ul>
+					</div>
+				</td>
+				<td class="active"><a href="reports.html">Отчеты</a>
+					<div class="sub_menu">
+					<ul>
+						<li><a href="">История запросов</a></li>
+						<li><a href="">Справки ЦКИИ</a></li>
+					</ul>
+					</div>
+				</td>
+				<td><a href="#">Инструменты</a></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+	<div class="main">
+		<div class="container">
+
+			<div id="credits" class="clearfix width_100">
+				<div class="header">
+					<h1>Отчеты</h1>
+				</div>
+				<div class="nav">
+					<ul>
+						<li class="active query_history" data-tabs="query_history">
+							История <br>запросов
+						</li>
+						<li class="referenceCKKI" data-tabs="referenceCKKI"> 
+							Справки<br>ЦККИ
+						</li>
+					</ul>
+				</div>
+
+				<div id="query_history"  class="credits_tabs" data-tabs="query_history">
+					<div class="reports_page">
+						<div class="referenceDate">
+							<h1>История запросов</h1>
+						</div>
+						<table class="reports_page_table striped-odd">
+							<tr>
+								<td>Наименование</td>
+								<td class="second">Дата</td>
+								<td class="third">Бюро</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Запрос кредитной истории</td>
+								<td>6.03.14</td>
+								<td class="bureau"><img src="img/rating1.png"></td>
+								<td class="eye"></td>
+								<td class="download"></td>
+							</tr>
+							<tr>
+								<td>Запрос кредитной истории</td>
+								<td>6.03.14</td>
+								<td class="bureau"><img src="img/rating1.png"></td>
+								<td class="eye"></td>
+								<td class="download"></td>
+							</tr>
+							<tr>
+								<td>Запрос кредитной истории</td>
+								<td>6.03.14</td>
+								<td class="bureau"><img src="img/rating1.png"></td>
+								<td class="eye"></td>
+								<td class="download"></td>
+							</tr>
+							<tr>
+								<td>Запрос кредитной истории</td>
+								<td>6.03.14</td>
+								<td class="bureau"><img src="img/rating1.png"></td>
+								<td class="eye"></td>
+								<td class="download"></td>
+							</tr>
+							<tr>
+								<td>Запрос кредитной истории</td>
+								<td>6.03.14</td>
+								<td class="bureau"><img src="img/rating1.png"></td>
+								<td class="eye"></td>
+								<td class="download"></td>
+							</tr>
+							<tr>
+								<td>Запрос кредитной истории</td>
+								<td>6.03.14</td>
+								<td class="bureau"><img src="img/rating1.png"></td>
+								<td class="eye"></td>
+								<td class="download"></td>
+							</tr>
+							<tr>
+								<td>Запрос кредитной истории</td>
+								<td>6.03.14</td>
+								<td class="bureau"><img src="img/rating2.png"></td>
+								<td class="eye"></td>
+								<td class="download"></td>
+							</tr>
+							<tr>
+								<td>Запрос кредитной истории</td>
+								<td>6.03.14</td>
+								<td class="bureau"><img src="img/rating1.png"></td>
+								<td class="eye"></td>
+								<td class="download"></td>
+							</tr>
+							<tr>
+								<td>Запрос кредитной истории</td>
+								<td>6.03.14</td>
+								<td class="bureau"><img src="img/rating2.png"></td>
+								<td class="eye"></td>
+								<td class="download"></td>
+							</tr>
+							<tr>
+								<td>Запрос кредитной истории</td>
+								<td>6.03.14</td>
+								<td class="bureau"><img src="img/rating1.png"></td>
+								<td class="eye"></td>
+								<td class="download"></td>
+							</tr>
+							<tr>
+								<td>Запрос кредитной истории</td>
+								<td>6.03.14</td>
+								<td class="bureau"><img src="img/rating1.png"></td>
+								<td class="eye"></td>
+								<td class="download"></td>
+							</tr>
+							<tr>
+								<td>Запрос кредитной истории</td>
+								<td>6.03.14</td>
+								<td class="bureau"><img src="img/rating1.png"></td>
+								<td class="eye"></td>
+								<td class="download"></td>
+							</tr>
+							<tr>
+								<td>Запрос кредитной истории</td>
+								<td>6.03.14</td>
+								<td class="bureau"><img src="img/rating1.png"></td>
+								<td class="eye"></td>
+								<td class="download"></td>
+							</tr>
+							<tr>
+								<td>Запрос кредитной истории</td>
+								<td>6.03.14</td>
+								<td class="bureau"><img src="img/rating1.png"></td>
+								<td class="eye"></td>
+								<td class="download"></td>
+							</tr>
+							<tr>
+								<td>Запрос кредитной истории</td>
+								<td>6.03.14</td>
+								<td class="bureau"><img src="img/rating1.png"></td>
+								<td class="eye"></td>
+								<td class="download"></td>
+							</tr>
+							<tr>
+								<td>Запрос кредитной истории</td>
+								<td>6.03.14</td>
+								<td class="bureau"><img src="img/rating1.png"></td>
+								<td class="eye"></td>
+								<td class="download"></td>
+							</tr>
+							<tr>
+								<td>Запрос кредитной истории</td>
+								<td>6.03.14</td>
+								<td class="bureau"><img src="img/rating2.png"></td>
+								<td class="eye"></td>
+								<td class="download"></td>
+							</tr>
+							<tr>
+								<td>Запрос кредитной истории</td>
+								<td>6.03.14</td>
+								<td class="bureau"><img src="img/rating1.png"></td>
+								<td class="eye"></td>
+								<td class="download"></td>
+							</tr>
+							<tr>
+								<td>Запрос кредитной истории</td>
+								<td>6.03.14</td>
+								<td class="bureau"><img src="img/rating2.png"></td>
+								<td class="eye"></td>
+								<td class="download"></td>
+							</tr>
+							<tr>
+								<td>Запрос кредитной истории</td>
+								<td>6.03.14</td>
+								<td class="bureau"><img src="img/rating1.png"></td>
+								<td class="eye"></td>
+								<td class="download"></td>
+							</tr>
+							<tr>
+								<td>Запрос кредитной истории</td>
+								<td>6.03.14</td>
+								<td class="bureau"><img src="img/rating1.png"></td>
+								<td class="eye"></td>
+								<td class="download"></td>
+							</tr>
+							<tr>
+								<td>Запрос кредитной истории</td>
+								<td>6.03.14</td>
+								<td class="bureau"><img src="img/rating1.png"></td>
+								<td class="eye"></td>
+								<td class="download"></td>
+							</tr>
+							<tr>
+								<td>Запрос кредитной истории</td>
+								<td>6.03.14</td>
+								<td class="bureau"><img src="img/rating1.png"></td>
+								<td class="eye"></td>
+								<td class="download"></td>
+							</tr>
+							<tr>
+								<td>Запрос кредитной истории</td>
+								<td>6.03.14</td>
+								<td class="bureau"><img src="img/rating1.png"></td>
+								<td class="eye"></td>
+								<td class="download"></td>
+							</tr>
+							<tr>
+								<td>Запрос кредитной истории</td>
+								<td>6.03.14</td>
+								<td class="bureau"><img src="img/rating1.png"></td>
+								<td class="eye"></td>
+								<td class="download"></td>
+							</tr>					
+						</table>
+						<div class="pagination">
+										<label>Показывать по:</label>
+										<div style="margin-left:6px;">
+											<span class="active"><i>10</i></span>
+											<span><i>25</i></span>
+											<span><i>50</i></span>
+										</div>
+										<div class="pagination_number">
+											<span class="active"><i>1</i></span>
+											<span><i>2</i></span>
+											<span><i>3</i></span>
+											<span><i>4</i></span>
+											<span><i>5</i></span>
+											<span><i>6</i></span>
+											<span><i>7</i></span>
+										</div>
+										<div class="table_buttons">
+											<img src="img/left_arrow.png" alt="" class="opacity_06">
+											<img src="img/right_arrow.png" alt="">
+										</div>
+						</div>
+				
+					</div>
+				</div>
+
+				<div id="referenceCKKI"  class="credits_tabs" data-tabs="referenceCKKI">
+					<div class="reports_page">
+						<div class="referenceDate clearfix width_100 box-sizing">
+							<h1 class="left">Справки ЦККИ</h1>
+							<a href="" class="button right get_reference">Получить справку</a>
+						</div>
+						<table class="reports_page_table striped-odd">
+							<tr>
+								<td>Наименование</td>
+								<td class="second">Осн. код субъекта</td>
+								<td class="third">Доп. код субъекта</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td><a href="">Справка от 15.03.13</a></td>
+								<td>12690745</td>
+								<td class="bureau">12690746</td>
+								<td class="eye"></td>
+								<td class="download"></td>
+							</tr>
+							<tr>
+								<td><a href="">Справка от 15.03.13</a></td>
+								<td>12690745</td>
+								<td class="bureau">12690746</td>
+								<td class="eye"></td>
+								<td class="download"></td>
+							</tr>
+							<tr>
+								<td><a href="">Справка от 15.03.13</a></td>
+								<td>12690745</td>
+								<td class="bureau">12690746</td>
+								<td class="eye"></td>
+								<td class="download"></td>
+							</tr>
+							<tr>
+								<td><a href="">Справка от 15.03.13</a></td>
+								<td>12690745</td>
+								<td class="bureau">12690746</td>
+								<td class="eye"></td>
+								<td class="download"></td>
+							</tr>
+							<tr>
+								<td><a href="">Справка от 15.03.13</a></td>
+								<td>12690745</td>
+								<td class="bureau">12690746</td>
+								<td class="eye"></td>
+								<td class="download"></td>
+							</tr>
+							<tr>
+								<td><a href="">Справка от 15.03.13</a></td>
+								<td>12690745</td>
+								<td class="bureau">12690746</td>
+								<td class="eye"></td>
+								<td class="download"></td>
+							</tr>
+							<tr>
+								<td><a href="">Справка от 15.03.13</a></td>
+								<td>12690745</td>
+								<td class="bureau">12690745</td>
+								<td class="eye"></td>
+								<td class="download"></td>
+							</tr>
+							<tr>
+								<td><a href="">Справка от 15.03.13</a></td>
+								<td>12690745</td>
+								<td class="bureau">12690746</td>
+								<td class="eye"></td>
+								<td class="download"></td>
+							</tr>
+							<tr>
+								<td><a href="">Справка от 15.03.13</a></td>
+								<td>12690745</td>
+								<td class="bureau">12690745</td>
+								<td class="eye"></td>
+								<td class="download"></td>
+							</tr>
+							<tr>
+								<td><a href="">Справка от 15.03.13</a></td>
+								<td>12690745</td>
+								<td class="bureau">12690746</td>
+								<td class="eye"></td>
+								<td class="download"></td>
+							</tr>
+							<tr>
+								<td><a href="">Справка от 15.03.13</a></td>
+								<td>12690745</td>
+								<td class="bureau">12690746</td>
+								<td class="eye"></td>
+								<td class="download"></td>
+							</tr>
+							<tr>
+								<td><a href="">Справка от 15.03.13</a></td>
+								<td>12690745</td>
+								<td class="bureau">12690746</td>
+								<td class="eye"></td>
+								<td class="download"></td>
+							</tr>				
+						</table>
+						<div class="pagination">
+										<label>Показывать по:</label>
+										<div style="margin-left:6px;">
+											<span class="active"><i>10</i></span>
+											<span><i>25</i></span>
+											<span><i>50</i></span>
+										</div>
+										<div class="pagination_number">
+											<span class="active"><i>1</i></span>
+											<span><i>2</i></span>
+											<span><i>3</i></span>
+											<span><i>4</i></span>
+											<span><i>5</i></span>
+											<span><i>6</i></span>
+											<span><i>7</i></span>
+										</div>
+										<div class="table_buttons">
+											<img src="img/left_arrow.png" alt="" class="opacity_06">
+											<img src="img/right_arrow.png" alt="">
+										</div>
+						</div>
+				
+					</div>
+				</div>
+
+				<div class="one_reference credits_tabs">
+					<div class="reports_page">
+						<div class="referenceDate clearfix width_100 box-sizing">
+							<h1>Справки ЦККИ</h1>
+							<p>В данной справке указан список бюро кредитных историй, в которых хранятся данные о вашей кредитной истории</p>
+							<ul>
+								<li>Дата получения справки</li>
+								<li><b>15.04.13</b></li>
+								<li>Основной код субъекта: 1289073</li>
+								<li>Дополнительный код субъекта: 1289074</li>
+							</ul>
+						</div>
+						<div class="one_reference">
+							<img src="img/nat_bureau.png" alt="">
+							<aside>
+								<ul>
+									<li>ООО "Национальное бюро кредитных историй"</li>
+									<li><b>Номер БКИ : 078-00012</b></li>
+								</ul>
+							</aside>
+							<a href="" class="button right">Получить отчет</a>
+						</div>
+						<div class="one_reference">
+							<img src="img/nat_bureau.png" alt="">
+							<aside>
+								<ul>
+									<li>ООО "Национальное бюро кредитных историй"</li>
+									<li><b>Номер БКИ : 078-00012</b></li>
+								</ul>
+							</aside>
+							<a href="" class="button right">Получить отчет</a>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<div id="footer">
+				<div class="nav-wrapper">
+					<div class="nav credit-history">
+						<div class="header">
+							<h1>Кредитная история</h1>
+						</div>
+						<ul>
+							<li><a href="#">Бюро кредитных историй</a></li>
+							<li><a href="#">Закон о кредитных историях</a></li>
+							<li><a href="#">Как узнать кредитную историю?</a></li>
+							<li><a href="#">Исправление кредитной истории</a></li>
+							<li><a href="#">Получение кредита</a></li>
+						</ul>
+					</div>
+					<div class="nav for-users">
+						<div class="header">
+							<h1>Пользователям</h1>
+						</div>
+						<ul>
+							<li><a href="#">Симулятор</a></li>
+							<li><a href="#">Входи с паролем</a></li>
+							<li><a href="#">Регистрация в системе</a></li>
+							<li><a href="#">Демо-режим</a></li>
+							<li><a href="#">Презентация</a></li>
+						</ul>
+					</div>
+					<div class="nav about">
+						<div class="header">
+							<h1>О проекте</h1>
+						</div>
+						<ul>
+							<li><a href="#">Контактная информация</a></li>
+							<li><a href="#">Юридическая информация</a></li>
+							<li><a href="#">Заявление о конфиденциальности</a></li>
+							<li><a href="#">Наша команда</a></li>
+							<li><a href="#">Поддержка</a></li>
+						</ul>
+					</div>
+					<div class="nav credit-info">
+						<div class="header">
+							<h1>Кредитная информация</h1>
+						</div>
+						<ul>
+							<li><a href="#">Ваши данные в банках</a></li>
+							<li><a href="#">Обработка данных</a></li>
+							<li><a href="#">Защита персональных данных</a></li>
+							<li><a href="#">Хранение кредитной истории</a></li>
+						</ul>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="tell-about-us">
+					<div class="social-icons">
+						<a href="#" class="vk social"></a> 
+						<a href="#" class="fb social"></a> 
+						<a href="#" class="tw social"></a>
+					</div>
+					<p>Расскажите о нас: </p>
+				</div>
+				<a href="#" class="go-up"></a>
+				<p class="copyright"> 
+					c 2013 BK-INFO Все права защищены
+				</p>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>	
+
+</body>
+</html>

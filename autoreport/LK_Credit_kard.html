@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/jquery.jscrollpane.css">
+	<link rel="stylesheet/less" type="text/css" href="css/style.less">
+	<link rel="stylesheet" href="css/ion.rangeSlider.css" />
+    <link rel="stylesheet" href="css/ion.rangeSlider.skinFlat.css" />
+    <link rel="stylesheet" href="css/rubl.css" />
+
+	<title></title>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script type="text/javascript" src="js/application.js"></script>
+	<script type="text/javascript" src="js/libs/less.js"></script>
+	<script type="text/javascript" src="js/libs/selectivizr-min.js"></script>
+	<script type="text/javascript" src="js/libs/jquery.mousewheel.js"></script>
+	<script type="text/javascript" src="js/plugins/jquery.jscrollpane.js"></script>
+	<script type="text/javascript" src="js/libs/ion.rangeSlider.js"></script>
+
+	<script type="text/javascript" src="js/filter.js"></script>
+
+	<script src="js/libs/d3.js"></script>
+	
+	<script>
+		$(document).ready(function() {
+			$('.scrollable figure').jScrollPane({scrollbarWidth:18, showArrows:true});
+		});
+	</script>
+
+</head>
+<body>
+	<div class="header">
+		<div class="container">
+			<!--
+			<div class="userbar">
+				<img src="img/userpic.png" class="userpic">
+				<span class="name"> Алексей П.</span>
+				<a href="">Выход</a>
+			</div>
+			-->
+			<div class="userbar">
+				<img src="img/userpic.png" class="userpic">
+				<label>Вход для пользователей</label>
+				<div class="hidden">
+					<input type="text" placeholder="Введите ваш e-mail" class="autoreport_input">
+					<input type="text" placeholder="Введите желаемый пароль" class="autoreport_input">
+					<a href="">Забыли пароль?</a>
+					<input type="text" value="Войти" class="button">
+
+					<div class="social-icons">
+						<label for="">Войти через:</label>
+						<a href="#" class="vk social"></a> 
+						<a href="#" class="fb social"></a> 
+						<a href="#" class="g_plus social"></a>
+						<a href="#" class="vector social"></a>
+					</div>
+
+				</div>
+			</div>
+	
+			<div class="clearfix"></div>
+			<div class="nav" id="menu1">
+				<a href="#" class="logo"><img src="img/logo.png"></a>
+				<ul>
+					<li><a href="#">Кредитные истории</a></li>
+					<li><a href="#">Симулятор</a></li>
+					<li><a href="#">Предложение</a></li>
+					<li><a href="#">О проекте</a></li>
+					<li><a href="#">Контакты</a></li>
+				</ul>
+			</div> 
+		</div>
+	</div>
+	<div class="container">
+		<div id="menu2" class="nav">
+			<a href="" class="message-notifier">
+				<div class="counter">3</div>
+			</a>
+			<table class="table_menu">
+				<tr>
+				<td><a href="#">Сводка</a></td>
+				<td>
+					<a href="#">Услуги</a>
+					<div class="sub_menu">
+					<ul>
+						<li><a href="">Кредитный рейтинг</a></li>
+						<li><a href="">Кредитные отчеты</a></li>
+						<li><a href="">Кредитный симулятор</a></li>
+						<li><a href="">Мои расходы</a></li>
+						<li><a href="">Мои рекомендации</a></li>
+						<li><a href="">Кредитные карты</a></li>
+					</ul>
+					</div>
+				</td>
+				<td><a href="credit_reports.html">Мои финансы</a></td>
+				<td><a href="credit_cards.html">Кредитные карты</a></td>
+				<td><a href="credits.html">Кредиты</a>
+					<div class="sub_menu">
+						<ul>
+							<li><a href="">Потребительские кредиты</a></li>
+							<li><a href="">Автокредиты</a></li>
+							<li><a href="">Ипотека</a></li>
+						</ul>
+					</div>
+				</td>
+				<td><a href="reports.html">Отчеты</a></td>
+				<td><a href="#">Инструменты</a></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<div class="main">
+		<div class="container">
+			<div class="status_bar">
+				<div class="passed">Регистрация</div>
+				<div class="active">Ввод личных данных></div>
+				<div class="not_active">Идентификация</div>
+				<div class="not_active">Справка из ЦККИ</div>
+			</div>
+			<div id="user-panel">
+				<div id="user-info">
+					<img src="img/user_photo.png" class="user-photo">
+					<div class="name">Алексей Перепалов</div>
+					<div class="birthdate">
+						<p>Дата рождения</p>
+						<div class="date" datetime="1975-12-03">12.03.75</div>
+					</div>
+					<div class="reg-date">
+						<p>Дата регистрации в системе</p>
+						<div class="date" datetime="2013-12-03">12.03.13</div>
+					</div>
+					<div class="history-duration">
+						<p>Общая кредитная история</p>
+						<p class="duration">5 лет/3 месяца</p>
+					</div>
+				</div>
+				<div id="user-contacts">
+				</div>
+				<div id="user-security">
+				</div>
+				<div class="nav">
+					<ul>
+						<li>
+							<a href="">
+								<img src="img/person_icon.png"> 
+								<br>
+								Личные данные
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="img/list_icon.png">
+								<br>
+								Контактные данные
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="img/private_icon.png">
+								<br>
+								Безопасность
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div id="rating-main">
+				<button class="more">Подробнее</button>
+				<div class="header">
+					<h1>Кредитный рейтинг</h1>
+				</div>
+				<div class="nav">
+					<table class="general-reports-table">
+						<tbody>
+							<tr>
+								<td class="active"><img src="img/rating1.png"></td>
+								<td><img src="img/rating2.png"></td>
+								<td><img src="img/rating3.png"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="equifax">
+					<div class="rating_line">
+						<div class="rating_line_number">
+							<figure>678</figure>
+							<span>Нормально</span>
+						</div>
+						<input type="text" class="filter">
+						<figure class="box-1"><span style="margin-left: 0px;">300</span><label for="" class="color-1">Очень плохо</label></figure>
+						<figure class="box-2"><span>580</span><label for="" class="color-2" style="margin-left: 33px;">Плохо</label></figure>
+						<figure class="box-3"><span>640</span><label for="" class="color-3">Нормально</label></figure>
+						<figure class="box-4"><span>700</span><label for="" class="color-4" style="margin-left: 35px;">Хорошо</label></figure>
+						<figure class="box-5"><span>750</span><label for="" class="color-5">Великолепно</label></figure>
+						<figure style="width:0px;"><span style="margin-left: -21px;">850</span></figure>
+					</div>
+					<div class="graphic">
+						<div class="charts--container" data-cardUseGraph="lineChartCreditRatingMonth">
+						    <div class="chart">
+						      <div id="lineChartCreditRatingMonth">
+						        <svg class="lineChart--svg">
+						          <defs>
+						            <linearGradient id="lineChart--gradientBackgroundArea" x1="10" x2="0" y1="0" y2="1">
+						              <stop class="lineChart--gradientBackgroundArea--top" offset="0%" />
+						              <stop class="lineChart--gradientBackgroundArea--bottom" offset="100%" />
+						            </linearGradient>
+						          </defs>
+						        </svg>
+						      </div>
+						    </div>
+						</div>
+					</div>
+				</div>
+				<div class="buro hidden">
+					<img src="img/graphic.png" >
+				</div>
+				<div class="experian hidden">
+					<img src="img/graphic.png">
+				</div>
+			</div>
+			<div id="credits" class="clearfix">
+				<button class="more">Подробнее</button>
+				<div class="header">
+					<h1>Мои кредиты</h1>
+				</div>
+				<div class="nav">
+					<ul>
+						<li data-tabs="general-stats" class="active general-stats">
+							Общая статистика
+						</li>
+						<li data-tabs="consumer-loans" class="consumer-loans">
+							<!--<div class="counter"></div>-->
+							Потребительские кредиты
+						</li>
+						<li data-tabs="credit-cards" class="credit-cards">
+							Кредитные <br> карты
+						</li>
+						<li data-tabs="autocredits" class="autocredits">
+							Автокредиты
+						</li>
+						<li data-tabs="mortgage" class="mortgage">
+							Ипотека
+						</li>
+						<li data-tabs="other-credits" class="other-credits">
+							Другие кредиты
+						</li>
+					</ul>
+				</div>
+				<div class="content-container">
+					<div id="general-stats" data-tabs="general-stats" class="tab-shown">
+						<div class="clearfix width_100">
+							<div class="debts">
+								<h1>Общая кредитная задолженность</h1>
+								<h1 class="money">124 000 <span class="rur"> P<span></h1>
+							</div>
+							<div class="update-date">
+								<h1>Последняя дата обновления</h1>
+								<div class="date" datetime="2013-12-03">13.04.13</div>
+							</div>
+						</div>
+						
+
+						<script>
+						$(document).ready(function() {
+
+							var width = 245,
+							    height = 245,
+							    radius = Math.min(width, height) / 2;
+
+							var color = d3.scale.ordinal()
+							    .range([ "#3FAA4C", "#2093C2","#ED3E45","#FFB643","#7B7B78"]);
+
+							var arc = d3.svg.arc()
+							    .outerRadius(radius - 10)
+							    .innerRadius(radius - 50);
+
+							var pie = d3.layout.pie()
+							    .sort(null)
+							    .value(function(d) { return d.population; });
+
+							var svg = d3.select("#donutTotalCreditDebt").append("svg")
+							    .attr("width", width)
+							    .attr("height", height)
+							  	.append("g")
+							    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+							d3.csv("csv/TotalCreditDebt.csv", function(error, data) {
+
+							  data.forEach(function(d) {
+							    d.population = +d.population;
+							  });
+
+							  var g = svg.selectAll("#donutTotalCreditDebt .arc")
+							      .data(pie(data))
+							      .enter().append("g")
+							      .attr("class", "arc");
+
+							  g.append("path")
+							      .attr("d", arc)
+							      .style("fill", function(d) { return color(d.data.age); });
+
+							  g.append("text")
+							      .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")"; })
+							      .attr("dy", ".35em")
+							      .style("text-anchor", "middle")
+							      .text(function(d) { return d.data.age; });
+
+							});
+
+						});
+						</script>
+
+						<div class="card_chart_figure" id="donutTotalCreditDebt">
+							<svg xmlns="http://www.w3.org/2000/svg"
+							    xmlns:xlink="http://www.w3.org/1999/xlink">
+
+							    <style type="text/css" >
+							      <![CDATA[
+
+							       .arc{
+								       stroke: #fff;
+								       fill:   red;
+								       stroke-width:3px;
+							    	}
+							    	
+							    	.arc text{
+								      stroke-width:1px;
+								    }
+
+							      ]]>
+							    </style>
+							</svg>
+							<ul class="credit_type">
+								<li data-donut="0"><figure class="box-4" ></figure><span>Потребительские кредиты</span></li>
+								<li data-donut="1"><figure class="box-9" ></figure><span>Кредитные карты</span></li>
+								<li data-donut="2"><figure class="box-2" ></figure><span>Автокредиты</span></li>
+								<li data-donut="3"><figure class="box-3" ></figure><span>Ипотека</span></li>
+								<li data-donut="4"><figure class="box-10" ></figure><span>Другие кредиты</span></li>
+							</ul>
+							<div class="viewMode">Режим отображения
+								<div><img src="img/viewMode_1.png" alt=""><img src="img/viewMode_2.png" alt=""></div>
+							</div>
+						</div>
+						
+						
+						<table class="basic_table striped-even">
+							<col class="type"></col>
+							<col class="date"></col>
+							<col class="how-much"></col>
+							<col class="diff"></col>
+							<tr>
+								<th><div></div>Тип кредита</th>
+								<th>Дата обновления</th>
+								<th>Текущая задолженность</th>
+								<th></th>
+							</tr>
+							<tr>
+								<td class="border1">Потребительские кредиты</td>
+								<td><div class="date" datetime="2013-12-03">13.04.13</div></td>
+								<td>123 000 <span class="rur"> P<span></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="border2">Кредитные карты</td>
+								<td><div class="date" datetime="2013-12-03">13.04.11</div></td>
+								<td>64 570 <span class="rur"> P<span></td>
+								<td><img src="img/arrow_down.png"></td>
+							</tr>
+							<tr>
+								<td class="border3">Автокредиты</td>
+								<td><div class="date" datetime="2013-12-03">13.04.13</div></td>
+								<td>123 000 <span class="rur"> P<span></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="border4">Ипотека</td>
+								<td><div class="date" datetime="2013-12-03">13.04.13</div></td>
+								<td>123 000 <span class="rur"> P<span></td>
+								<td><img src="img/arrow_up.png"></td>
+							</tr>
+							<tr>
+								<td class="border5">Другие кредиты</td>
+								<td><div class="date" datetime="2013-12-03">13.04.13</div></td>
+								<td>123 000 <span class="rur"> P<span></td>
+								<td></td>
+							</tr>
+						</table>
+					</div>
+
+					<div id="consumer-loans" class="tab-hidden">
+						<div class="update-date">
+						<h1>Последняя дата обновления</h1>
+						<div class="date" datetime="2013-12-03">13.04.13</div>
+						</div>
+						<div class="debts">
+							<h1>Задолженность по потребительским кредитам</h1>
+							<h1 class="money">230 000 <span class="rur"> P<span></h1>
+						</div>
+						<div class="payment">
+							<h1>Общий ежемесячный платеж</h1>
+							<h1 class="money">589 340 <span class="rur"> P<span></h1>
+						</div>
+						<script>
+						$(document).ready(function() {
+
+							var width = 245,
+							    height = 245,
+							    radius = Math.min(width, height) / 2;
+
+							var color = d3.scale.ordinal()
+							    .range([ "#66b06f","#5296b3","#ed565b"]);
+
+							var arc = d3.svg.arc()
+							    .outerRadius(radius - 10)
+							    .innerRadius(radius - 50);
+
+							var pie = d3.layout.pie()
+							    .sort(null)
+							    .value(function(d) { return d.population; });
+
+							var svg = d3.select("#donutConsumerLoans").append("svg")
+							    .attr("width", width)
+							    .attr("height", height)
+							  	.append("g")
+							    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+							d3.csv("csv/ConsumerLoans.csv", function(error, data) {
+
+							  data.forEach(function(d) {
+							    d.population = +d.population;
+							  });
+
+							  var g = svg.selectAll("#donutConsumerLoans .arc")
+							      .data(pie(data))
+							      .enter().append("g")
+							      .attr("class", "arc");
+
+							  g.append("path")
+							      .attr("d", arc)
+							      .style("fill", function(d) { return color(d.data.age); });
+
+							  g.append("text")
+							      .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")"; })
+							      .attr("dy", ".35em")
+							      .style("text-anchor", "middle")
+							      .text(function(d) { return d.data.age; });
+
+							});
+
+						});
+						</script>
+
+						<div class="card_chart_figure" id="donutConsumerLoans">
+							<div class="viewMode">Режим отображения
+								<div><img src="img/viewMode_1.png" alt=""><img src="img/viewMode_2.png" alt=""></div>
+							</div>
+						</div>
+
+						<table class="basic_table">
+							<col class="bank"></col>
+							<col class="debt"></col>
+							<col class="limit"></col>
+							<col class="monthly"></col>
+							<col class="update"></col>
+							<thead>
+								<tr>
+									<th>Банк</th>
+									<th>Задолженность</th>
+									<th>Лимит</th>
+									<th>Ежемесячный платеж</th>
+									<th>Дата обновления</th>
+								</tr>
+							</thead>
+						</table>
+						<div class="scrollable">
+							<table class="basic_table striped-odd">
+								<col class="bank"></col>
+								<col class="debt"></col>
+								<col class="limit"></col>
+								<col class="monthly"></col>
+								<col class="update"></col>
+								<tbody>
+
+									<tr>
+										<td class="border2">CHASE</td>
+										<td>12 340 <span class="rur"> P<span></td>
+										<td>340 000 <span class="rur"> P<span></td>
+										<td>9 000 <span class="rur"> P<span></td>
+										<td><time datetime="2013-12-03">13.04.13</time></td>
+									</tr>
+
+									<tr>
+										<td class="border3">CHASE</td>
+										<td>12 340 <span class="rur"> P<span></td>
+										<td>340 000 <span class="rur"> P<span></td>
+										<td>9 000 <span class="rur"> P<span></td>
+										<td><time datetime="2013-12-03">13.04.13</time></td>
+									</tr>
+
+									<tr>
+										<td class="border1">CHASE</td>
+										<td>12 340 <span class="rur"> P<span></td>
+										<td>340 000 <span class="rur"> P<span></td>
+										<td>9 000 <span class="rur"> P<span></td>
+										<td><time datetime="2013-12-03">13.04.13</time></td>
+									</tr>	
+
+								</tbody>
+							</table>
+						</div>
+
+					</div>
+
+					<div id="credit-cards" class="tab-hidden">
+						<div class="update-date">
+							<h1>Последняя дата обновления</h1>
+							<div class="date" datetime="2013-12-03">13.04.13</div>
+						</div>
+						<div class="debts">
+							<h1>Задолженность по кредитным картам</h1>
+							<h1 class="money">230 000 <span class="rur"> P<span></h1>
+						</div>
+						<div class="payment">
+							<h1>Общий ежемесячный платеж</h1>
+							<h1 class="money">589 340 <span class="rur"> P<span></h1>
+						</div>
+						<script>
+						$(document).ready(function() {
+
+							var width = 245,
+							    height = 245,
+							    radius = Math.min(width, height) / 2;
+
+							var color = d3.scale.ordinal()
+							    .range([ "#3FAA4C", "#2093C2","#ED3E45","#FFB643","#7B7B78"]);
+
+							var arc = d3.svg.arc()
+							    .outerRadius(radius - 10)
+							    .innerRadius(radius - 50);
+
+							var pie = d3.layout.pie()
+							    .sort(null)
+							    .value(function(d) { return d.population; });
+
+							var svg = d3.select("#donutCardTotalCreditDebt").append("svg")
+							    .attr("width", width)
+							    .attr("height", height)
+							  	.append("g")
+							    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+							d3.csv("csv/CardTotalCreditDebt.csv", function(error, data) {
+
+							  data.forEach(function(d) {
+							    d.population = +d.population;
+							  });
+
+							  var g = svg.selectAll("#donutCardTotalCreditDebt .arc")
+							      .data(pie(data))
+							      .enter().append("g")
+							      .attr("class", "arc");
+
+							  g.append("path")
+							      .attr("d", arc)
+							      .style("fill", function(d) { return color(d.data.age); });
+
+							  g.append("text")
+							      .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")"; })
+							      .attr("dy", ".35em")
+							      .style("text-anchor", "middle")
+							      .text(function(d) { return d.data.age; });
+
+							});
+
+						});
+						</script>
+
+						<div class="card_chart_figure" id="donutCardTotalCreditDebt">
+							<div class="viewMode">Режим отображения
+								<div><img src="img/viewMode_1.png" alt=""><img src="img/viewMode_2.png" alt=""></div>
+							</div>
+						</div>
+
+						<table class="basic_table">
+							<col class="bank"></col>
+							<col class="debt"></col>
+							<col class="limit"></col>
+							<col class="monthly"></col>
+							<col class="update"></col>
+							<thead>
+								<tr>
+									<th>Банк</th>
+									<th>Задолженность</th>
+									<th>Лимит</th>
+									<th>Ежемесячный платеж</th>
+									<th>Дата обновления</th>
+								</tr>
+							</thead>
+						</table>
+						<div class="scrollable">
+							<table class="basic_table striped-odd">
+								<col class="bank"></col>
+								<col class="debt"></col>
+								<col class="limit"></col>
+								<col class="monthly"></col>
+								<col class="update"></col>
+								<tbody>
+									<tr>
+										<td class="border1">Citi Diamond Preferred Card</td>
+										<td>12 340 <span class="rur"> P<span></td>
+										<td>340 000 <span class="rur"> P<span></td>
+										<td>9 000 <span class="rur"> P<span></td>
+										<td><time datetime="2013-12-03">13.04.13</time></td>
+									</tr>
+									<tr>
+										<td class="border2">US BANK</td>
+										<td>12 340 <span class="rur"> P<span></td>
+										<td>340 000 <span class="rur"> P<span></td>
+										<td>9 000 <span class="rur"> P<span></td>
+										<td><time datetime="2013-12-03">13.04.13</time></td>
+									</tr>
+									<tr>
+										<td class="border3">CHASE</td>
+										<td>12 340 <span class="rur"> P<span></td>
+										<td>340 000 <span class="rur"> P<span></td>
+										<td>9 000 <span class="rur"> P<span></td>
+										<td><time datetime="2013-12-03">13.04.13</time></td>
+									</tr>
+									<tr>
+										<td class="border4">GECRB/CHEVRO</td>
+										<td>12 340 <span class="rur"> P<span></td>
+										<td>340 000 <span class="rur"> P<span></td>
+										<td>9 000 <span class="rur"> P<span></td>
+										<td><time datetime="2013-12-03">13.04.13</time></td>
+									</tr>
+									<tr>
+										<td class="border5">CAP ONE</td>
+										<td>12 340 <span class="rur"> P<span></td>
+										<td>340 000 <span class="rur"> P<span></td>
+										<td>9 000 <span class="rur"> P<span></td>
+										<td><time datetime="2013-12-03">13.04.13</time></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+
+					<div id="autocredits" class="tab-hidden">
+
+						<div class="update-date">
+						<h1>Последняя дата обновления</h1>
+						<div class="date" datetime="2013-12-03">13.04.13</div>
+						</div>
+						<div class="debts">
+							<h1>Задолженность по автокредитам</h1>
+							<h1 class="money">230 000 <span class="rur"> P<span></h1>
+						</div>
+						<div class="payment">
+							<h1>Общий ежемесячный платеж</h1>
+							<h1 class="money">589 340 <span class="rur"> P<span></h1>
+						</div>
+						<script>
+						$(document).ready(function() {
+
+							var width = 245,
+							    height = 245,
+							    radius = Math.min(width, height) / 2;
+
+							var color = d3.scale.ordinal()
+							    .range([ "#5296b3"]);
+
+							var arc = d3.svg.arc()
+							    .outerRadius(radius - 10)
+							    .innerRadius(radius - 50);
+
+							var pie = d3.layout.pie()
+							    .sort(null)
+							    .value(function(d) { return d.population; });
+
+							var svg = d3.select("#donutAutocredits").append("svg")
+							    .attr("width", width)
+							    .attr("height", height)
+							  	.append("g")
+							    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+							d3.csv("csv/Autocredits.csv", function(error, data) {
+
+							  data.forEach(function(d) {
+							    d.population = +d.population;
+							  });
+
+							  var g = svg.selectAll("#donutAutocredits .arc")
+							      .data(pie(data))
+							      .enter().append("g")
+							      .attr("class", "arc");
+
+							  g.append("path")
+							      .attr("d", arc)
+							      .style("fill", function(d) { return color(d.data.age); });
+
+							  g.append("text")
+							      .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")"; })
+							      .attr("dy", ".35em")
+							      .style("text-anchor", "middle")
+							      .text(function(d) { return d.data.age; });
+
+							});
+
+						});
+						</script>
+
+						<div class="card_chart_figure" id="donutAutocredits">
+							<div class="viewMode">Режим отображения
+								<div><img src="img/viewMode_1.png" alt=""><img src="img/viewMode_2.png" alt=""></div>
+							</div>
+						</div>
+
+						<table class="basic_table">
+							<col class="bank"></col>
+							<col class="debt"></col>
+							<col class="limit"></col>
+							<col class="monthly"></col>
+							<col class="update"></col>
+							<thead>
+								<tr>
+									<th>Банк</th>
+									<th>Задолженность</th>
+									<th>Лимит</th>
+									<th>Ежемесячный платеж</th>
+									<th>Дата обновления</th>
+								</tr>
+							</thead>
+						</table>
+						<div class="scrollable">
+							<table class="basic_table striped-odd">
+								<col class="bank"></col>
+								<col class="debt"></col>
+								<col class="limit"></col>
+								<col class="monthly"></col>
+								<col class="update"></col>
+								<tbody>
+
+									<tr>
+										<td class="border2">CHASE</td>
+										<td>12 340 <span class="rur"> P<span></td>
+										<td>340 000 <span class="rur"> P<span></td>
+										<td>9 000 <span class="rur"> P<span></td>
+										<td><time datetime="2013-12-03">13.04.13</time></td>
+									</tr>
+
+								</tbody>
+							</table>
+						</div>
+
+					</div>
+
+					<div id="mortgage" class="tab-hidden">
+
+						<div class="update-date">
+						<h1>Последняя дата обновления</h1>
+						<div class="date" datetime="2013-12-03">13.04.13</div>
+						</div>
+						<div class="debts">
+							<h1>Задолженность по ипотеке</h1>
+							<h1 class="money">230 000 <span class="rur"> P<span></h1>
+						</div>
+						<div class="payment">
+							<h1>Общий ежемесячный платеж</h1>
+							<h1 class="money">589 340 <span class="rur"> P<span></h1>
+						</div>
+						<script>
+						$(document).ready(function() {
+
+							var width = 245,
+							    height = 245,
+							    radius = Math.min(width, height) / 2;
+
+							var color = d3.scale.ordinal()
+							    .range([ "#5296b3"]);
+
+							var arc = d3.svg.arc()
+							    .outerRadius(radius - 10)
+							    .innerRadius(radius - 50);
+
+							var pie = d3.layout.pie()
+							    .sort(null)
+							    .value(function(d) { return d.population; });
+
+							var svg = d3.select("#donutMortgage").append("svg")
+							    .attr("width", width)
+							    .attr("height", height)
+							  	.append("g")
+							    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+							d3.csv("csv/Mortgage.csv", function(error, data) {
+
+							  data.forEach(function(d) {
+							    d.population = +d.population;
+							  });
+
+							  var g = svg.selectAll("#donutMortgage .arc")
+							      .data(pie(data))
+							      .enter().append("g")
+							      .attr("class", "arc");
+
+							  g.append("path")
+							      .attr("d", arc)
+							      .style("fill", function(d) { return color(d.data.age); });
+
+							  g.append("text")
+							      .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")"; })
+							      .attr("dy", ".35em")
+							      .style("text-anchor", "middle")
+							      .text(function(d) { return d.data.age; });
+
+							});
+
+						});
+						</script>
+
+						<div class="card_chart_figure" id="donutMortgage">
+							<div class="viewMode">Режим отображения
+								<div><img src="img/viewMode_1.png" alt=""><img src="img/viewMode_2.png" alt=""></div>
+							</div>
+						</div>
+
+						<table class="basic_table">
+							<col class="bank"></col>
+							<col class="debt"></col>
+							<col class="limit"></col>
+							<col class="monthly"></col>
+							<col class="update"></col>
+							<thead>
+								<tr>
+									<th>Банк</th>
+									<th>Задолженность</th>
+									<th>Лимит</th>
+									<th>Ежемесячный платеж</th>
+									<th>Дата обновления</th>
+								</tr>
+							</thead>
+						</table>
+						<div class="scrollable">
+							<table class="basic_table striped-odd">
+								<col class="bank"></col>
+								<col class="debt"></col>
+								<col class="limit"></col>
+								<col class="monthly"></col>
+								<col class="update"></col>
+								<tbody>
+
+									<tr>
+										<td class="border2">CHASE</td>
+										<td>12 340 <span class="rur"> P<span></td>
+										<td>340 000 <span class="rur"> P<span></td>
+										<td>9 000 <span class="rur"> P<span></td>
+										<td><time datetime="2013-12-03">13.04.13</time></td>
+									</tr>
+
+								</tbody>
+							</table>
+						</div>
+
+					</div>
+
+					<div id="other-credits" class="tab-hidden">
+
+						<div class="update-date">
+						<h1>Последняя дата обновления</h1>
+						<div class="date" datetime="2013-12-03">13.04.13</div>
+						</div>
+						<div class="debts">
+							<h1>Задолженность по другим кредитам</h1>
+							<h1 class="money">230 000 <span class="rur"> P<span></h1>
+						</div>
+						<div class="payment">
+							<h1>Общий ежемесячный платеж</h1>
+							<h1 class="money">589 340 <span class="rur"> P<span></h1>
+						</div>
+						<script>
+						$(document).ready(function() {
+
+							var width = 245,
+							    height = 245,
+							    radius = Math.min(width, height) / 2;
+
+							var color = d3.scale.ordinal()
+							    .range([ "#66b06f","#5296b3","#ed565b"]);
+
+							var arc = d3.svg.arc()
+							    .outerRadius(radius - 10)
+							    .innerRadius(radius - 50);
+
+							var pie = d3.layout.pie()
+							    .sort(null)
+							    .value(function(d) { return d.population; });
+
+							var svg = d3.select("#donutOtherCredits").append("svg")
+							    .attr("width", width)
+							    .attr("height", height)
+							  	.append("g")
+							    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+							d3.csv("csv/OtherCredits.csv", function(error, data) {
+
+							  data.forEach(function(d) {
+							    d.population = +d.population;
+							  });
+
+							  var g = svg.selectAll("#donutOtherCredits .arc")
+							      .data(pie(data))
+							      .enter().append("g")
+							      .attr("class", "arc");
+
+							  g.append("path")
+							      .attr("d", arc)
+							      .style("fill", function(d) { return color(d.data.age); });
+
+							  g.append("text")
+							      .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")"; })
+							      .attr("dy", ".35em")
+							      .style("text-anchor", "middle")
+							      .text(function(d) { return d.data.age; });
+
+							});
+
+						});
+						</script>
+
+						<div class="card_chart_figure" id="donutOtherCredits">
+							<div class="viewMode">Режим отображения
+								<div><img src="img/viewMode_1.png" alt=""><img src="img/viewMode_2.png" alt=""></div>
+							</div>
+						</div>
+
+						<table class="basic_table">
+							<col class="bank"></col>
+							<col class="debt"></col>
+							<col class="limit"></col>
+							<col class="monthly"></col>
+							<col class="update"></col>
+							<thead>
+								<tr>
+									<th>Банк</th>
+									<th>Задолженность</th>
+									<th>Лимит</th>
+									<th>Ежемесячный платеж</th>
+									<th>Дата обновления</th>
+								</tr>
+							</thead>
+						</table>
+						<div class="scrollable">
+							<table class="basic_table striped-odd">
+								<col class="bank"></col>
+								<col class="debt"></col>
+								<col class="limit"></col>
+								<col class="monthly"></col>
+								<col class="update"></col>
+								<tbody>
+
+									<tr>
+										<td class="border2">CHASE</td>
+										<td>12 340 <span class="rur"> P<span></td>
+										<td>340 000 <span class="rur"> P<span></td>
+										<td>9 000 <span class="rur"> P<span></td>
+										<td><time datetime="2013-12-03">13.04.13</time></td>
+									</tr>
+
+									<tr>
+										<td class="border3">CHASE</td>
+										<td>12 340 <span class="rur"> P<span></td>
+										<td>340 000 <span class="rur"> P<span></td>
+										<td>9 000 <span class="rur"> P<span></td>
+										<td><time datetime="2013-12-03">13.04.13</time></td>
+									</tr>
+
+									<tr>
+										<td class="border1">CHASE</td>
+										<td>12 340 <span class="rur"> P<span></td>
+										<td>340 000 <span class="rur"> P<span></td>
+										<td>9 000 <span class="rur"> P<span></td>
+										<td><time datetime="2013-12-03">13.04.13</time></td>
+									</tr>	
+
+								</tbody>
+							</table>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+
+			<div id="reference">
+				<div class="header">
+					<h1>Справки ЦККИ</h1>
+				</div>
+				<table class="basic_table">
+					<col></col>
+					<col></col>
+					<col></col>
+					<tr>
+						<th>Наименование бюро</th>
+						<th>Осн. код субъекта</th>
+						<th>Доп. код субъекта</th>
+					</tr>
+				</table>
+				<div class="scrollable">
+					<table class="basic_table striped-odd">
+					<col></col>
+					<col></col>
+					<col></col>
+					<tr>
+						<td><a href="">ООО «Межрегиональное Бюро кредитных историй»</a></td>
+						<td>12697450</td>
+						<td>12697450</td>
+					</tr>
+					<tr>
+						<td><a href="">ООО «Межрегиональное Бюро кредитных историй»</a></td>
+						<td>12697450</td>
+						<td>12697450</td>
+					</tr>
+					<tr>
+						<td><a href="">ООО «Межрегиональное Бюро кредитных историй»</a></td>
+						<td>12697450</td>
+						<td>12697450</td>
+					</tr>
+					<tr>
+						<td><a href="">ООО «Межрегиональное Бюро кредитных историй»</a></td>
+						<td>12697450</td>
+						<td>12697450</td>
+					</tr>
+
+				</table>
+				</div>
+			</div>
+			<div id="reports" class="">
+				<button class="more">Подробнее</button>
+				<div class="header">
+					<h1>Кредитные отчеты</h1>
+					<div class="nav">
+						<table class="general-reports-table">
+							<tbody>
+								<tr>
+									<td class="active"><img src="img/rating1.png"></td>
+									<td><img src="img/rating2.png"></td>
+									<td><img src="img/rating3.png"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="equifax score">
+					<div class="header">
+						<h1>Общая оценка</h1>
+					</div>
+					<figure class="general-stats-box tooltip">
+						<div>C</div>
+						<figure class="stats-box box-1"></figure>
+						<figure class="stats-box box-2"></figure>
+						<figure class="stats-box box-3 active"></figure>
+						<figure class="stats-box box-4"></figure>
+						<figure class="stats-box box-5"></figure>	
+					</figure>
+					<p>Учитывая ваш балл, кредиторы
+						должны сделать вывод, что вы
+						способны погасить свои долги.
+						Эта информация поможет
+						в определении того, какое
+						предложение вы получите
+					</p>
+				</div>
+				<div class="buro score hidden">
+					<div class="header">
+						<h1>Общая оценка</h1>
+					</div>
+					<img src="img/rating_score.png">
+					<p>Учитывая ваш балл, кредиторы
+						должны сделать вывод, что вы
+						способны погасить свои долги.
+						Эта информация поможет
+						в определении того, какое
+						предложение вы получите
+					</p>
+				</div>
+				<div class="experian score hidden">
+					<div class="header">
+						<h1>Общая оценка</h1>
+					</div>
+					<img src="img/rating_score.png">
+					<p>Учитывая ваш балл, кредиторы
+						должны сделать вывод, что вы
+						способны погасить свои долги.
+						Эта информация поможет
+						в определении того, какое
+						предложение вы получите
+					</p>
+				</div>
+			</div>
+			<div id="requests">
+				<div class="header">
+					<h1>Пользователи и запросы</h1>
+				</div>
+				<table class="basic_table">
+					<col></col>
+					<col></col>
+					<thead>
+						<tr>
+							<th>Кредитор</th>
+							<th>Дата запроса</th>
+						</tr>
+					</thead>
+				</table>
+				<div class="scrollable">
+					<figure>
+							<div class="item">
+								<a href="">ООО «Банк Русский стандарт»</a>
+								<time datetime="2013-12-03">13.04.13</time>
+							</div>
+							<div class="item">
+								<a href="">ООО «Банк Русский стандарт»</a>
+								<time datetime="2013-12-03">13.04.13</time>
+							</div>
+							<div class="item">
+								<a href="">ООО «Банк Русский стандарт»</a>
+								<time datetime="2013-12-03">13.04.13</time>
+							</div>
+							<div class="item">
+								<a href="">ООО «Банк Русский стандарт»</a>
+								<time datetime="2013-12-03">13.04.13</time>
+							</div>
+							<div class="item">
+								<a href="">ООО «Банк Русский стандарт»</a>
+								<time datetime="2013-12-03">13.04.13</time>
+							</div>
+							<div class="item">
+								<a href="">ООО «Банк Русский стандарт»</a>
+								<time datetime="2013-12-03">13.04.13</time>
+							</div>
+							<div class="item">
+								<a href="">ООО «Банк Русский стандарт»</a>
+								<time datetime="2013-12-03">13.04.13</time>
+							</div>
+							<div class="item">
+								<a href="">ООО «Банк Русский стандарт»</a>
+								<time datetime="2013-12-03">13.04.13</time>
+							</div>
+							<div class="item">
+								<a href="">ООО «Банк Русский стандарт»</a>
+								<time datetime="2013-12-03">13.04.13</time>
+							</div>
+							<div class="item">
+								<a href="">ООО «Банк Русский стандарт»</a>
+								<time datetime="2013-12-03">13.04.13</time>
+							</div>
+							<div class="item">
+								<a href="">ООО «Банк Русский стандарт»</a>
+								<time datetime="2013-12-03">13.04.13</time>
+							</div>
+							<div class="item">
+								<a href="">ООО «Банк Русский стандарт»</a>
+								<time datetime="2013-12-03">13.04.13</time>
+							</div>
+							<div class="item">
+								<a href="">ООО «Банк Русский стандарт»</a>
+								<time datetime="2013-12-03">13.04.13</time>
+							</div>
+							<div class="item">
+								<a href="">ООО «Банк Русский стандарт»</a>
+								<time datetime="2013-12-03">13.04.13</time>
+							</div>
+					</figure>
+				</div>
+
+			</div>
+			<div id="request-history">
+				<button class="more">Подробнее</button>
+				<div class="header">
+					<h1>Истории запросов</h1>
+				</div>
+				<table class="basic_table">
+					<col></col>
+					<col></col>
+					<col></col>
+					<tr>
+						<th>Наименование услуги</th>
+						<th>Дата</th>
+						<th></th>
+					</tr>
+				</table>
+				<div class="scrollable">
+					<figure>
+						<div class="item">
+							<a href="">Запрос кредитной истории</a>
+							<time datetime="2013-12-03">13.04.13</time>
+							<img src="img/download.png">
+						</div>
+						<div class="item">
+							<a href="">Запрос кредитной истории</a>
+							<time datetime="2013-12-03">13.04.13</time>
+							<img src="img/download.png">
+						</div>
+						<div class="item">
+							<a href="">Запрос кредитной истории</a>
+							<time datetime="2013-12-03">13.04.13</time>
+							<img src="img/download.png">
+						</div>
+						<div class="item">
+							<a href="">Запрос кредитной истории</a>
+							<time datetime="2013-12-03">13.04.13</time>
+							<img src="img/download.png">
+						</div>
+						<div class="item">
+							<a href="">Запрос кредитной истории</a>
+							<time datetime="2013-12-03">13.04.13</time>
+							<img src="img/download.png">
+						</div>
+						<div class="item">
+							<a href="">Запрос кредитной истории</a>
+							<time datetime="2013-12-03">13.04.13</time>
+							<img src="img/download.png">
+						</div>
+						<div class="item">
+							<a href="">Запрос кредитной истории</a>
+							<time datetime="2013-12-03">13.04.13</time>
+							<img src="img/download.png">
+						</div>
+						<div class="item">
+							<a href="">Запрос кредитной истории</a>
+							<time datetime="2013-12-03">13.04.13</time>
+							<img src="img/download.png">
+						</div>
+						<div class="item">
+							<a href="">Запрос кредитной истории</a>
+							<time datetime="2013-12-03">13.04.13</time>
+							<img src="img/download.png">
+						</div>
+						<div class="item">
+							<a href="">Запрос кредитной истории</a>
+							<time datetime="2013-12-03">13.04.13</time>
+							<img src="img/download.png">
+						</div>
+					</figure>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+			<div id="footer">
+				<div class="nav-wrapper">
+					<div class="nav credit-history">
+						<div class="header">
+							<h1>Кредитная история</h1>
+						</div>
+						<ul>
+							<li><a href="#">Бюро кредитных историй</a></li>
+							<li><a href="#">Закон о кредитных историях</a></li>
+							<li><a href="#">Как узнать кредитную историю?</a></li>
+							<li><a href="#">Исправление кредитной истории</a></li>
+							<li><a href="#">Получение кредита</a></li>
+						</ul>
+					</div>
+					<div class="nav for-users">
+						<div class="header">
+							<h1>Пользователям</h1>
+						</div>
+						<ul>
+							<li><a href="#">Симулятор</a></li>
+							<li><a href="#">Входи с паролем</a></li>
+							<li><a href="#">Регистрация в системе</a></li>
+							<li><a href="#">Демо-режим</a></li>
+							<li><a href="#">Презентация</a></li>
+						</ul>
+					</div>
+					<div class="nav about">
+						<div class="header">
+							<h1>О проекте</h1>
+						</div>
+						<ul>
+							<li><a href="#">Контактная информация</a></li>
+							<li><a href="#">Юридическая информация</a></li>
+							<li><a href="#">Заявление о конфиденциальности</a></li>
+							<li><a href="#">Наша команда</a></li>
+							<li><a href="#">Поддержка</a></li>
+						</ul>
+					</div>
+					<div class="nav credit-info">
+						<div class="header">
+							<h1>Кредитная информация</h1>
+						</div>
+						<ul>
+							<li><a href="#">Ваши данные в банках</a></li>
+							<li><a href="#">Обработка данных</a></li>
+							<li><a href="#">Защита персональных данных</a></li>
+							<li><a href="#">Хранение кредитной истории</a></li>
+						</ul>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="tell-about-us">
+					<div class="social-icons">
+						<a href="#" class="vk social"></a> 
+						<a href="#" class="fb social"></a> 
+						<a href="#" class="tw social"></a>
+					</div>
+					<p>Расскажите о нас: </p>
+				</div>
+				<a class="go-up" href="#"></a>
+				<p class="copyright"> 
+					© 2013 BK-INFO Все права защищены
+				</p>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>	
+
+<script src="js/chart-data.js"></script>
+	
+</body>
+</html>

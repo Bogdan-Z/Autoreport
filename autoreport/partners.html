@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet/less" type="text/css" href="css/style.less">
+	<title></title>
+	<script src="js/libs/jquery-1.10.2.js"></script>
+	<script src="js/libs/jquery-ui-1.10.3.custom.min.js"></script>
+	<script type="text/javascript" src="js/libs/ui.datepicker-ru.js"></script>
+	<script type="text/javascript" src="js/libs/modernizr.js"></script>
+	<script type="text/javascript" src="js/libs/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="js/application.js"></script>
+	<script type="text/javascript" src="js/libs/less.js"></script>
+	<script type="text/javascript" src="js/libs/selectivizr-min.js"></script>
+</head>
+
+<body id="partners">
+	<div class="header">
+		<div class="container">
+			<!--
+			<div class="userbar">
+				<img src="img/userpic.png" class="userpic">
+				<span class="name"> Алексей П.</span>
+				<a href="">Выход</a>
+			</div>
+			-->
+			<div class="userbar">
+				<img src="img/userpic.png" class="userpic">
+				<label>Вход для пользователей</label>
+				<div class="hidden">
+					<input type="text" placeholder="Введите ваш e-mail" class="autoreport_input">
+					<input type="text" placeholder="Введите желаемый пароль" class="autoreport_input">
+					<a href="">Забыли пароль?</a>
+					<input type="text" value="Войти" class="button">
+
+					<div class="social-icons">
+						<label for="">Войти через:</label>
+						<a href="#" class="vk social"></a> 
+						<a href="#" class="fb social"></a> 
+						<a href="#" class="g_plus social"></a>
+						<a href="#" class="vector social"></a>
+					</div>
+
+				</div>
+			</div>
+			<div class="clearfix"></div>
+			<div class="nav" id="menu1">
+				<a href="#" class="logo"><img src="img/logo.png"></a>
+				<ul>
+					<li><a href="#">Кредитные истории</a></li>
+					<li><a href="#">Симулятор</a></li>
+					<li><a href="#" class="active">Партнерам</a></li>
+					<li><a href="#">О проекте</a></li>
+					<li><a href="#">Контакты</a></li>
+				</ul>
+			</div> 
+		</div>
+	</div>
+
+
+		<div class="container">
+
+		<h1 class="first">Информация для банков</h1>
+
+		<div class="partnets_container clearfix width_100">
+			<div class="box left"><img src="img/logo.jpg" alt=""></div>
+			<div class="box right box_color-0"><img src="img/logo_small.png" alt="">
+				<p>это самый быстрый и удобный доступ к своей кредитной истории</p>
+			</div>
+			<div class="scheme_box left box_color-1 box-sizing active"><img src="img/scheme_cl.png" alt=""><h1>Схема работы клиента</h1></div>
+			<div class="scheme_box right box_color-2 box-sizing"><img src="img/scheme_bank.png" alt=""><h1>Схема работы банка</h1></div>
+
+			<div class="arrow_box left active" data-partners-tabs="client"><img src="img/bottom_arrow.png" alt=""></div>
+			<div class="arrow_box right" data-partners-tabs="bank"><img src="img/bottom_arrow.png" alt=""></div>
+
+			<div class="partners-tab clearfix width_100" data-partners-tabs="client">
+				<div class="box_01 box_color-1 left box-sizing">
+					<label for="">01</label><h3>Посетитель получает доступ к своей кредитной истории и кредитному рейтингу</h3>
+				</div>
+				<div class="box_img right">
+					<img src="img/notebook.jpg" alt="">
+				</div>
+				<div class="left financial_profile box-sizing">
+						<table>
+							<tbody><tr>
+								<td>Финансовый профиль</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Кредитный рейтинг:</td>
+								<td class="orange_color">678</td>
+							</tr>
+							<tr>
+								<td style="padding-bottom: 24px;">Общий долг по кредитам:</td>
+								<td> 124 000</td>
+							</tr>
+							<tr class="blue_bg">
+								<td style="padding-top: 12px;">Найдено вариантов:</td>
+								<td>12</td>
+							</tr>
+							<tr class="blue_bg">
+								<td>Общая сумма экономии:</td>
+								<td>3 984</td>
+							</tr>
+						</tbody></table>
+				</div>
+				<div class="box_02 right box_color-2 box-sizing">
+					<label for="">02</label><h3>Посетитель получает рекомендации от системы о возможности рефинансирования займа или предоставления нового кредита исходя из кредитного портфеля пользователя</h3>
+				</div>
+					
+				<div class="empty_block left"></div>
+				<div class="rating right">
+					<div class="required_rating tooltip">
+						Требуемый рейтинг
+						<span>650</span>
+					</div>
+
+					<div class="probability_of_approval">
+						<div>
+							<figure class="stats-box box-1"></figure>
+							<figure class="stats-box box-2"></figure>
+							<figure class="stats-box box-3"></figure>
+							<figure class="stats-box box-4"></figure>
+							<figure class="stats-box box-5"></figure>
+						</div>
+					</div>
+					<span>Вероятность одобрения</span>
+				</div>
+
+				<div class="box_03 right box_color-1 box-sizing">
+					<label for="">03</label><h3>Пользователь так же может выбирать предложения из общего каталога займов, заранее оценивая свои шансы на его получение</h3>
+				</div>
+	
+
+
+				<div class="files left"><img src="img/files.png" alt=""></div>
+				<div class="box_04 left box_color-2 box-sizing">
+					<label for="">04</label><h3>Пользователь подгатавливает унифицированную заявку на кредит и прикрепляет необзодимые документы</h3>
+				</div>
+				<div class="box_05 right box_color-1 box-sizing">
+					<label for="">05</label><h3>Пользователь отправляет заявку на кредиты по выбранным предложениям</h3>
+				</div>
+				<div class="box_06 left box_color-1 box-sizing">
+					<label for="">06</label><h3>В случае необзодимости дополнительной информации, пользователь имеет контакт с банком</h3>
+				</div>
+				<div class="form_credit right box_color-2 box-sizing">
+					<a href="" class="button">Оформить кредит</a>
+				</div>
+				<div class="comments left">
+					<img src="img/coments.png" alt="">
+				</div>
+				<div class="box_07 right box-sizing">
+						<label for="">07</label><h3>Пользователь получает кредит</h3>
+				</div>
+
+
+			</div>
+
+			<div class="partners-tab clearfix width_100 hidden" data-partners-tabs="bank">
+
+
+				<div class="box_01 box_color-1 left box-sizing">
+					<label for="">01</label><h3>Размещение кредитных продуктов в каталоге Zaimix: описание условий, необходимые документы, фома заявки</h3>
+				</div>
+				<div class="box_img right">
+					<img src="img/z.jpg" alt="">
+				</div>
+				<div class="left financial_profile">
+						<img src="img/rating.jpg" alt="">
+				</div>
+				<div class="box_02 right box_color-2 box-sizing">
+					<label for="">02</label><h3>Указание необходимого минимального порога кредитного рейтинга для кредитов со скоринговой моделью</h3>
+				</div>
+					
+				<div class="empty_block left"></div>
+				<div class="rating right">
+					<img src="img/chart_logo.jpg" alt="">
+				</div>
+
+				<div class="box_03 right box_color-1 box-sizing">
+					<label for="">03</label><h3>Настройка взаимодействя CRM системы банка и Zaimix</h3>
+				</div>
+
+				<div class="abilities left box_color-2 box-sizing">
+					<h3>Возможности, которые дает Zaimix</h3>
+				</div>
+
+				<div class="abilities_list right box-sizing">
+					<ul>
+						<li>Сегментирование пользователей по величине кредитного рейтинга</li>
+						<li>Предложение и рекомендаций пользователю на основе его текущего кредитного портфеля</li>
+						<li>Указание минимального уровня кредитного рейтинга для ваших кредитных продуктов</li>
+						<li>Быстрое завершение конверсии на основе получаемого полного пакета документов</li>
+						<li>Взаимодействие с клиентом через внутреннюю систему CRM банка</li>
+					</ul>
+				</div>
+				<div class="widget box_color-1 left  box-sizing">
+					<h3>Виджет</h3>
+				</div>
+				<div class="designation box_color-2 right  box-sizing">
+					<h3>Указание<br>причины отказа</h3>
+				</div>
+				<div class="additional-1 left box-sizing">
+					<p>Если в Вашем банке не реализована возможность получения кредитной истории для коиентов, мы может предлоить Вам возможность нашего виджета для клинтов интернет-банка.</p>
+					<p>Тем самым ваши клиенты смогут получить свою кредитную историю непосредственно из личного кабинета и всегда контролировать свою кредитную историю</p>
+
+				</div>
+				<div class="additional-2 right box-sizing">
+					<p>Отказ в выдаче кредита клиенту, без объяснения причин является основным фактором снижения заинтересованности потенциального клиента к работе с банком и как следствие общее снижение лояльности.</p>
+					<p>Указание причины отказа и ссылка на величину кредитного рейтинга не оставят вашего клиента без внимания и позволят не потерять связь со своим будущим клиентом</p>
+				</div>
+			</div>
+
+
+
+			<div id="footer">
+				<div class="nav-wrapper">
+					<div class="nav credit-history">
+						<div class="header">
+							<h1>Кредитная история</h1>
+						</div>
+						<ul>
+							<li><a href="#">Бюро кредитных историй</a></li>
+							<li><a href="#">Закон о кредитных историях</a></li>
+							<li><a href="#">Как узнать кредитную историю?</a></li>
+							<li><a href="#">Исправление кредитной истории</a></li>
+							<li><a href="#">Получение кредита</a></li>
+						</ul>
+					</div>
+					<div class="nav for-users">
+						<div class="header">
+							<h1>Пользователям</h1>
+						</div>
+						<ul>
+							<li><a href="#">Симулятор</a></li>
+							<li><a href="#">Входи с паролем</a></li>
+							<li><a href="#">Регистрация в системе</a></li>
+							<li><a href="#">Демо-режим</a></li>
+							<li><a href="#">Презентация</a></li>
+						</ul>
+					</div>
+					<div class="nav about">
+						<div class="header">
+							<h1>О проекте</h1>
+						</div>
+						<ul>
+							<li><a href="#">Контактная информация</a></li>
+							<li><a href="#">Юридическая информация</a></li>
+							<li><a href="#">Заявление о конфиденциальности</a></li>
+							<li><a href="#">Наша команда</a></li>
+							<li><a href="#">Поддержка</a></li>
+						</ul>
+					</div>
+					<div class="nav credit-info">
+						<div class="header">
+							<h1>Кредитная информация</h1>
+						</div>
+						<ul>
+							<li><a href="#">Ваши данные в банках</a></li>
+							<li><a href="#">Обработка данных</a></li>
+							<li><a href="#">Защита персональных данных</a></li>
+							<li><a href="#">Хранение кредитной истории</a></li>
+						</ul>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="tell-about-us">
+					<div class="social-icons">
+						<a href="#" class="vk social"></a> 
+						<a href="#" class="fb social"></a> 
+						<a href="#" class="tw social"></a>
+					</div>
+					<p>Расскажите о нас: </p>
+				</div>
+				<a href="#" class="go-up"></a>
+				<p class="copyright"> 
+					c 2013 BK-INFO Все права защищены
+				</p>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+
+
+</body>
+</html>

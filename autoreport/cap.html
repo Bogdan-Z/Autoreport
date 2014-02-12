@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet/less" type="text/css" href="css/style.less">
+	<!--<link rel="stylesheet" type="text/css" href="css/media-queries.css">-->
+	<title></title>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script type="text/javascript" src="js/libs/less.js"></script>
+	<script type="text/javascript" src="js/libs/selectivizr-min.js"></script>
+	<script type="text/javascript" src="js/libs/jquery.validate.min.js"></script>
+</head>
+<script>
+	$(document).ready(function(){
+
+		 $(".opening_mail form").validate({
+
+			  rules: {
+				  email: {
+				      required: true,
+				      email: true
+				    }
+			   },
+			   messages: {
+					email :"Не правильно введен e-mail",
+			   },
+
+			  success: function() {
+				var text = 'Вы подписаны, на обновления. Ввести еще один адрес!';
+				$('.opening_mail_text').text(text);
+				$('.opening_mail_text').css('font-size','17px').css('height','20px');
+				$('#cap_mail').val('');
+			  }
+		 });
+
+	});
+</script>
+<body>
+	<div class="cup-container">
+		<div class="cup-header">
+			<img src="img/Zaglushka.png" alt="">
+			<div class="fast_access">
+				<ul>
+					<li>БЫСТРЫЙ ДОСТУП</li>
+					<li class="active">К КРЕДИТНОЙ ИСТОРИИ</li>
+					<li>С ЛЮБОГО УСТРОЙСТВА</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="opening">
+		<div class="cup-container">
+			<label for="">До открытия осталось:</label>
+			<div class="timer">
+			    <div class="timer-item days">
+			        <div class="clock">88</div>
+			        <div class="caption" style="margin-left: 16px;">дни</div>
+			    </div>
+			    <div class="timer-item separate-dots">/</div>
+			    <div class="timer-item hours">
+			        <div class="clock">19</div>
+			        <div class="caption">часы</div>
+			    </div>
+			    <div class="timer-item separate-dots">/</div>
+			    <div class="timer-item minutes">
+			        <div class="clock">8</div>
+			        <div class="caption">минуты</div>
+			    </div>
+			    <div class="timer-item separate-dots">/</div>
+			    <div class="timer-item seconds">
+			        <div class="clock">13</div>
+			        <div class="caption" style="margin-left: -3px;">секунды</div>
+			    </div>
+			</div>
+			<div class="opening_mail">
+				<div class="opening_mail_text">
+				Узнайте первым о старте проекта
+				</div>
+				<div>
+					<form action="">
+						<input type="text" placeholder="Ваш e-mail" id="email" name="email" class="required">
+						<input type="submit" class="cap_mail" value="">
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="cup-footer">
+		<div class="cup-container">
+			<div id="footer">
+				<div class="copyright">© 2013 ООО «Курсор» Все права защищены</div>
+				<div class="tell-about-us">
+					<div class="social-icons">
+						<a href="#" class="vk social"></a> 
+						<a href="#" class="fb social"></a> 
+						<a href="#" class="tw social"></a>
+					</div>
+					<p>Расскажите о нас: </p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="js/libs/time.js"></script>
+	<script type="text/javascript" src="js/application.js"></script>
+</body>
+</html>

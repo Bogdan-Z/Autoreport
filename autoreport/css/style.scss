@@ -1,0 +1,549 @@
+@import '_fonts';
+@import '_reset';
+@import '_header';
+@import '_footer';
+
+$darkblue: #334D5C;
+$grey: #888888;
+$lightgrey: #ebebeb;
+$mediumfont: HelveticaCyrMedium, Helvetica, Arial, Tahoma;
+$thinfont: HelveticaCyrThin, Helvetica, Arial, Tahoma;
+$romanfont: HelveticaCyrRoman, Helvetica, Arial, Tahoma;
+
+//general styles
+
+.container {
+  margin: auto;
+  padding: 0 10px;
+  position: relative;
+  width: 940px;
+}
+
+.clearfix {
+  clear: both;
+}
+
+
+.main {
+  background-image: url(../img/bg.png);
+}
+
+#user-panel {
+  float: left;
+  width: 340px;
+  height: 555px;
+  margin: 22px 0 0 0;
+  background-color: #FFF;
+  text-align: center;
+  position: relative;
+  color: $darkblue;
+}
+
+.user-photo {
+  margin: auto;
+  padding: 19px 0 0px 0;
+  display: block;
+}
+
+#user-info {
+  .name {
+    padding: 20px 0 15px;
+    border-bottom: solid 1px $lightgrey;
+    width: 282px;
+    margin: auto;
+    font-size: 19px;
+  }
+  .birthdate {
+    p {
+      color: $grey;
+    }
+    padding: 11px 0 0;
+    border-bottom: solid 1px $lightgrey;
+    width: 282px;
+    margin: auto;
+    font-size: 14px;
+  }
+}
+
+.birthdate .date {
+  font-size: 22px;
+  padding: 10px 0 12px;
+}
+
+#user-info .reg-date {
+  p {
+    color: $grey;
+  }
+  padding: 14px 0 0;
+  border-bottom: solid 1px $lightgrey;
+  width: 282px;
+  margin: auto;
+  font-size: 14px;
+}
+
+.reg-date .date {
+  padding: 8px 0 12px;
+  font-size: 22px;
+}
+
+#user-info .history-duration {
+  p {
+    color: $grey;
+    &.duration {
+      color: $darkblue;
+    }
+  }
+  padding: 14px 0 0;
+  border-bottom: solid 1px $lightgrey;
+  width: 282px;
+  margin: auto;
+  font-size: 14px;
+}
+
+.history-duration p.duration {
+  font-size: 23px;
+  padding: 7px 0 15px;
+}
+
+#user-panel .nav {
+  position: absolute;
+  bottom: 0;
+  background-color: #ebebeb;
+  li {
+    display: inline-block;
+    width: 110px;
+    font-size: 11px;
+    padding: 11px 0 21px 0;
+    a {
+      text-decoration: none;
+      color: $grey;
+      font-family: $mediumfont;
+    }
+  }
+}
+
+#rating-main {
+  float: left;
+  width: 580px;
+  height: 553px;
+  margin: 22px 0 0 20px;
+  background-color: #FFF;
+  .header {
+    padding: 13px 16px 13px;
+    h1 {
+      font-size: 18px;
+    }
+  }
+}
+
+button.more {
+  float: right;
+  border: none;
+  color: #FFF;
+  background: #2293C2 url(../img/more.png);
+  height: 33px;
+  width: 135px;
+  padding-left: 25px;
+}
+
+#rating-main .nav {
+  padding: 13px 14px;
+  background-color: #C8E9F0;
+  height: 38px;
+  ul {
+    border-radius: 5px;
+    background-color: #FFF;
+    height: 45px;
+    li {
+      display: block;
+      width: 184px;
+      float: left;
+      height: 45px;
+    }
+  }
+}
+
+.equifax img {
+  position: relative;
+  top: 2px;
+  left: 6px;
+}
+
+.buro img, .experian img {
+  position: relative;
+  top: -4px;
+  left: 5px;
+}
+
+#rating-main .nav li img {
+  margin: auto;
+  display: block;
+  padding: 12px;
+}
+
+h1.score {
+  padding: 20px 11px 0;
+}
+
+.score {
+  .number {
+    font-size: 90px;
+    color: #FFA500;
+  }
+  .text {
+    font-size: 34px;
+    color: #FFA500;
+    position: relative;
+    top: -25px;
+    left: 43px;
+  }
+}
+
+.user-rating {
+  padding-top: 18px;
+  img {
+    display: block;
+    margin: auto;
+  }
+}
+
+.graphic {
+  padding-top: 12px;
+  img {
+    display: block;
+    margin: auto;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+#credits {
+  margin-top: 17px;
+  background-color: white;
+  height: 771px;
+  .header {
+    height: 50px;
+    border-bottom: solid 2px grey;
+    h1 {
+      padding: 18px 0 0 13px;
+      font-size: 18px;
+      font-family: $mediumfont;
+      color: $grey;
+    }
+  }
+  .nav {
+    float: left;
+    height: 719px;
+    width: 119px;
+    li {
+      height: 120px;
+      font-size: 14px;
+      text-align: center;
+      background-color: whitesmoke;
+      img {
+        display: block;
+        margin: auto;
+        padding: 24px 0 10px 0;
+      }
+    }
+  }
+  .debts {
+    float: left;
+    padding: 17px 0 0 33px;
+    font-size: 31px;
+    color: grey;
+  }
+  .update-date {
+    float: right;
+    padding: 26px 20px 0 0;
+    color: grey;
+  }
+}
+
+.update-date {
+  h1 {
+    font-size: 13px;
+  }
+  .date {
+    float: right;
+    padding: 6px 0px 0 0;
+    font-size: 20px;
+  }
+}
+
+#credits {
+  .debts .money {
+    line-height: 69px;
+    padding-left: 0px;
+    font-size: 51px;
+    color: lightblue;
+  }
+  table {
+    table-layout: fixed;
+    col {
+      &.type {
+        width:395px;
+      }
+      &.date {
+        width:200px;
+      }
+      &.how-much {
+        width:199px;
+      }
+      &.diff {
+        width:100%;
+      }
+    }
+    width: 821px;
+    margin-top: 13px;
+    font-size: 14px;
+    text-align: left;
+    td {
+      &:nth-child(1) {
+        padding-left: 39px;
+      }
+      padding-top: 11px;
+      padding-bottom: 12px;
+    }
+    th {
+      &:nth-child(1) {
+        padding-left: 39px;
+      }
+      color: #FFF;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      background-color: $darkblue;
+    }
+  }
+}
+
+tr.odd {
+  background-color: whitesmoke;
+  color: grey;
+}
+
+#credits table .type {
+  padding-left: 39px;
+}
+
+th {
+  &.date, &.how-much {
+    padding-left: 5px;
+  }
+}
+
+td {
+  &.type, &.date, &.how-much {
+    padding-left: 5px;
+  }
+}
+
+#reference {
+  float: left;
+  margin-top: 20px;
+  background-color: white;
+  width: 579px;
+  height: 286px;
+  .header {
+    height: 44px;
+    h1 {
+      padding: 11px 14px;
+      font-size: 20px;
+      color: grey;
+    }
+  }
+  table {
+    col {
+      &:nth-child(1) {
+        width: 237px;
+      }
+      &:nth-child(2) {
+        width: 161px;
+      }
+      &:nth-child(3) {
+        width: 100%;
+      }
+    }
+    td, th {
+      &:first-child {
+        padding-left: 17px;
+      }
+    }
+    th {
+      padding: 8px 0 11px;
+    }
+    td {
+      padding: 11px 0;
+    }
+  }
+}
+
+table {
+  width: 100%;
+  table-layout: fixed;
+  font-size: 15px;
+  td, th {
+    padding: 5px 0;
+    text-align: left;
+    &:first-child {
+      padding-left: 39px;
+    }
+  }
+  th {
+    color: white;
+    background-color: $darkblue;
+  }
+  tr.odd {
+    background-color: whitesmoke;
+  }
+}
+
+
+
+
+#reports {
+  float: left;
+  width: 340px;
+  height: 286px;
+  background-color: white;
+  margin: 20px 0 0 21px;
+  .header {
+    height: 44px;
+    h1 {
+      padding: 11px 14px;
+      font-size: 20px;
+      color: grey;
+    }
+    .nav {
+      height: 49px;
+      background-color: lightblue;
+      padding: 13px;
+      ul {
+        border-radius: 5px;
+        background-color: #FFF;
+        height: 47px;
+        li {
+          display: block;
+          width: 80px;
+          height: 100%;
+          float: left;
+          padding: 10px;
+        }
+      }
+    }
+  }
+  .score {
+    .header {
+      padding: 0;
+      height: 30px;
+      h1 {
+        font-size: 15px;
+        padding: 6px 0 0 18px;
+      }
+    }
+    img {
+      float: left;
+      .equifax & {
+        position: relative;
+        top: 0px;
+        left: 17px;
+      }
+    }
+    p {
+      font-size: 13px;
+      padding: 0 12px 8px;
+      float: right;
+      width: 196px;
+    }
+  }
+}
+
+#requests {
+  background-color: white;
+  width: 580px;
+  height: 300px;
+  margin-top: 21px;
+  float: left;
+  .header {
+    height: 44px;
+    h1 {
+      padding: 11px 14px;
+      font-size: 20px;
+      color: grey;
+    }
+  }
+  .scrollable {
+    overflow-y: scroll;
+    height: 222px;
+  }
+  table {
+    col {
+      &:nth-child(1) {
+        width: 360px;
+      }
+      &:nth-child(2) {
+        width: 100% ;
+      }
+    }
+    td, th {
+      &:first-child {
+        padding-left: 17px;
+      }
+    }
+    th {
+      padding: 8px 0 11px;
+    }
+    td {
+      padding: 11px 0;
+    }
+  }
+}
+
+#request-history {
+  background-color: white;
+  width: 340px;
+  height: 300px;
+  margin: 21px 0 0 20px;
+  float: left;
+  .scrollable {
+    overflow-y: scroll;
+    height: 200px;
+  }
+  .header {
+    height: 44px;
+    h1 {
+      padding: 11px 14px;
+      font-size: 20px;
+      color: grey;
+    }
+  }
+  table {
+    col {
+      &:nth-child(1) {
+        width: 180px;
+      }
+      &:nth-child(2) {
+        width: 99px;
+      }
+      &:nth-child(3) {
+        width: 100%;
+      }
+    }
+    td, th {
+      &:first-child {
+        padding-left: 17px;
+      }
+    }
+    th {
+      padding: 8px 0 11px;
+    }
+    td {
+      padding: 11px 13px 11px 0;
+      font-size: 13px;
+    }
+  }
+}
+
+

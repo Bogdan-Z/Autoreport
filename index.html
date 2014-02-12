@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet/less" type="text/css" href="css/style.less">
+	<link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css">
+
+	
+	<!--<link rel="stylesheet" type="text/css" href="css/media-queries.css">-->
+	<title></title>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script type="text/javascript" src="js/libs/less.js"></script>
+	<script type="text/javascript" src="js/libs/selectivizr-min.js"></script>
+	<script type="text/javascript" src="js/libs/jquery.bxslider.min.js"></script>
+		
+</head>
+<body class="main_bg">
+	<div class="header">
+		
+		<div class="container">
+			<!--
+			<div class="userbar">
+				<img src="img/userpic.png" class="userpic">
+				<span class="name"> Алексей П.</span>
+				<a href="">Выход</a>
+			</div>
+			-->
+			<div class="userbar">
+				<img src="img/userpic.png" class="userpic">
+				<label>Вход для пользователей</label>
+				<div class="hidden">
+					<input type="text" placeholder="Введите ваш e-mail" class="autoreport_input">
+					<input type="text" placeholder="Введите желаемый пароль" class="autoreport_input">
+					<a href="">Забыли пароль?</a>
+					<input type="text" value="Войти" class="button">
+
+					<div class="social-icons">
+						<label for="">Войти через:</label>
+						<a href="#" class="vk social"></a> 
+						<a href="#" class="fb social"></a> 
+						<a href="#" class="g_plus social"></a>
+						<a href="#" class="vector social"></a>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="clearfix"></div>
+			<div class="nav" id="menu1">
+				<a href="#" class="logo"><img src="img/logo.png"></a>
+				<ul>
+					<li><a href="#">Кредитные истории</a></li>
+					<li><a href="#">Симулятор</a></li>
+					<li><a href="#">Предложение</a></li>
+					<li><a href="#">О проекте</a></li>
+					<li><a href="#">Контакты</a></li>
+				</ul>
+			</div> 
+		</div>
+	</div>
+	<div class="main-container">
+		<div class="cup-header">
+			<img src="img/Main_image.png" alt="">
+			<div class="fast_access">
+				<ul>
+					<li>БЫСТРЫЙ ДОСТУП</li>
+					<li class="active">К КРЕДИТНОЙ ИСТОРИИ</li>
+					<li>С ЛЮБОГО УСТРОЙСТВА</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="main" style="background:none">
+		<div class="container">
+					<div class="sign_in_form">
+						<input type="text" placeholder="Введите e-mail">
+						<input type="text" placeholder="Введите пароль">
+						<a href="" class="button">Войти</a>
+						<a href="" class="forget_pass">забыли пароль?</a>
+						<div class="social-icons">
+							<label for="">Войти через:</label>
+							<a href="#" class="vk social"></a> 
+							<a href="#" class="fb social"></a> 
+							<a href="#" class="g_plus social"></a>
+							<a href="#" class="vector social"></a>
+						</div>
+					</div>
+					<div class="center-box">
+						<a href="" id="reg_popup_opener" class="button yellow">Регистрация</a>
+					</div>
+					<h1 class="how_to_know">Как узнать свою кредитную историю</h1>
+					<div style="height: 360px;">
+						<table class="main_page_circle">
+							<tr>
+								<td class="circle registration"><a href="">Зарегистрируйтесь</a></td>
+								<td class="circle confirm_a_person"><a href="">Подтвердите личность</a></td>
+								<td class="circle history_request"><a href="">Запросите свою кредитную историю</a></td>
+							</tr>
+						</table>
+					</div>
+					<script>
+						$(document).ready(function(){
+						  $('.bxslider').bxSlider({
+						  	mode: 'horizontal',
+						  	speed: 500
+						  });
+						});
+					</script>
+					<div class="main_slider">
+						<ul class="bxslider">
+							<li><img src="img/slides/slide.jpg">
+								<div class="descr">1как использовать систему и получить всю доступную информацию по вашей кридитной истории?
+									<a href="" class="white-button">Попробовать демо-режим</a>
+								</div>
+							</li>
+							<li><img src="img/slides/slide.jpg">
+								<div class="descr">2как использовать систему и получить всю доступную информацию по вашей кридитной истории?
+									<a href="" class="white-button">Попробовать демо-режим</a>
+								</div>
+							</li>
+							<li><img src="img/slides/slide.jpg">
+								<div class="descr">3как использовать систему и получить всю доступную информацию по вашей кридитной истории?
+									<a href="" class="white-button">Попробовать демо-режим</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+
+					<div class="blue_line">
+						<figure class="discr_box_color-1"></figure>
+						<figure class="discr_box_color-2"></figure>
+						<figure class="discr_box_color-3"></figure>
+						<figure class="discr_box_color-4"></figure>
+					</div>
+
+					<div class="main_discr_box">
+						<figure>
+							<h3>
+								Чем наш отчет отличается от других?<br>
+								<div>
+									<i></i>
+									<i></i>
+									<i></i>
+									<i></i>
+								</div>
+							</h3>
+						</figure>
+						<figure class="discr_box_color-1"><i class="main_descr_icon credit_rating"></i><h4>Кредитный рейтинг</h4>
+							<span>Уточните информацию о событиях повлиявших на формирование кредитного рейтинга</span>
+						</figure>
+						<figure class="discr_box_color-2"><i class="main_descr_icon your_credits"></i><h4>Ваши кредиты</h4>
+							<span>Возможность получить данные от всех основных существующих бюро на территории РФ</span>
+						</figure>
+						<figure class="discr_box_color-3"><i class="main_descr_icon credit_expert"></i><h4>Кредитный эксперт</h4>
+								<span>Консультация по всем вопросам от эксперта в области кредитирования</span>
+						</figure>
+						<figure class="bg_none"></figure>
+						<figure class="discr_box_color-3"><i class="main_descr_icon find_new_credit"></i><h4>Поиск новых кредитов</h4>
+								<span>Подберите кредит или рефинансируйте текущий займ непосредственно через личный кабинет</span>
+						</figure>
+						<figure class="discr_box_color-4"><i class="main_descr_icon make_credit_cheaper"></i><h4>Сделать кредит дешевле</h4>
+								<span>Подбор способов уменьшения платы по новым и текущим кредитам</span>
+						</figure>
+						<figure class="discr_box_color-1"><i class="main_descr_icon credit_simulator"></i><h4>Кредитный симулятор</h4>
+								<span>Спрогнозируйте изменения кредитного рейтинга</span>
+						</figure>
+					</div>
+
+					<div id="footer">
+						<div class="nav-wrapper">
+							<div class="nav credit-history">
+								<div class="header">
+									<h1>Кредитная история</h1>
+								</div>
+								<ul>
+									<li><a href="#">Бюро кредитных историй</a></li>
+									<li><a href="#">Закон о кредитных историях</a></li>
+									<li><a href="#">Как узнать кредитную историю?</a></li>
+									<li><a href="#">Исправление кредитной истории</a></li>
+									<li><a href="#">Получение кредита</a></li>
+								</ul>
+							</div>
+							<div class="nav for-users">
+								<div class="header">
+									<h1>Пользователям</h1>
+								</div>
+								<ul>
+									<li><a href="#">Симулятор</a></li>
+									<li><a href="#">Входи с паролем</a></li>
+									<li><a href="#">Регистрация в системе</a></li>
+									<li><a href="#">Демо-режим</a></li>
+									<li><a href="#">Презентация</a></li>
+								</ul>
+							</div>
+							<div class="nav about">
+								<div class="header">
+									<h1>О проекте</h1>
+								</div>
+								<ul>
+									<li><a href="#">Контактная информация</a></li>
+									<li><a href="#">Юридическая информация</a></li>
+									<li><a href="#">Заявление о конфиденциальности</a></li>
+									<li><a href="#">Наша команда</a></li>
+									<li><a href="#">Поддержка</a></li>
+								</ul>
+							</div>
+							<div class="nav credit-info">
+								<div class="header">
+									<h1>Кредитная информация</h1>
+								</div>
+								<ul>
+									<li><a href="#">Ваши данные в банках</a></li>
+									<li><a href="#">Обработка данных</a></li>
+									<li><a href="#">Защита персональных данных</a></li>
+									<li><a href="#">Хранение кредитной истории</a></li>
+								</ul>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<div class="tell-about-us">
+							<div class="social-icons">
+								<a href="#" class="vk social"></a> 
+								<a href="#" class="fb social"></a> 
+								<a href="#" class="tw social"></a>
+							</div>
+							<p>Расскажите о нас: </p>
+						</div>
+						<a class="go-up"></a>
+						<p class="copyright"> 
+							c 2013 BK-INFO Все права защищены
+						</p>
+					</div>
+
+			</div>
+		<div class="reg_popup" id="reg_popup">
+			<div class="close"></div>
+			<h4>Зарегистрируйтесь и получите доступ к своей кредитной истории</h4>
+			<div>
+				<div>
+					<input type="text" placeholder="Введите ваш e-mail">
+					<input type="text" placeholder="Введите желаемый пароль">
+					<label for="">Введите символы изображенные на рисунке:</label>
+					<div class="captcha">
+						<div>
+							<img src="img/captcha.jpg" alt=""><br>
+							<a href="">Обновить</a>
+						</div>
+						<input type="text">
+					</div>
+					<div class="checkboxes">
+						<div class="check">
+							Я принимаю условия <a href="">пользовательского соглашения</a>
+							<input type="checkbox" value="have">
+						</div>
+					</div>
+					<input type="submit" class="button" value="Зарегистрироваться">
+
+					<div class="social-icons">
+						<label for="">Зарегистрироваться через:</label>
+						<a href="#" class="vk social"></a> 
+						<a href="#" class="fb social"></a> 
+						<a href="#" class="g_plus social"></a>
+						<a href="#" class="vector social"></a>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+
+		<div class="reg_popup" id="reg_popup_ty">
+			<div class="close"></div>
+			<h4>Cпасибо за регистрацию</h4>
+			<div>
+				<div>
+					<h2>Благодарим вас за регистрацию!</h2>
+					<p>Осталось совсем немного. Вам необзодимо подтвердить адрес электронной почты. Для этого, перейдите по ссылке в письме, которое было автоматически отправлено нашей системой.</p>
+					<p>Если вы не нашли письмо в папке "Входящие", проверьте папку "Спам" вашего почтового ящика, каду письмо могло попасть по ошибке.</p>
+					<p>Если у вас возникли проблемы с получением письма, напишите нас по адресу: <a href="" mailto="info@zaimix.ru">info@zaimix.ru</a></p>
+				</div>
+			</div>
+			
+		</div>
+
+
+	</div>
+
+
+	<script type="text/javascript" src="js/libs/time.js"></script>
+	<script type="text/javascript" src="js/application.js"></script>
+</body>
+</html>

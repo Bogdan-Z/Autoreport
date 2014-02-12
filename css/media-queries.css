@@ -1,0 +1,26 @@
+@media screen and (max-width: 1100px) {
+.cup-header{
+  background-position-x: -430px;
+}
+
+}
+
+@media screen and (min-width: 1400px) {
+.cup-header{
+  background-position-x: -200px;
+}
+
+}
+
+@media screen and (min-width: 1600px) {
+.cup-header{
+  background-position-x: -100px;
+}
+
+}
+@media screen and (min-width: 1900px) {
+.cup-header{
+  background-position-x: 20px;
+}
+
+}

@@ -1,0 +1,4 @@
+       @font-face { font-family: "Rubl Sign"; src: url(http://www.artlebedev.ru/;-)/ruble.eot); }
+    span.rur { float:none!important; // text-transform: none;}    
+    span.rur span { position: absolute; margin: .1ex 0 0 -.62em; // display: none; }
+    span.rur span:before { content: '\2013'; 
